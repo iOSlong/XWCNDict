@@ -1,0 +1,52 @@
+//
+//  XWCNDict-PrefixHeader.pch
+//  XWCNDict
+//
+//  Created by xw.long on 16/6/8.
+//  Copyright © 2016年 linxi. All rights reserved.
+//
+
+#ifndef XWCNDict_PrefixHeader_pch
+#define XWCNDict_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import <Availability.h>
+
+#ifndef __IPHONE_7_0
+#warning "This project uses features only available in iOS SDK 7.0 and later."
+#endif
+//===========
+
+#ifdef __OBJC__
+
+#import "Constant/constantUI.h"
+#import "Constant/constantStr.h"
+
+#endif
+
+
+//==========
+#ifdef DEBUG
+#  define XLOG(fmt, ...) do {                                            \
+NSString* file = [[NSString alloc] initWithFormat:@"%s", __FILE__]; \
+NSLog((@"%@(%d) " fmt), [file lastPathComponent], __LINE__, ##__VA_ARGS__);\
+} while(0)
+
+#  define XLOG_METHOD NSLog(@"%s", __func__)
+#  define XLOG_CMETHOD NSLog(@"%@/%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd))
+#  define XLOG_TRACE(x) do {printf x; putchar('\n'); fflush(stdout);} while (0)
+#else
+#  define XLOG(...)
+#  define XLOG_METHOD
+#  define XLOG_CMETHOD
+#  define XLOG_TRACE(x)
+#endif
+
+
+
+#define kGetTagFromIndex(n) (789+n)
+#define kGetIndexFromTag(n) (n-789)
+
+
+#endif /* XWCNDict_PrefixHeader_pch */
