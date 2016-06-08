@@ -78,6 +78,7 @@
 		010989201D08792A00C1BA84 /* sinofont.mm in Sources */ = {isa = PBXBuildFile; fileRef = 010989171D08792A00C1BA84 /* sinofont.mm */; };
 		010989211D08792A00C1BA84 /* StrokeFontIO.mm in Sources */ = {isa = PBXBuildFile; fileRef = 010989191D08792A00C1BA84 /* StrokeFontIO.mm */; };
 		010989221D08792A00C1BA84 /* STSinoFont.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0109891B1D08792A00C1BA84 /* STSinoFont.mm */; };
+		010989261D087DDF00C1BA84 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010989251D087DDF00C1BA84 /* AVFoundation.framework */; };
 		949518C21453B223C48F0180 /* libPods-XWCNDict.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A81A65CF20390F0A70B90DBA /* libPods-XWCNDict.a */; };
 /* End PBXBuildFile section */
 
@@ -186,6 +187,7 @@
 		0109891C1D08792A00C1BA84 /* STStrokeFontApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STStrokeFontApi.h; sourceTree = "<group>"; };
 		0109891D1D08792A00C1BA84 /* WinDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WinDef.h; sourceTree = "<group>"; };
 		010989231D087CB400C1BA84 /* CodeMapping.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = CodeMapping.dat; sourceTree = "<group>"; };
+		010989251D087DDF00C1BA84 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A81A65CF20390F0A70B90DBA /* libPods-XWCNDict.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XWCNDict.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC6815308AC0DB192C2529A1 /* Pods-XWCNDict.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XWCNDict.release.xcconfig"; path = "Pods/Target Support Files/Pods-XWCNDict/Pods-XWCNDict.release.xcconfig"; sourceTree = "<group>"; };
 		E76EE84323E23508EDADCCD5 /* Pods-XWCNDict.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XWCNDict.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XWCNDict/Pods-XWCNDict.debug.xcconfig"; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				010989261D087DDF00C1BA84 /* AVFoundation.framework in Frameworks */,
 				949518C21453B223C48F0180 /* libPods-XWCNDict.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,6 +466,7 @@
 		C0F3D4718F76C97EE3F5D885 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				010989251D087DDF00C1BA84 /* AVFoundation.framework */,
 				A81A65CF20390F0A70B90DBA /* libPods-XWCNDict.a */,
 			);
 			name = Frameworks;
