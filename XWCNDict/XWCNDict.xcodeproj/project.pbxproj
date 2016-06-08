@@ -73,6 +73,11 @@
 		0109890C1D0873A900C1BA84 /* jiantou2.png in Resources */ = {isa = PBXBuildFile; fileRef = 010988ED1D0873A900C1BA84 /* jiantou2.png */; };
 		0109890D1D0873A900C1BA84 /* nav1.png in Resources */ = {isa = PBXBuildFile; fileRef = 010988EE1D0873A900C1BA84 /* nav1.png */; };
 		0109890E1D0873A900C1BA84 /* navbackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 010988EF1D0873A900C1BA84 /* navbackground.png */; };
+		0109891E1D08792A00C1BA84 /* BmpDataManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 010989141D08792A00C1BA84 /* BmpDataManager.mm */; };
+		0109891F1D08792A00C1BA84 /* FontBitmapDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = 010989161D08792A00C1BA84 /* FontBitmapDraw.m */; };
+		010989201D08792A00C1BA84 /* sinofont.mm in Sources */ = {isa = PBXBuildFile; fileRef = 010989171D08792A00C1BA84 /* sinofont.mm */; };
+		010989211D08792A00C1BA84 /* StrokeFontIO.mm in Sources */ = {isa = PBXBuildFile; fileRef = 010989191D08792A00C1BA84 /* StrokeFontIO.mm */; };
+		010989221D08792A00C1BA84 /* STSinoFont.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0109891B1D08792A00C1BA84 /* STSinoFont.mm */; };
 		949518C21453B223C48F0180 /* libPods-XWCNDict.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A81A65CF20390F0A70B90DBA /* libPods-XWCNDict.a */; };
 /* End PBXBuildFile section */
 
@@ -169,6 +174,17 @@
 		010988ED1D0873A900C1BA84 /* jiantou2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jiantou2.png; sourceTree = "<group>"; };
 		010988EE1D0873A900C1BA84 /* nav1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav1.png; sourceTree = "<group>"; };
 		010988EF1D0873A900C1BA84 /* navbackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navbackground.png; sourceTree = "<group>"; };
+		010989131D08792A00C1BA84 /* BmpDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BmpDataManager.h; sourceTree = "<group>"; };
+		010989141D08792A00C1BA84 /* BmpDataManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BmpDataManager.mm; sourceTree = "<group>"; };
+		010989151D08792A00C1BA84 /* FontBitmapDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontBitmapDraw.h; sourceTree = "<group>"; };
+		010989161D08792A00C1BA84 /* FontBitmapDraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontBitmapDraw.m; sourceTree = "<group>"; };
+		010989171D08792A00C1BA84 /* sinofont.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = sinofont.mm; sourceTree = "<group>"; };
+		010989181D08792A00C1BA84 /* StrokeFontIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StrokeFontIO.h; sourceTree = "<group>"; };
+		010989191D08792A00C1BA84 /* StrokeFontIO.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = StrokeFontIO.mm; sourceTree = "<group>"; };
+		0109891A1D08792A00C1BA84 /* STSinoFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STSinoFont.h; sourceTree = "<group>"; };
+		0109891B1D08792A00C1BA84 /* STSinoFont.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = STSinoFont.mm; sourceTree = "<group>"; };
+		0109891C1D08792A00C1BA84 /* STStrokeFontApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STStrokeFontApi.h; sourceTree = "<group>"; };
+		0109891D1D08792A00C1BA84 /* WinDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WinDef.h; sourceTree = "<group>"; };
 		A81A65CF20390F0A70B90DBA /* libPods-XWCNDict.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XWCNDict.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC6815308AC0DB192C2529A1 /* Pods-XWCNDict.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XWCNDict.release.xcconfig"; path = "Pods/Target Support Files/Pods-XWCNDict/Pods-XWCNDict.release.xcconfig"; sourceTree = "<group>"; };
 		E76EE84323E23508EDADCCD5 /* Pods-XWCNDict.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XWCNDict.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XWCNDict/Pods-XWCNDict.debug.xcconfig"; sourceTree = "<group>"; };
@@ -207,6 +223,7 @@
 		010987BF1D086DFA00C1BA84 /* XWCNDict */ = {
 			isa = PBXGroup;
 			children = (
+				0109890F1D08784D00C1BA84 /* SinoFont */,
 				010988321D08701C00C1BA84 /* Constant */,
 				010988351D08701C00C1BA84 /* Controller */,
 				0109884C1D08701C00C1BA84 /* FeatureBlock */,
@@ -406,6 +423,32 @@
 			path = navbarItem;
 			sourceTree = "<group>";
 		};
+		0109890F1D08784D00C1BA84 /* SinoFont */ = {
+			isa = PBXGroup;
+			children = (
+				010989121D08792A00C1BA84 /* FontAPI */,
+			);
+			path = SinoFont;
+			sourceTree = "<group>";
+		};
+		010989121D08792A00C1BA84 /* FontAPI */ = {
+			isa = PBXGroup;
+			children = (
+				010989131D08792A00C1BA84 /* BmpDataManager.h */,
+				010989141D08792A00C1BA84 /* BmpDataManager.mm */,
+				010989151D08792A00C1BA84 /* FontBitmapDraw.h */,
+				010989161D08792A00C1BA84 /* FontBitmapDraw.m */,
+				010989171D08792A00C1BA84 /* sinofont.mm */,
+				010989181D08792A00C1BA84 /* StrokeFontIO.h */,
+				010989191D08792A00C1BA84 /* StrokeFontIO.mm */,
+				0109891A1D08792A00C1BA84 /* STSinoFont.h */,
+				0109891B1D08792A00C1BA84 /* STSinoFont.mm */,
+				0109891C1D08792A00C1BA84 /* STStrokeFontApi.h */,
+				0109891D1D08792A00C1BA84 /* WinDef.h */,
+			);
+			path = FontAPI;
+			sourceTree = "<group>";
+		};
 		3B273739CA4827A1ABC3DF34 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -585,11 +628,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				010989221D08792A00C1BA84 /* STSinoFont.mm in Sources */,
 				010988951D08701C00C1BA84 /* XWGameViewController.m in Sources */,
 				010988931D08701C00C1BA84 /* XWCharactersViewController.m in Sources */,
 				010988CE1D08701D00C1BA84 /* XWNavSegmentView.m in Sources */,
 				010988941D08701C00C1BA84 /* XWCollectionViewController.m in Sources */,
 				010988981D08701C00C1BA84 /* XWPhoneticViewController.m in Sources */,
+				0109891E1D08792A00C1BA84 /* BmpDataManager.mm in Sources */,
 				0109889C1D08701C00C1BA84 /* XWYizijingViewController.m in Sources */,
 				010987C81D086DFA00C1BA84 /* ViewController.m in Sources */,
 				0109889D1D08701C00C1BA84 /* XWCharacterPlat.m in Sources */,
@@ -597,14 +642,17 @@
 				010988991D08701C00C1BA84 /* XWPoemViewController.m in Sources */,
 				0109889A1D08701C00C1BA84 /* XWRadicalViewController.m in Sources */,
 				010987C51D086DFA00C1BA84 /* AppDelegate.m in Sources */,
+				0109891F1D08792A00C1BA84 /* FontBitmapDraw.m in Sources */,
 				010988C91D08701D00C1BA84 /* NSString+SubStringMethod.m in Sources */,
 				010988961D08701C00C1BA84 /* XWNavigationViewController.m in Sources */,
 				010988921D08701C00C1BA84 /* XWBaseViewController.m in Sources */,
 				010988CB1D08701D00C1BA84 /* RadicalPinyinDict.m in Sources */,
+				010989211D08792A00C1BA84 /* StrokeFontIO.mm in Sources */,
 				010988971D08701C00C1BA84 /* XWNotebookViewController.m in Sources */,
 				010988CC1D08701D00C1BA84 /* XWBounceBox.m in Sources */,
 				010988CA1D08701D00C1BA84 /* PlistReader.m in Sources */,
 				010988CD1D08701D00C1BA84 /* XWDictBtn.m in Sources */,
+				010989201D08792A00C1BA84 /* sinofont.mm in Sources */,
 				010987C21D086DFA00C1BA84 /* main.m in Sources */,
 				0109889B1D08701C00C1BA84 /* XWTabBarViewController.m in Sources */,
 			);
