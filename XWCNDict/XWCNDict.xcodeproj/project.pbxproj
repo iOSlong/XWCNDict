@@ -185,6 +185,7 @@
 		0109891B1D08792A00C1BA84 /* STSinoFont.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = STSinoFont.mm; sourceTree = "<group>"; };
 		0109891C1D08792A00C1BA84 /* STStrokeFontApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STStrokeFontApi.h; sourceTree = "<group>"; };
 		0109891D1D08792A00C1BA84 /* WinDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WinDef.h; sourceTree = "<group>"; };
+		010989231D087CB400C1BA84 /* CodeMapping.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = CodeMapping.dat; sourceTree = "<group>"; };
 		A81A65CF20390F0A70B90DBA /* libPods-XWCNDict.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XWCNDict.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC6815308AC0DB192C2529A1 /* Pods-XWCNDict.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XWCNDict.release.xcconfig"; path = "Pods/Target Support Files/Pods-XWCNDict/Pods-XWCNDict.release.xcconfig"; sourceTree = "<group>"; };
 		E76EE84323E23508EDADCCD5 /* Pods-XWCNDict.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XWCNDict.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XWCNDict/Pods-XWCNDict.debug.xcconfig"; sourceTree = "<group>"; };
@@ -426,6 +427,7 @@
 		0109890F1D08784D00C1BA84 /* SinoFont */ = {
 			isa = PBXGroup;
 			children = (
+				010989231D087CB400C1BA84 /* CodeMapping.dat */,
 				010989121D08792A00C1BA84 /* FontAPI */,
 			);
 			path = SinoFont;
