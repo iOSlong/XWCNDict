@@ -26,22 +26,27 @@
 #import "Constant/constantStr.h"
 
 //==========
-#ifdef DEBUG
-#  define XLOG(fmt, ...) do {                                            \
-NSString* file = [[NSString alloc] initWithFormat:@"%s", __FILE__]; \
-NSLog((@"%@(%d) " fmt), [file lastPathComponent], __LINE__, ##__VA_ARGS__);\
-} while(0)
+//#ifdef DEBUG
+//#  define XLOG(fmt, ...) do {                                            \
+//NSString* file = [[NSString alloc] initWithFormat:@"%s", __FILE__]; \
+//NSLog((@"%@(%d) " fmt), [file lastPathComponent], __LINE__, ##__VA_ARGS__);\
+//} while(0)
+//
+//#  define XLOG_METHOD NSLog(@"%s", __func__)
+//#  define XLOG_CMETHOD NSLog(@"%@/%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd))
+//#  define XLOG_TRACE(x) do {printf x; putchar('\n'); fflush(stdout);} while (0)
+//#else
+//#  define XLOG(...)
+//#  define XLOG_METHOD
+//#  define XLOG_CMETHOD
+//#  define XLOG_TRACE(x)
+//#endif
 
-#  define XLOG_METHOD NSLog(@"%s", __func__)
-#  define XLOG_CMETHOD NSLog(@"%@/%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd))
-#  define XLOG_TRACE(x) do {printf x; putchar('\n'); fflush(stdout);} while (0)
+#ifdef DEBUG //Xcode中默认已经定义了DEBUG宏（Build Settings > Preprocessor Macros  : DEBUG）
+#define NSLog(fmt, ...) NSLog((@"%s [Line %d]" fmt), __PRETTY_FUNCTION__,__LINE__,##__VA_ARGS__)
 #else
-#  define XLOG(...)
-#  define XLOG_METHOD
-#  define XLOG_CMETHOD
-#  define XLOG_TRACE(x)
+#define NSLog(...)
 #endif
-
 
 
 #define kGetTagFromIndex(n) (789+n)

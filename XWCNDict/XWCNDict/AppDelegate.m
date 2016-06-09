@@ -48,6 +48,9 @@
     }
 
 
+    NSLog(@"hello %d",100);
+
+
     return YES;
 }
 
