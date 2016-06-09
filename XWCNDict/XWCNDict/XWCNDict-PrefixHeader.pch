@@ -18,13 +18,12 @@
 #endif
 //===========
 
+// 保证#ifdef 中的宏定义，智慧在 OC 的代码中被引用，
+// 否则，一旦引入 C\C++ 的代码或者框架，就会出错！
 #ifdef __OBJC__
 
 #import "Constant/constantUI.h"
 #import "Constant/constantStr.h"
-
-#endif
-
 
 //==========
 #ifdef DEBUG
@@ -47,6 +46,10 @@ NSLog((@"%@(%d) " fmt), [file lastPathComponent], __LINE__, ##__VA_ARGS__);\
 
 #define kGetTagFromIndex(n) (789+n)
 #define kGetIndexFromTag(n) (n-789)
+
+
+#endif
+
 
 
 #endif /* XWCNDict_PrefixHeader_pch */
