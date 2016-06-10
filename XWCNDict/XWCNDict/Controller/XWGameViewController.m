@@ -7,12 +7,12 @@
 //
 
 #import "XWGameViewController.h"
-//#import "STSinoFont.h"
+#import "STSinoFont.h"
 
 
-@interface XWGameViewController ()//<STSinoFontDelegate>
+@interface XWGameViewController ()<STSinoFontDelegate>
 
-//@property (nonatomic, strong) STSinoFont *sinoFont;
+@property (nonatomic, strong) STSinoFont *sinoFont;
 
 @property (nonatomic, strong) UIImageView *imgvFont;
 
@@ -22,18 +22,18 @@
 @implementation XWGameViewController
 
 - (void)btnDrawClick:(UIButton *)btn {
-//    [_sinoFont drawStar];//启动动画绘制（BaseDraw）
+    [_sinoFont drawStar];//启动动画绘制（BaseDraw）
 
 }
-//- (void)sinoFontDrawingFinished:(STSinoFont *)sinofont{
-//    NSLog(@"finish font drawing");
-//}
+- (void)sinoFontDrawingFinished:(STSinoFont *)sinofont{
+    NSLog(@"finish font drawing");
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
-//    _sinoFont = [[STSinoFont alloc] initWithChar:@"啊" andSize:CGSizeMake(140, 140) thousandeBase:NO];
-//    _sinoFont.delegate = self;
+    _sinoFont = [[STSinoFont alloc] initWithChar:@"啊" andSize:CGSizeMake(140, 140) thousandeBase:NO];
+    _sinoFont.delegate = self;
 
     self.btnDraw = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [self.btnDraw setBackgroundColor:[UIColor orangeColor]];
@@ -47,7 +47,7 @@
     self.imgvFont.backgroundColor = [UIColor yellowColor];
 
 
-//    [self.imgvFont addSubview:_sinoFont.imageCanvas];
+    [self.imgvFont addSubview:_sinoFont.imageCanvas];
 
 }
 

@@ -87,6 +87,10 @@ void STFreeAnimationInfo(STAnimationInfo* animationInfo);
     NSBundle *mainBundle = [NSBundle mainBundle];
     NSString *stroke_font = [mainBundle pathForResource:@"stroke_font" ofType:@"dat"];
     NSString *codeMapping = [mainBundle pathForResource:@"CodeMapping" ofType:@"dat"];
+
+//    stroke_font = @"/Users/longxuewu/Desktop/myGitHub/XWCNDict/XWCNDict/XWCNDict/SinoFont/stroke_font.dat";
+//    codeMapping = @"/Users/longxuewu/Desktop/myGitHub/XWCNDict/XWCNDict/XWCNDict/SinoFont/CodeMapping.dat";
+
     const char *fontfile = [stroke_font UTF8String];
     const char *mapfile = [codeMapping UTF8String];
 

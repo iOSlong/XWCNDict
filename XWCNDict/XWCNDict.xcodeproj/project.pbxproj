@@ -79,6 +79,8 @@
 		010989211D08792A00C1BA84 /* StrokeFontIO.mm in Sources */ = {isa = PBXBuildFile; fileRef = 010989191D08792A00C1BA84 /* StrokeFontIO.mm */; };
 		010989221D08792A00C1BA84 /* STSinoFont.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0109891B1D08792A00C1BA84 /* STSinoFont.mm */; };
 		010989261D087DDF00C1BA84 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010989251D087DDF00C1BA84 /* AVFoundation.framework */; };
+		0109892B1D0A5A4700C1BA84 /* CodeMapping.dat in Resources */ = {isa = PBXBuildFile; fileRef = 010989231D087CB400C1BA84 /* CodeMapping.dat */; };
+		0109892C1D0A5A4700C1BA84 /* stroke_font.dat in Resources */ = {isa = PBXBuildFile; fileRef = 010989271D087E3C00C1BA84 /* stroke_font.dat */; };
 		949518C21453B223C48F0180 /* libPods-XWCNDict.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A81A65CF20390F0A70B90DBA /* libPods-XWCNDict.a */; };
 /* End PBXBuildFile section */
 
@@ -534,6 +536,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0109892B1D0A5A4700C1BA84 /* CodeMapping.dat in Resources */,
+				0109892C1D0A5A4700C1BA84 /* stroke_font.dat in Resources */,
 				010988FD1D0873A900C1BA84 /* bar_a4.png in Resources */,
 				010988FF1D0873A900C1BA84 /* bar_a6.png in Resources */,
 				010989031D0873A900C1BA84 /* bar_d2.png in Resources */,
