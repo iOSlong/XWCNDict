@@ -7,9 +7,27 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XWSectionPlatView.h"
+
+
+typedef NS_ENUM(NSUInteger, XWPlatViewModel) {
+    XWPlatViewModelCharacters,
+    XWPlatViewModelRadical,
+    XWPlatViewModelPhonetic,
+    XWPlatViewModelCollection,
+    XWPlatViewModelPeom,
+    XWPlatViewModelYizijing,
+    XWPlatViewModelNotebook,
+    XWPlatViewModelGame
+};
 
 @interface XWBaseViewController : UIViewController
 
 @property (nonatomic, strong) UIImageView *imgvBackground;
+
+///默认隐藏
+@property (nonatomic) XWSectionPlatView *sectionPlatView;
+@property (nonatomic, assign) XWPlatViewModel platViewModel;
+
 
 @end

@@ -7,13 +7,11 @@
 //
 
 #import "XWPhoneticViewController.h"
-#import "XWSectionPlatView.h"
 #import "RadicalPinyinDict.h"
 #import "XWBounceBox.h"
 #import "PlistReader.h"
 
 @interface XWPhoneticViewController ()<UIScrollViewDelegate,UITextFieldDelegate>
-@property (nonatomic, strong) XWSectionPlatView *sectionPlatView;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) XWBounceBox *bounceBox;
 @property (nonatomic, strong) UITextField *textfiled;
@@ -51,24 +49,21 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor brownColor];
 
-    [self setSectionPlatView];
+    [self configureSectionPlatView];
 
     [self addSearchBar];
 
 
 }
-- (void)setSectionPlatView {
-    _sectionPlatView= [[XWSectionPlatView alloc] initWithFrame:CGRectMake(kPlatX, kPlatY, kPlatW, kPlatH )];
-    _sectionPlatView.leftColor = [UIColor colorWithRed:204.0/225 green:166.0/255 blue:31.0/255 alpha:1];
-    _sectionPlatView.rightColor = [UIColor colorWithRed:235.0/255 green:235.0/255 blue:235.0/255 alpha:1];
-    _sectionPlatView.leftSpan = 350/2 * kFixed_rate;
-    [self.view addSubview:_sectionPlatView];
+- (void)configureSectionPlatView {
+    self.platViewModel = XWPlatViewModelPhonetic;
 
 
-    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, kupSpan, kPlatW, kPlatH-112*kFixed_rate)];
+
+    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, kupSpan, kPlat_W, kPlat_H-112*kFixed_rate)];
     [self.scrollView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(sectionPlatScrollTap:)]];
     self.scrollView.delegate = self;
-    [_sectionPlatView addSubview:_scrollView];
+    [self.sectionPlatView addSubview:_scrollView];
 
 
     UILabel *infolabel  = [[UILabel alloc] initWithFrame:CGRectMake(78 * kFixed_rate, 198 * kFixed_rate, 300 *kFixed_rate, 30 *kFixed_rate)];
@@ -92,7 +87,7 @@
 
 
     self.bounceBox = [[XWBounceBox alloc] initWithFrame:CGRectMake(50, 50, 200, 100)];
-    [_sectionPlatView addSubview:self.bounceBox];
+    [self.sectionPlatView addSubview:self.bounceBox];
     [self.bounceBox setHidden:YES];
 
 
@@ -173,7 +168,7 @@
     NSLog(@"%@",btn.superKey);
 
     CGFloat Animationweitiao = 0;
-    if (btn.center.y-_scrollView.contentOffset.y >= (kPlatH-110)-btn.frame.size.height/2) {
+    if (btn.center.y-_scrollView.contentOffset.y >= (kPlat_H-110)-btn.frame.size.height/2) {
         [_scrollView setContentOffset:CGPointMake(_scrollView.contentOffset.x, _scrollView.contentOffset.y+20) animated:YES];
         Animationweitiao = 20;
     }
@@ -195,7 +190,7 @@
     }
 
 
-    [_sectionPlatView bringSubviewToFront:self.bounceBox];
+    [self.sectionPlatView bringSubviewToFront:self.bounceBox];
     [self.bounceBox setHidden:NO];
 
     _bounceBox.frame = CGRectMake(0, 0, 100*(arc4random()%3+1), 50*(arc4random()%6+1));
@@ -224,13 +219,13 @@
 
 
     span_l = btn.center.x - kLeftSpan;
-    span_r = kPlatW - relativeCenter.x;
+    span_r = kPlat_W - relativeCenter.x;
     span_up = relativeCenter.y;
-    span_down = kPlatH - relativeCenter.y;
+    span_down = kPlat_H - relativeCenter.y;
 
     //    printf("%3.1f,\t%3.2f,\t%3.2f,\t%3.2f\n",span_l,span_r,span_up,span_down);
 
-    float a[4] = {span_l/(kPlatW-kLeftSpan),span_r/(kPlatW-kLeftSpan),span_up/kPlatH,span_down/kPlatH};
+    float a[4] = {span_l/(kPlat_W-kLeftSpan),span_r/(kPlat_W-kLeftSpan),span_up/kPlat_H,span_down/kPlat_H};
 
     direction = getBigestFromArray(a);
 

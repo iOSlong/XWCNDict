@@ -12,13 +12,15 @@
 
 
 
-#define kFixed_rate  (([UIScreen mainScreen].bounds.size.width)/1024.0)
-#define kLeftSpan (175.0 * kFixed_rate)
-#define kupSpan (56.0 * kFixed_rate)
-#define kPlatW (862.0 * kFixed_rate)
-#define kPlatH (427.0 * kFixed_rate)
-#define kPlatX (80.0 * kFixed_rate)
-#define kPlatY (235.0 * kFixed_rate)
+#define kFixed_rate                 (([UIScreen mainScreen].bounds.size.width)/1024.0)
+#define kScreenSize                 [UIScreen mainScreen].bounds.size
+#define kLeftSpan                   (175.0 * kFixed_rate)
+#define kPlat_W                     (876 * kFixed_rate)
+#define kPlat_H                     (428 * kFixed_rate)
+#define kPlat_X                     (74 * kFixed_rate)
+#define kPlat_Y                     (235.0 * kFixed_rate)
+
+#define kupSpan                     (56.0 * kFixed_rate)
 
 
 

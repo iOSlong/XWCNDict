@@ -120,6 +120,7 @@
 		0109897A1D0B10F900C1BA84 /* box_3r.png in Resources */ = {isa = PBXBuildFile; fileRef = 0109896E1D0B10F900C1BA84 /* box_3r.png */; };
 		0109897B1D0B10F900C1BA84 /* colorkeyboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 0109896F1D0B10F900C1BA84 /* colorkeyboard.png */; };
 		0109897C1D0B10F900C1BA84 /* mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 010989701D0B10F900C1BA84 /* mask.png */; };
+		0109897F1D0B14E300C1BA84 /* XWCharPlatSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = 0109897E1D0B14E300C1BA84 /* XWCharPlatSegment.m */; };
 		949518C21453B223C48F0180 /* libPods-XWCNDict.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A81A65CF20390F0A70B90DBA /* libPods-XWCNDict.a */; };
 /* End PBXBuildFile section */
 
@@ -269,6 +270,8 @@
 		0109896E1D0B10F900C1BA84 /* box_3r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = box_3r.png; sourceTree = "<group>"; };
 		0109896F1D0B10F900C1BA84 /* colorkeyboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = colorkeyboard.png; sourceTree = "<group>"; };
 		010989701D0B10F900C1BA84 /* mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask.png; sourceTree = "<group>"; };
+		0109897D1D0B14E300C1BA84 /* XWCharPlatSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWCharPlatSegment.h; sourceTree = "<group>"; };
+		0109897E1D0B14E300C1BA84 /* XWCharPlatSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWCharPlatSegment.m; sourceTree = "<group>"; };
 		A81A65CF20390F0A70B90DBA /* libPods-XWCNDict.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XWCNDict.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC6815308AC0DB192C2529A1 /* Pods-XWCNDict.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XWCNDict.release.xcconfig"; path = "Pods/Target Support Files/Pods-XWCNDict/Pods-XWCNDict.release.xcconfig"; sourceTree = "<group>"; };
 		E76EE84323E23508EDADCCD5 /* Pods-XWCNDict.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XWCNDict.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XWCNDict/Pods-XWCNDict.debug.xcconfig"; sourceTree = "<group>"; };
@@ -387,6 +390,8 @@
 		0109884D1D08701C00C1BA84 /* CharacterPlat */ = {
 			isa = PBXGroup;
 			children = (
+				0109897D1D0B14E300C1BA84 /* XWCharPlatSegment.h */,
+				0109897E1D0B14E300C1BA84 /* XWCharPlatSegment.m */,
 				0109884E1D08701C00C1BA84 /* XWCharacterPlat.h */,
 				0109884F1D08701C00C1BA84 /* XWCharacterPlat.m */,
 			);
@@ -831,6 +836,7 @@
 				010989201D08792A00C1BA84 /* sinofont.mm in Sources */,
 				010987C21D086DFA00C1BA84 /* main.m in Sources */,
 				0109889B1D08701C00C1BA84 /* XWTabBarViewController.m in Sources */,
+				0109897F1D0B14E300C1BA84 /* XWCharPlatSegment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
