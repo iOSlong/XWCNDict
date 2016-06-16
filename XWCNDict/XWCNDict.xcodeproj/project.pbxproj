@@ -121,7 +121,7 @@
 		0109897B1D0B10F900C1BA84 /* colorkeyboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 0109896F1D0B10F900C1BA84 /* colorkeyboard.png */; };
 		0109897C1D0B10F900C1BA84 /* mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 010989701D0B10F900C1BA84 /* mask.png */; };
 		0109897F1D0B14E300C1BA84 /* XWCharPlatSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = 0109897E1D0B14E300C1BA84 /* XWCharPlatSegment.m */; };
-		949518C21453B223C48F0180 /* libPods-XWCNDict.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A81A65CF20390F0A70B90DBA /* libPods-XWCNDict.a */; };
+		972AAC4B0CBEFD594E9CD667 /* Pods_XWCNDict.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0A31ACC754A38205F171B7C /* Pods_XWCNDict.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -272,8 +272,8 @@
 		010989701D0B10F900C1BA84 /* mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask.png; sourceTree = "<group>"; };
 		0109897D1D0B14E300C1BA84 /* XWCharPlatSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWCharPlatSegment.h; sourceTree = "<group>"; };
 		0109897E1D0B14E300C1BA84 /* XWCharPlatSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWCharPlatSegment.m; sourceTree = "<group>"; };
-		A81A65CF20390F0A70B90DBA /* libPods-XWCNDict.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XWCNDict.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC6815308AC0DB192C2529A1 /* Pods-XWCNDict.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XWCNDict.release.xcconfig"; path = "Pods/Target Support Files/Pods-XWCNDict/Pods-XWCNDict.release.xcconfig"; sourceTree = "<group>"; };
+		E0A31ACC754A38205F171B7C /* Pods_XWCNDict.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XWCNDict.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E76EE84323E23508EDADCCD5 /* Pods-XWCNDict.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XWCNDict.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XWCNDict/Pods-XWCNDict.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -283,7 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				010989261D087DDF00C1BA84 /* AVFoundation.framework in Frameworks */,
-				949518C21453B223C48F0180 /* libPods-XWCNDict.a in Frameworks */,
+				972AAC4B0CBEFD594E9CD667 /* Pods_XWCNDict.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -601,7 +601,7 @@
 			isa = PBXGroup;
 			children = (
 				010989251D087DDF00C1BA84 /* AVFoundation.framework */,
-				A81A65CF20390F0A70B90DBA /* libPods-XWCNDict.a */,
+				E0A31ACC754A38205F171B7C /* Pods_XWCNDict.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

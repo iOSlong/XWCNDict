@@ -1,0 +1,6 @@
+framework module Pods_XWCNDict {
+  umbrella header "Pods-XWCNDict-umbrella.h"
+
+  export *
+  module * { export * }
+}
