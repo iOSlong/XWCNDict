@@ -187,6 +187,8 @@
 //继续绘制
 -(void)drawContinue;
 
+//结束绘制
+-(void)drawFinished;
 
 //绘制速度（绘制帧率 绘制步长 两个参数决定）len取值>=0,当取0的时候使用默认步长1.
 -(void)drawSpeed:(float)speed addSteplength:(int)leng;

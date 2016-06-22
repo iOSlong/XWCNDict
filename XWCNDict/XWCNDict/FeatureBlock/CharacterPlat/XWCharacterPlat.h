@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XWGestureCanvas.h"
 
 @class XWCharacterPlat;
 
@@ -31,7 +32,7 @@
 @property(nonatomic,retain) UIImageView *migeImgView;
 
 //字体书写的画布
-@property(nonatomic,retain) UIImageView *fontImgView;
+@property(nonatomic,retain) XWGestureCanvas *fontCanvas;
 
 //一个静态图片标记
 @property(nonatomic,retain) UIImage *staticImg;

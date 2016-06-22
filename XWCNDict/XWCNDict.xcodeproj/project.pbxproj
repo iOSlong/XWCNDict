@@ -121,6 +121,8 @@
 		0109897B1D0B10F900C1BA84 /* colorkeyboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 0109896F1D0B10F900C1BA84 /* colorkeyboard.png */; };
 		0109897C1D0B10F900C1BA84 /* mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 010989701D0B10F900C1BA84 /* mask.png */; };
 		0109897F1D0B14E300C1BA84 /* XWCharPlatSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = 0109897E1D0B14E300C1BA84 /* XWCharPlatSegment.m */; };
+		01098A4A1D1AD4CF00C1BA84 /* XWGestureCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 01098A491D1AD4CF00C1BA84 /* XWGestureCanvas.m */; };
+		01098A4E1D1AE77B00C1BA84 /* XWSetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 01098A4D1D1AE77B00C1BA84 /* XWSetInfo.m */; };
 		972AAC4B0CBEFD594E9CD667 /* Pods_XWCNDict.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0A31ACC754A38205F171B7C /* Pods_XWCNDict.framework */; };
 /* End PBXBuildFile section */
 
@@ -272,6 +274,10 @@
 		010989701D0B10F900C1BA84 /* mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask.png; sourceTree = "<group>"; };
 		0109897D1D0B14E300C1BA84 /* XWCharPlatSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWCharPlatSegment.h; sourceTree = "<group>"; };
 		0109897E1D0B14E300C1BA84 /* XWCharPlatSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWCharPlatSegment.m; sourceTree = "<group>"; };
+		01098A481D1AD4CF00C1BA84 /* XWGestureCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWGestureCanvas.h; sourceTree = "<group>"; };
+		01098A491D1AD4CF00C1BA84 /* XWGestureCanvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWGestureCanvas.m; sourceTree = "<group>"; };
+		01098A4C1D1AE77B00C1BA84 /* XWSetInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWSetInfo.h; sourceTree = "<group>"; };
+		01098A4D1D1AE77B00C1BA84 /* XWSetInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWSetInfo.m; sourceTree = "<group>"; };
 		DC6815308AC0DB192C2529A1 /* Pods-XWCNDict.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XWCNDict.release.xcconfig"; path = "Pods/Target Support Files/Pods-XWCNDict/Pods-XWCNDict.release.xcconfig"; sourceTree = "<group>"; };
 		E0A31ACC754A38205F171B7C /* Pods_XWCNDict.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XWCNDict.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E76EE84323E23508EDADCCD5 /* Pods-XWCNDict.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XWCNDict.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XWCNDict/Pods-XWCNDict.debug.xcconfig"; sourceTree = "<group>"; };
@@ -394,6 +400,8 @@
 				0109897E1D0B14E300C1BA84 /* XWCharPlatSegment.m */,
 				0109884E1D08701C00C1BA84 /* XWCharacterPlat.h */,
 				0109884F1D08701C00C1BA84 /* XWCharacterPlat.m */,
+				01098A481D1AD4CF00C1BA84 /* XWGestureCanvas.h */,
+				01098A491D1AD4CF00C1BA84 /* XWGestureCanvas.m */,
 			);
 			path = CharacterPlat;
 			sourceTree = "<group>";
@@ -435,6 +443,7 @@
 		010988801D08701C00C1BA84 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				01098A4B1D1AE70D00C1BA84 /* singleton */,
 				010988811D08701C00C1BA84 /* category */,
 				010988841D08701C00C1BA84 /* plistReader */,
 			);
@@ -588,6 +597,15 @@
 			path = characters;
 			sourceTree = "<group>";
 		};
+		01098A4B1D1AE70D00C1BA84 /* singleton */ = {
+			isa = PBXGroup;
+			children = (
+				01098A4C1D1AE77B00C1BA84 /* XWSetInfo.h */,
+				01098A4D1D1AE77B00C1BA84 /* XWSetInfo.m */,
+			);
+			path = singleton;
+			sourceTree = "<group>";
+		};
 		3B273739CA4827A1ABC3DF34 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -635,6 +653,7 @@
 		010987B51D086DFA00C1BA84 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = XW;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = linxi;
 				TargetAttributes = {
@@ -828,9 +847,11 @@
 				010988961D08701C00C1BA84 /* XWNavigationViewController.m in Sources */,
 				010988921D08701C00C1BA84 /* XWBaseViewController.m in Sources */,
 				010988CB1D08701D00C1BA84 /* RadicalPinyinDict.m in Sources */,
+				01098A4A1D1AD4CF00C1BA84 /* XWGestureCanvas.m in Sources */,
 				010989211D08792A00C1BA84 /* StrokeFontIO.mm in Sources */,
 				010988971D08701C00C1BA84 /* XWNotebookViewController.m in Sources */,
 				010988CC1D08701D00C1BA84 /* XWBounceBox.m in Sources */,
+				01098A4E1D1AE77B00C1BA84 /* XWSetInfo.m in Sources */,
 				010988CA1D08701D00C1BA84 /* PlistReader.m in Sources */,
 				010988CD1D08701D00C1BA84 /* XWDictBtn.m in Sources */,
 				010989201D08792A00C1BA84 /* sinofont.mm in Sources */,

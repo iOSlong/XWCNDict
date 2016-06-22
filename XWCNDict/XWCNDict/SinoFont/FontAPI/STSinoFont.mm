@@ -405,6 +405,15 @@ void STFreeAnimationInfo(STAnimationInfo* animationInfo);
     _drawing = YES;
 }
 
+-(void)drawFinished{
+    STFreeAnimationInfo(&(_tempInfo));
+    [_timer invalidate];
+    _timer = nil;
+    self.imageCanvas.image = nil;
+    _drawing = NO;
+    _drawOver = YES;
+}
+
 #pragma mark 《绘制速度调节》
 -(void)drawSpeed:(float)speed addSteplength:(int)leng;
 {
