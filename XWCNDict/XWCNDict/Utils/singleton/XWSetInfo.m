@@ -25,7 +25,17 @@
     self = [super init];
     if (self) {
         self.sinofontArray  = [NSMutableArray array];
-        self.boxImgName     = @"mi";
+
+        self.imgNameField     = @"mi";
+
+        _imgNameCharacterPlat = @"font_plat";
+
+        _arrInfoImgName = [NSMutableArray array];
+        for (int i=1;i<=4; i++) {
+            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"info2-%d.png",i]];
+            [_arrInfoImgName addObject:image];
+        }
+
     }
     return self;
 }

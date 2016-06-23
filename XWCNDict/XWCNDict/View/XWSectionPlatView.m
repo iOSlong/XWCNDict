@@ -28,13 +28,13 @@
         _layerRight.fillColor = nil;
         _layerLeft.frame = self.bounds;
         _layerRight.frame = self.bounds;
-        self.backgroundColor = [UIColor blueColor];
 
         [self.layer addSublayer:_layerLeft];
         [self.layer addSublayer:_layerRight];
     }
     return self;
 }
+
 - (void)setLeftLayer{
     _pathLeft = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, _leftSpan, self.frame.size.height)];
     _layerLeft.path = _pathLeft.CGPath;

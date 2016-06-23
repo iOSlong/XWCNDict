@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
 int main(int argc, char * argv[]) {
     @autoreleasepool {

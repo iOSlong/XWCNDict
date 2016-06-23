@@ -23,6 +23,18 @@
 #define kupSpan                     (56.0 * kFixed_rate)
 
 
+#define kMiField_W                  (235.0 * kFixed_rate)           // 米字格大小
+#define kMiField_X                  (264/2 * kFixed_rate)
+#define kMiField_Y                  (192/2 * kFixed_rate)
+#define kChar_W                     (kMiField_W - 40 * kFixed_rate) // 文字大小
+
+#define kInfoBanner_X               (896.0/2 * kFixed_rate)
+#define kInfoBanner_Y               (85.0/2 * kFixed_rate)
+#define kInfoBanner_W               (627.0/2 * kFixed_rate)
+#define kInfoBanner_H               (163.0/2 * kFixed_rate)
+
+
+
 
 
 #endif /* constantUI_h */

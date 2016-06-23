@@ -26,6 +26,7 @@
 
     [self configureScrollView];
 
+
     
 }
 
@@ -50,9 +51,9 @@
     XWCharacterPlat *charPlat1 = [[XWCharacterPlat alloc] initWithFrame:CGRectMake(kPlat_X, 0, kPlat_W, kPlat_H)];
     XWCharacterPlat *charPlat2 = [[XWCharacterPlat alloc] initWithFrame:CGRectMake(kPlat_X + kScreenSize.width, 0,  kPlat_W, kPlat_H)];
     XWCharacterPlat *charPlat3 = [[XWCharacterPlat alloc] initWithFrame:CGRectMake(kPlat_X + 2*(kScreenSize.width * kFixed_rate), 0,  kPlat_W, kPlat_H)];
-    charPlat1.backgroundColor = [UIColor whiteColor];
-    charPlat2.backgroundColor = [UIColor whiteColor];
-    charPlat3.backgroundColor = [UIColor whiteColor];
+//    charPlat1.backgroundColor = [UIColor yellowColor];
+//    charPlat2.backgroundColor = [UIColor yellowColor];
+//    charPlat3.backgroundColor = [UIColor yellowColor];
 
     [self.scrollView addSubview:charPlat1];
     [self.scrollView addSubview:charPlat2];

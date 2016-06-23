@@ -86,9 +86,10 @@
     for ( int i=0; i<_selectedImgsArr.count; i++) {
         UIImage *normalImg = [_normalImgsArr objectAtIndex:i];
         UIImage *selectImg = [_selectedImgsArr objectAtIndex:i];
-        CGFloat img_w = normalImg.size.width/2;
-        CGFloat img_h = normalImg.size.height/2;
-        MySegBtn *sgmBtn = [[MySegBtn alloc] initWithFrame:CGRectMake(lastLoction, 10, a[i], img_h)];
+        CGFloat img_w = normalImg.size.width/2 * kFixed_rate;
+        CGFloat img_h = normalImg.size.height/2 * kFixed_rate;
+
+        MySegBtn *sgmBtn = [[MySegBtn alloc] initWithFrame:CGRectMake(lastLoction, 10 * kFixed_rate, a[i] * kFixed_rate, img_h)];
         [sgmBtn setImage:normalImg forState:UIControlStateNormal];
         [sgmBtn setImage:selectImg forState:UIControlStateSelected];
         [sgmBtn setFrame:CGRectMake(lastLoction, 0, img_w, img_h)];
@@ -97,7 +98,7 @@
 
         [self.segmentItems addObject:sgmBtn];
         [self addSubview:sgmBtn];
-        lastLoction += a[i];
+        lastLoction += a[i] * kFixed_rate;
         segmentWidth = img_h;
     }
     self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, lastLoction, segmentWidth);
@@ -110,7 +111,9 @@
     NSInteger index = kGetIndexFromTag(sender.tag);
     sender.selected = !sender.selected;
     [self setSelectedSegmentWithIndex:index];
-    [_delegate selectSegmentWithIndex:index];
+    if ([self.delegate respondsToSelector:@selector(selectSegmentWithIndex:)]) {
+        [self.delegate selectSegmentWithIndex:index];
+    }
 }
 
 -(void)setSelectedSegmentWithIndex:(NSUInteger)index

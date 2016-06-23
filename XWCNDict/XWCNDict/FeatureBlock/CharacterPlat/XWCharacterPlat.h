@@ -25,28 +25,33 @@
 
 
 @interface XWCharacterPlat : UIImageView
+
 //保存按钮图片
-@property(nonatomic,retain) UIImageView *saveImgView;
+@property (nonatomic, strong) UIImageView *saveImgView;
 
 //米字格字体框
-@property(nonatomic,retain) UIImageView *migeImgView;
+@property (nonatomic, strong) UIImageView *migeImgView;
+
+/// 小模块信息标题（CharacterInfo，StrokeInfo，PinyinLinks，RadicalLinks）
+@property (nonatomic, strong) UIImageView *imgvInfoBanner;
+
 
 //字体书写的画布
-@property(nonatomic,retain) XWGestureCanvas *fontCanvas;
+@property (nonatomic, strong) XWGestureCanvas *fontCanvas;
 
 //一个静态图片标记
-@property(nonatomic,retain) UIImage *staticImg;
+@property (nonatomic, strong) UIImage *staticImg;
 
 
 //本字符平台对应字符
-@property(nonatomic,retain)NSString *fontChar;
+@property (nonatomic, strong) NSString *fontChar;
 
 //字符平台对应字符的当前拼音
-@property(nonatomic,retain)NSString *fontCharPinyin;
+@property (nonatomic, strong) NSString *fontCharPinyin;
 
 
 //声明协议代理属性
-@property(nonatomic,assign)id<XWCharacterPlatDelegate>delegate;
+@property (nonatomic, assign) id<XWCharacterPlatDelegate>delegate;
 
 
 

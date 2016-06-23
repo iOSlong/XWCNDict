@@ -13,7 +13,10 @@
 
 + (XWSetInfo *)shareSetInfo;
 
-@property (nonatomic, strong) NSString  *boxImgName;
+@property (nonatomic, strong, readonly) NSMutableArray  *arrInfoImgName;
+@property (nonatomic, strong, readonly) NSString        *imgNameCharacterPlat;
+
+@property (nonatomic, strong) NSString  *imgNameField;
 @property (nonatomic, strong) UIColor   *color_char;
 @property (nonatomic, strong) UIColor   *color_radical;
 

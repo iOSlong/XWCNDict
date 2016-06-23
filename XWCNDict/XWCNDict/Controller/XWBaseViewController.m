@@ -14,6 +14,15 @@
 
 @implementation XWBaseViewController
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        NSLog(@"%s",__FUNCTION__);
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -40,7 +49,7 @@
 
     switch (platViewModel) {
         case XWPlatViewModelCharacters:
-            self.sectionPlatView.backgroundColor = [UIColor whiteColor];
+            self.sectionPlatView.backgroundColor = [UIColor clearColor];
             break;
         case XWPlatViewModelRadical:{
             self.sectionPlatView.leftColor  = [UIColor colorWithRed:204.0/225 green:166.0/255 blue:31.0/255 alpha:1];
