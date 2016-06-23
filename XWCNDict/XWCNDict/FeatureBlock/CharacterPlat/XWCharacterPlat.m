@@ -10,11 +10,13 @@
 #import "XWCharPlatSegment.h"
 #import "XWCharacterInfoView.h"
 #import "XWStrokeInfoView.h"
+#import "XWPinyinInfoView.h"
 
 @interface XWCharacterPlat ()<XWCharPlatSegmentDelegate,XWGestureCanvasDelegate>
 @property (nonatomic, strong) XWCharPlatSegment     *infoSegment;
 @property (nonatomic, strong) XWCharacterInfoView   *characterInfoView;
 @property (nonatomic, strong) XWStrokeInfoView      *strokeInfoView;
+@property (nonatomic, strong) XWPinyinInfoView      *pinyinInfoView;
 @end
 
 @implementation XWCharacterPlat{
@@ -43,7 +45,7 @@
 
         [self addSubview:self.characterInfoView];
         [self addSubview:self.strokeInfoView];
-
+        [self addSubview:self.pinyinInfoView];
         /// UI布局的部分都搁置到最前面最好。
         [self configureMigeImageView];
 
@@ -57,7 +59,10 @@
         _characterInfoView = [[XWCharacterInfoView alloc] init];
         _characterInfoView.x = 896.0/2 * kFixed_rate;
         _characterInfoView.y = 314.0/2 * kFixed_rate;
+        __weak __typeof(self)weakSelf = self;
         [_characterInfoView charInfo:^(NSString *charPinyin) {
+            __strong __typeof(weakSelf)strongSelf = weakSelf;
+            strongSelf.fontCharPinyin = charPinyin;
             NSLog(@"%@",charPinyin);
         }];
     }
@@ -74,6 +79,16 @@
     return _strokeInfoView;
 }
 
+- (XWPinyinInfoView *)pinyinInfoView {
+    if (!_pinyinInfoView) {
+        _pinyinInfoView = [[XWPinyinInfoView alloc] initWithFrame:CGRectMake(896/2 * kFixed_rate, 330/2 * kFixed_rate, 768/2 * kFixed_rate, 260/2 * kFixed_rate)];
+        [_pinyinInfoView pinyinInfo:^(NSString *fontChar, NSString *pinyin) {
+            NSLog(@"fontchar:%@, pinyin:%@",fontChar, pinyin);
+        }];
+        [_pinyinInfoView setHidden:YES];
+    }
+    return _pinyinInfoView;
+}
 
 - (void)configureMigeImageView {
     
@@ -112,20 +127,20 @@
     {
         [_characterInfoView setHidden:NO];
         [_strokeInfoView setHidden:YES];
-//        [_pinyin_infoView setHidden:YES];
+        [_pinyinInfoView setHidden:YES];
 //        [_radical_infoView setHidden:YES];
     }
     if (index==1) {
         [_strokeInfoView setHidden:NO];
         [_characterInfoView setHidden:YES];
-//        [_pinyin_infoView setHidden:YES];
+        [_pinyinInfoView setHidden:YES];
 //        [_radical_infoView setHidden:YES];
 
     }
     if (index==2) {
-//        [_pinyin_infoView setHidden:NO];
-//        [_character_infoView setHidden:YES];
-//        [_stroke_infoView setHidden:YES];
+        [_pinyinInfoView setHidden:NO];
+        [_characterInfoView setHidden:YES];
+        [_strokeInfoView setHidden:YES];
 //        [_radical_infoView setHidden:YES];
 
     }
@@ -186,19 +201,22 @@
     [self.characterInfoView reloadCharacterWith:self.fontChar strokeNum:canvas.sinoFont.strokeNum];
 
     [self reloadStrokeInfoWith:canvas.sinoFont];
+
+    [self.pinyinInfoView reloadPinyinWith:self.fontChar pinyin:self.fontCharPinyin];
+
 }
 
 - (void)reloadStrokeInfoWith:(STSinoFont *)sinoFont{
-    NSArray *normalArr = [sinoFont getStrokesContinueImageArrayWithSize:CGSizeMake(50, 50) bottomColor:[UIColor grayColor] frontColor:[UIColor blackColor]];
-    NSArray *selectArr = [sinoFont getStrokesContinueImageArrayWithSize:CGSizeMake(50, 50) bottomColor:[UIColor colorWithRed:190.0/255 green:220.0/255 blue:156.0/255 alpha:1] frontColor:[UIColor whiteColor]];
-    //    [_stroke_infoView setStrokesImgArr:normalArr withState:StrokeBtnNormalState];
-    //    [_stroke_infoView setStrokesImgArr:selectArr withState:StrokeBtnSelectedState];
+    dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INTERACTIVE, 0), ^{
+        NSArray *normalArr = [sinoFont getStrokesContinueImageArrayWithSize:CGSizeMake(50, 50) bottomColor:[UIColor grayColor] frontColor:[UIColor blackColor]];
+        NSArray *selectArr = [sinoFont getStrokesContinueImageArrayWithSize:CGSizeMake(50, 50) bottomColor:[UIColor colorWithRed:190.0/255 green:220.0/255 blue:156.0/255 alpha:1] frontColor:[UIColor whiteColor]];
+        [_strokeInfoView getNormalImgArray:normalArr];
+        [_strokeInfoView getSelectedImgArray:selectArr];
 
-
-    [_strokeInfoView getNormalImgArray:normalArr];
-    [_strokeInfoView getSelectedImgArray:selectArr];
-    [_strokeInfoView getStrokesBtnReload];
-
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [_strokeInfoView getStrokesBtnReload];
+        });
+    });
     if (self.infoSegment.selectedIndex==1) {
         [_strokeInfoView setHidden:NO];
     }

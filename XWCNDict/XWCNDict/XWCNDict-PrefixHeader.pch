@@ -24,6 +24,7 @@
 
 #import "Constant/constantUI.h"
 #import "Constant/constantStr.h"
+#import "PlistReader.h"
 
 //==========
 //#ifdef DEBUG

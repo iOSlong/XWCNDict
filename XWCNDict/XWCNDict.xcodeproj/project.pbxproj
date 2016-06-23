@@ -124,6 +124,8 @@
 		01098A4A1D1AD4CF00C1BA84 /* XWGestureCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 01098A491D1AD4CF00C1BA84 /* XWGestureCanvas.m */; };
 		01098A4E1D1AE77B00C1BA84 /* XWSetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 01098A4D1D1AE77B00C1BA84 /* XWSetInfo.m */; };
 		014B826F1D1C446900C6D841 /* XWStrokeInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 014B826E1D1C446900C6D841 /* XWStrokeInfoView.m */; };
+		014B82721D1C58C900C6D841 /* XWPinyinInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 014B82711D1C58C900C6D841 /* XWPinyinInfoView.m */; };
+		014B82751D1C5A7C00C6D841 /* XWPinyinBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 014B82741D1C5A7C00C6D841 /* XWPinyinBtn.m */; };
 		0170D2881D1C135B00275F70 /* UIView+XWPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0170D2871D1C135B00275F70 /* UIView+XWPosition.m */; };
 		0170D28C1D1C2B1A00275F70 /* XWCharacterInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0170D28B1D1C2B1A00275F70 /* XWCharacterInfoView.m */; };
 		0170D2911D1C3A8F00275F70 /* STZhuankai.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0170D2901D1C3A8F00275F70 /* STZhuankai.ttf */; };
@@ -285,6 +287,10 @@
 		01098A4D1D1AE77B00C1BA84 /* XWSetInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWSetInfo.m; sourceTree = "<group>"; };
 		014B826D1D1C446900C6D841 /* XWStrokeInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWStrokeInfoView.h; sourceTree = "<group>"; };
 		014B826E1D1C446900C6D841 /* XWStrokeInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWStrokeInfoView.m; sourceTree = "<group>"; };
+		014B82701D1C58C900C6D841 /* XWPinyinInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWPinyinInfoView.h; sourceTree = "<group>"; };
+		014B82711D1C58C900C6D841 /* XWPinyinInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWPinyinInfoView.m; sourceTree = "<group>"; };
+		014B82731D1C5A7C00C6D841 /* XWPinyinBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWPinyinBtn.h; sourceTree = "<group>"; };
+		014B82741D1C5A7C00C6D841 /* XWPinyinBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWPinyinBtn.m; sourceTree = "<group>"; };
 		0170D2861D1C135B00275F70 /* UIView+XWPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XWPosition.h"; sourceTree = "<group>"; };
 		0170D2871D1C135B00275F70 /* UIView+XWPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XWPosition.m"; sourceTree = "<group>"; };
 		0170D28A1D1C2B1A00275F70 /* XWCharacterInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWCharacterInfoView.h; sourceTree = "<group>"; };
@@ -497,6 +503,8 @@
 				0109888D1D08701C00C1BA84 /* XWDictBtn.m */,
 				0170D2921D1C417700275F70 /* XWStrokeBtn.h */,
 				0170D2931D1C417700275F70 /* XWStrokeBtn.m */,
+				014B82731D1C5A7C00C6D841 /* XWPinyinBtn.h */,
+				014B82741D1C5A7C00C6D841 /* XWPinyinBtn.m */,
 				0109888E1D08701C00C1BA84 /* XWNavSegmentView.h */,
 				0109888F1D08701C00C1BA84 /* XWNavSegmentView.m */,
 				010988901D08701C00C1BA84 /* XWSectionPlatView.h */,
@@ -633,6 +641,8 @@
 				0170D28B1D1C2B1A00275F70 /* XWCharacterInfoView.m */,
 				014B826D1D1C446900C6D841 /* XWStrokeInfoView.h */,
 				014B826E1D1C446900C6D841 /* XWStrokeInfoView.m */,
+				014B82701D1C58C900C6D841 /* XWPinyinInfoView.h */,
+				014B82711D1C58C900C6D841 /* XWPinyinInfoView.m */,
 			);
 			path = infoSection;
 			sourceTree = "<group>";
@@ -892,11 +902,13 @@
 				010988CB1D08701D00C1BA84 /* RadicalPinyinDict.m in Sources */,
 				01098A4A1D1AD4CF00C1BA84 /* XWGestureCanvas.m in Sources */,
 				010989211D08792A00C1BA84 /* StrokeFontIO.mm in Sources */,
+				014B82721D1C58C900C6D841 /* XWPinyinInfoView.m in Sources */,
 				010988971D08701C00C1BA84 /* XWNotebookViewController.m in Sources */,
 				010988CC1D08701D00C1BA84 /* XWBounceBox.m in Sources */,
 				01098A4E1D1AE77B00C1BA84 /* XWSetInfo.m in Sources */,
 				014B826F1D1C446900C6D841 /* XWStrokeInfoView.m in Sources */,
 				010988CA1D08701D00C1BA84 /* PlistReader.m in Sources */,
+				014B82751D1C5A7C00C6D841 /* XWPinyinBtn.m in Sources */,
 				010988CD1D08701D00C1BA84 /* XWDictBtn.m in Sources */,
 				010989201D08792A00C1BA84 /* sinofont.mm in Sources */,
 				010987C21D086DFA00C1BA84 /* main.m in Sources */,
