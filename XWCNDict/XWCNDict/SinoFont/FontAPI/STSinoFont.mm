@@ -382,7 +382,10 @@ void STFreeAnimationInfo(STAnimationInfo* animationInfo);
     
     //如果计时器为空 启动一新的计时器
     _timer = [NSTimer scheduledTimerWithTimeInterval:self.drawingSpeed target:self selector:@selector(timerEventRunloop) userInfo:nil repeats:YES];
+
+    [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
     
+
     _tempInfo.nCurState = 1;
     
     [_timer fire];
