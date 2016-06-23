@@ -27,13 +27,14 @@
 @interface XWCharacterPlat : UIImageView
 
 //保存按钮图片
-@property (nonatomic, strong) UIImageView *saveImgView;
+@property (nonatomic, strong) UIImageView *imgvSaveControl;
 
 //米字格字体框
 @property (nonatomic, strong) UIImageView *migeImgView;
 
 /// 小模块信息标题（CharacterInfo，StrokeInfo，PinyinLinks，RadicalLinks）
 @property (nonatomic, strong) UIImageView *imgvInfoBanner;
+
 
 
 //字体书写的画布
@@ -59,7 +60,7 @@
 -(id)initWithFrame:(CGRect)frame andChar:(NSString *)fontChar;
 
 
-//呈现字符信息调用函数
+/// 呈现字符信息调用函数
 -(void)characterInfoShow;
 
 

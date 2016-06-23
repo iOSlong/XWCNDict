@@ -124,6 +124,7 @@
 		01098A4A1D1AD4CF00C1BA84 /* XWGestureCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 01098A491D1AD4CF00C1BA84 /* XWGestureCanvas.m */; };
 		01098A4E1D1AE77B00C1BA84 /* XWSetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 01098A4D1D1AE77B00C1BA84 /* XWSetInfo.m */; };
 		0170D2881D1C135B00275F70 /* UIView+XWPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0170D2871D1C135B00275F70 /* UIView+XWPosition.m */; };
+		0170D28C1D1C2B1A00275F70 /* XWCharacterInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0170D28B1D1C2B1A00275F70 /* XWCharacterInfoView.m */; };
 		972AAC4B0CBEFD594E9CD667 /* Pods_XWCNDict.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0A31ACC754A38205F171B7C /* Pods_XWCNDict.framework */; };
 /* End PBXBuildFile section */
 
@@ -281,6 +282,8 @@
 		01098A4D1D1AE77B00C1BA84 /* XWSetInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWSetInfo.m; sourceTree = "<group>"; };
 		0170D2861D1C135B00275F70 /* UIView+XWPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XWPosition.h"; sourceTree = "<group>"; };
 		0170D2871D1C135B00275F70 /* UIView+XWPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XWPosition.m"; sourceTree = "<group>"; };
+		0170D28A1D1C2B1A00275F70 /* XWCharacterInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWCharacterInfoView.h; sourceTree = "<group>"; };
+		0170D28B1D1C2B1A00275F70 /* XWCharacterInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWCharacterInfoView.m; sourceTree = "<group>"; };
 		DC6815308AC0DB192C2529A1 /* Pods-XWCNDict.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XWCNDict.release.xcconfig"; path = "Pods/Target Support Files/Pods-XWCNDict/Pods-XWCNDict.release.xcconfig"; sourceTree = "<group>"; };
 		E0A31ACC754A38205F171B7C /* Pods_XWCNDict.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XWCNDict.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E76EE84323E23508EDADCCD5 /* Pods-XWCNDict.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XWCNDict.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XWCNDict/Pods-XWCNDict.debug.xcconfig"; sourceTree = "<group>"; };
@@ -399,6 +402,7 @@
 		0109884D1D08701C00C1BA84 /* CharacterPlat */ = {
 			isa = PBXGroup;
 			children = (
+				0170D2891D1C2AD600275F70 /* infoSection */,
 				0109897D1D0B14E300C1BA84 /* XWCharPlatSegment.h */,
 				0109897E1D0B14E300C1BA84 /* XWCharPlatSegment.m */,
 				0109884E1D08701C00C1BA84 /* XWCharacterPlat.h */,
@@ -419,13 +423,14 @@
 		010988511D08701C00C1BA84 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				0109892E1D0B10B700C1BA84 /* characters */,
-				010988D01D0873A900C1BA84 /* navbarItem */,
+				0170D28D1D1C36D800275F70 /* ttffont */,
 				010988521D08701C00C1BA84 /* background.png */,
 				010988561D08701C00C1BA84 /* info.png */,
 				010988571D08701C00C1BA84 /* navbackground.png */,
-				010988781D08701C00C1BA84 /* plistFile */,
 				0109887F1D08701C00C1BA84 /* search.png */,
+				0109892E1D0B10B700C1BA84 /* characters */,
+				010988D01D0873A900C1BA84 /* navbarItem */,
+				010988781D08701C00C1BA84 /* plistFile */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -609,6 +614,22 @@
 				01098A4D1D1AE77B00C1BA84 /* XWSetInfo.m */,
 			);
 			path = singleton;
+			sourceTree = "<group>";
+		};
+		0170D2891D1C2AD600275F70 /* infoSection */ = {
+			isa = PBXGroup;
+			children = (
+				0170D28A1D1C2B1A00275F70 /* XWCharacterInfoView.h */,
+				0170D28B1D1C2B1A00275F70 /* XWCharacterInfoView.m */,
+			);
+			path = infoSection;
+			sourceTree = "<group>";
+		};
+		0170D28D1D1C36D800275F70 /* ttffont */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ttffont;
 			sourceTree = "<group>";
 		};
 		3B273739CA4827A1ABC3DF34 /* Pods */ = {
@@ -852,6 +873,7 @@
 				010988C91D08701D00C1BA84 /* NSString+SubStringMethod.m in Sources */,
 				010988961D08701C00C1BA84 /* XWNavigationViewController.m in Sources */,
 				010988921D08701C00C1BA84 /* XWBaseViewController.m in Sources */,
+				0170D28C1D1C2B1A00275F70 /* XWCharacterInfoView.m in Sources */,
 				010988CB1D08701D00C1BA84 /* RadicalPinyinDict.m in Sources */,
 				01098A4A1D1AD4CF00C1BA84 /* XWGestureCanvas.m in Sources */,
 				010989211D08792A00C1BA84 /* StrokeFontIO.mm in Sources */,

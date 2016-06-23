@@ -7,13 +7,7 @@
 //
 
 #import "XWGestureCanvas.h"
-#import "STSinoFont.h"
 
-@interface XWGestureCanvas ()
-@property (nonatomic, strong) STSinoFont    *sinoFont;
-@property (nonatomic, strong) UIImage       *imgStatic;
-@property (nonatomic, strong) UIImageView   *imgvBackground;
-@end
 
 @implementation XWGestureCanvas
 
@@ -24,6 +18,7 @@
         }else{
             _fontChar = @"啊";
         }
+        _setInfo = [XWSetInfo shareSetInfo];
 
         [self configureGestures];
 
@@ -92,6 +87,42 @@
     _fontChar = fontChar;
     if (fontChar) {
 
+    }
+}
+
+- (void)releaseSinoFont {
+    if (self.sinoFont) {
+        [self.sinoFont releaseSinoFont_AnimationInfo];
+    }
+}
+
+- (void)reloadWithFontChar:(NSString *)fontChar {
+    self.fontChar = fontChar;
+    if (fontChar) {
+        self.sinoFont.fontChar = fontChar;
+        if (_setInfo.color_char) {
+            self.imgStatic = [_sinoFont getBaseImageWithColor:_setInfo.color_char];
+        }else{
+            self.imgStatic =[_sinoFont getBaseImageWithColor:[UIColor blackColor]];
+        }
+        self.imgvBackground.image = self.imgStatic;
+
+
+        UIImage *saveImg;
+        if (_setInfo.color_radical) {
+            saveImg = [_sinoFont getRadicalImageWithSize:CGSizeMake(100, 100) bottomColor:[UIColor colorWithRed:141.0/255 green:198.0/255 blue:228.0/255 alpha:1] radicalColor:_setInfo.color_radical];
+            self.sinoFont.charColor = _setInfo.color_char;
+            self.sinoFont.radicalColor = _setInfo.color_radical;
+
+        }else{
+            saveImg = [_sinoFont getRadicalImageWithSize:CGSizeMake(100, 100) bottomColor:[UIColor colorWithRed:141.0/255 green:198.0/255 blue:228.0/255 alpha:1] radicalColor:[UIColor colorWithRed:165.0/255 green:229.0/255 blue:133.0/255 alpha:1]];
+            _setInfo.color_radical =[UIColor colorWithRed:165.0/255 green:229.0/255 blue:133.0/255 alpha:1];
+        }
+
+        if ([self.delegate respondsToSelector:@selector(gestureCanvas:withEvent:saveImg:)]) {
+            [self.delegate gestureCanvas:self withEvent:XWCanvasEventReload saveImg:saveImg];
+        }
+        
     }
 }
 

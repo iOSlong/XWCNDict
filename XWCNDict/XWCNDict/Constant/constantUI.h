@@ -18,6 +18,7 @@
 #define kPlat_H                     (428 * kFixed_rate)
 #define kPlat_X                     (74 * kFixed_rate)
 #define kPlat_Y                     (235.0 * kFixed_rate)
+#define kPlat_suffix                 (9.0 * kFixed_rate)
 
 #define kupSpan                     (56.0 * kFixed_rate)
 
