@@ -35,6 +35,8 @@
 
         [self configureCharPlatInfoSegment];
 
+        [self configureCharSaveControlView];
+
 
     }
     return self;
@@ -64,7 +66,7 @@
 
 - (void)configureCharPlatInfoSegment {
     self.infoSegment = [[XWCharPlatSegment alloc] initWithFrame:CGRectMake(896/2 * kFixed_rate-2, 646/2 * kFixed_rate, 0, 0)];
-//    self.infoSegment.frame = CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>)
+    self.infoSegment.left = self.width - self.infoSegment.width;
     self.infoSegment.delegate = self;
     [self addSubview:self.infoSegment];
 }
@@ -101,5 +103,19 @@
     self.imgvInfoBanner.image = [_setInfo.arrInfoImgName objectAtIndex:index];
 }
 
+- (void)configureCharSaveControlView {
+    UIImage *saveImg = [UIImage imageNamed:_setInfo.imgNameCharSave];
+    CGFloat bw = 103 * kFixed_rate;
+    CGFloat bh = 101 * kFixed_rate;
+    UIButton *btnSaveControl = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btnSaveControl setImage:saveImg forState:UIControlStateNormal];
+    [btnSaveControl addTarget:self action:@selector(btnSaveControlClick:) forControlEvents:UIControlEventTouchUpInside];
+    [btnSaveControl setFrame:CGRectMake(1526/2 * kFixed_rate - 2 - 1, 87/2, bw, bh)];
+    [self addSubview:btnSaveControl];
+}
+
+- (void)btnSaveControlClick:(UIButton *)btn {
+
+}
 
 @end

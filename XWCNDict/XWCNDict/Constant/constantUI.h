@@ -9,8 +9,7 @@
 #ifndef constantUI_h
 #define constantUI_h
 
-
-
+#import "UIView+XWPosition.h"
 
 #define kFixed_rate                 (([UIScreen mainScreen].bounds.size.width)/1024.0)
 #define kScreenSize                 [UIScreen mainScreen].bounds.size

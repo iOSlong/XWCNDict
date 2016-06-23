@@ -15,6 +15,7 @@
 
 @property (nonatomic, strong, readonly) NSMutableArray  *arrInfoImgName;
 @property (nonatomic, strong, readonly) NSString        *imgNameCharacterPlat;
+@property (nonatomic, strong, readonly) NSString        *imgNameCharSave;
 
 @property (nonatomic, strong) NSString  *imgNameField;
 @property (nonatomic, strong) UIColor   *color_char;

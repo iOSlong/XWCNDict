@@ -123,6 +123,7 @@
 		0109897F1D0B14E300C1BA84 /* XWCharPlatSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = 0109897E1D0B14E300C1BA84 /* XWCharPlatSegment.m */; };
 		01098A4A1D1AD4CF00C1BA84 /* XWGestureCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 01098A491D1AD4CF00C1BA84 /* XWGestureCanvas.m */; };
 		01098A4E1D1AE77B00C1BA84 /* XWSetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 01098A4D1D1AE77B00C1BA84 /* XWSetInfo.m */; };
+		0170D2881D1C135B00275F70 /* UIView+XWPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0170D2871D1C135B00275F70 /* UIView+XWPosition.m */; };
 		972AAC4B0CBEFD594E9CD667 /* Pods_XWCNDict.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0A31ACC754A38205F171B7C /* Pods_XWCNDict.framework */; };
 /* End PBXBuildFile section */
 
@@ -278,6 +279,8 @@
 		01098A491D1AD4CF00C1BA84 /* XWGestureCanvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWGestureCanvas.m; sourceTree = "<group>"; };
 		01098A4C1D1AE77B00C1BA84 /* XWSetInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWSetInfo.h; sourceTree = "<group>"; };
 		01098A4D1D1AE77B00C1BA84 /* XWSetInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWSetInfo.m; sourceTree = "<group>"; };
+		0170D2861D1C135B00275F70 /* UIView+XWPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XWPosition.h"; sourceTree = "<group>"; };
+		0170D2871D1C135B00275F70 /* UIView+XWPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XWPosition.m"; sourceTree = "<group>"; };
 		DC6815308AC0DB192C2529A1 /* Pods-XWCNDict.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XWCNDict.release.xcconfig"; path = "Pods/Target Support Files/Pods-XWCNDict/Pods-XWCNDict.release.xcconfig"; sourceTree = "<group>"; };
 		E0A31ACC754A38205F171B7C /* Pods_XWCNDict.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XWCNDict.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E76EE84323E23508EDADCCD5 /* Pods-XWCNDict.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XWCNDict.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XWCNDict/Pods-XWCNDict.debug.xcconfig"; sourceTree = "<group>"; };
@@ -455,6 +458,8 @@
 			children = (
 				010988821D08701C00C1BA84 /* NSString+SubStringMethod.h */,
 				010988831D08701C00C1BA84 /* NSString+SubStringMethod.m */,
+				0170D2861D1C135B00275F70 /* UIView+XWPosition.h */,
+				0170D2871D1C135B00275F70 /* UIView+XWPosition.m */,
 			);
 			path = category;
 			sourceTree = "<group>";
@@ -838,6 +843,7 @@
 				0109889C1D08701C00C1BA84 /* XWYizijingViewController.m in Sources */,
 				010987C81D086DFA00C1BA84 /* ViewController.m in Sources */,
 				0109889D1D08701C00C1BA84 /* XWCharacterPlat.m in Sources */,
+				0170D2881D1C135B00275F70 /* UIView+XWPosition.m in Sources */,
 				010988CF1D08701D00C1BA84 /* XWSectionPlatView.m in Sources */,
 				010988991D08701C00C1BA84 /* XWPoemViewController.m in Sources */,
 				0109889A1D08701C00C1BA84 /* XWRadicalViewController.m in Sources */,
