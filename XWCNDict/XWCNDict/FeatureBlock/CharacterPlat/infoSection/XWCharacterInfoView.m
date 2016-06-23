@@ -80,7 +80,17 @@
     [self addSubview: _pinyinPlat];
     [self addSubview:_radicalLabel];
 
+
+
+//    [self.fontCharPinyin addObserver:self forKeyPath:@"fontCharPinyin" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
+
 }
+
+//- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
+//    NSLog(@"%@",object);
+//    
+//}
+
 - (void)reloadCharacterWith:(NSString *)fontChar strokeNum:(int )strokeNum{
     NSArray *pinArr = [_PR getPinyinArrByBlankChar:fontChar];
 
@@ -154,6 +164,7 @@
         return;
     }
     self.fontCharPinyin = btn.titleLabel.text;
+
     if (_CIBlock) {
         _CIBlock(self.fontCharPinyin);
     }

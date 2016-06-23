@@ -123,9 +123,11 @@
 		0109897F1D0B14E300C1BA84 /* XWCharPlatSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = 0109897E1D0B14E300C1BA84 /* XWCharPlatSegment.m */; };
 		01098A4A1D1AD4CF00C1BA84 /* XWGestureCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 01098A491D1AD4CF00C1BA84 /* XWGestureCanvas.m */; };
 		01098A4E1D1AE77B00C1BA84 /* XWSetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 01098A4D1D1AE77B00C1BA84 /* XWSetInfo.m */; };
+		014B826F1D1C446900C6D841 /* XWStrokeInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 014B826E1D1C446900C6D841 /* XWStrokeInfoView.m */; };
 		0170D2881D1C135B00275F70 /* UIView+XWPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0170D2871D1C135B00275F70 /* UIView+XWPosition.m */; };
 		0170D28C1D1C2B1A00275F70 /* XWCharacterInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0170D28B1D1C2B1A00275F70 /* XWCharacterInfoView.m */; };
 		0170D2911D1C3A8F00275F70 /* STZhuankai.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0170D2901D1C3A8F00275F70 /* STZhuankai.ttf */; };
+		0170D2941D1C417700275F70 /* XWStrokeBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 0170D2931D1C417700275F70 /* XWStrokeBtn.m */; };
 		972AAC4B0CBEFD594E9CD667 /* Pods_XWCNDict.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0A31ACC754A38205F171B7C /* Pods_XWCNDict.framework */; };
 /* End PBXBuildFile section */
 
@@ -281,11 +283,15 @@
 		01098A491D1AD4CF00C1BA84 /* XWGestureCanvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWGestureCanvas.m; sourceTree = "<group>"; };
 		01098A4C1D1AE77B00C1BA84 /* XWSetInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWSetInfo.h; sourceTree = "<group>"; };
 		01098A4D1D1AE77B00C1BA84 /* XWSetInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWSetInfo.m; sourceTree = "<group>"; };
+		014B826D1D1C446900C6D841 /* XWStrokeInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWStrokeInfoView.h; sourceTree = "<group>"; };
+		014B826E1D1C446900C6D841 /* XWStrokeInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWStrokeInfoView.m; sourceTree = "<group>"; };
 		0170D2861D1C135B00275F70 /* UIView+XWPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XWPosition.h"; sourceTree = "<group>"; };
 		0170D2871D1C135B00275F70 /* UIView+XWPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XWPosition.m"; sourceTree = "<group>"; };
 		0170D28A1D1C2B1A00275F70 /* XWCharacterInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWCharacterInfoView.h; sourceTree = "<group>"; };
 		0170D28B1D1C2B1A00275F70 /* XWCharacterInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWCharacterInfoView.m; sourceTree = "<group>"; };
 		0170D2901D1C3A8F00275F70 /* STZhuankai.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = STZhuankai.ttf; sourceTree = "<group>"; };
+		0170D2921D1C417700275F70 /* XWStrokeBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWStrokeBtn.h; sourceTree = "<group>"; };
+		0170D2931D1C417700275F70 /* XWStrokeBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWStrokeBtn.m; sourceTree = "<group>"; };
 		DC6815308AC0DB192C2529A1 /* Pods-XWCNDict.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XWCNDict.release.xcconfig"; path = "Pods/Target Support Files/Pods-XWCNDict/Pods-XWCNDict.release.xcconfig"; sourceTree = "<group>"; };
 		E0A31ACC754A38205F171B7C /* Pods_XWCNDict.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XWCNDict.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E76EE84323E23508EDADCCD5 /* Pods-XWCNDict.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XWCNDict.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XWCNDict/Pods-XWCNDict.debug.xcconfig"; sourceTree = "<group>"; };
@@ -489,6 +495,8 @@
 				0109888B1D08701C00C1BA84 /* XWBounceBox.m */,
 				0109888C1D08701C00C1BA84 /* XWDictBtn.h */,
 				0109888D1D08701C00C1BA84 /* XWDictBtn.m */,
+				0170D2921D1C417700275F70 /* XWStrokeBtn.h */,
+				0170D2931D1C417700275F70 /* XWStrokeBtn.m */,
 				0109888E1D08701C00C1BA84 /* XWNavSegmentView.h */,
 				0109888F1D08701C00C1BA84 /* XWNavSegmentView.m */,
 				010988901D08701C00C1BA84 /* XWSectionPlatView.h */,
@@ -623,6 +631,8 @@
 			children = (
 				0170D28A1D1C2B1A00275F70 /* XWCharacterInfoView.h */,
 				0170D28B1D1C2B1A00275F70 /* XWCharacterInfoView.m */,
+				014B826D1D1C446900C6D841 /* XWStrokeInfoView.h */,
+				014B826E1D1C446900C6D841 /* XWStrokeInfoView.m */,
 			);
 			path = infoSection;
 			sourceTree = "<group>";
@@ -874,6 +884,7 @@
 				0109889A1D08701C00C1BA84 /* XWRadicalViewController.m in Sources */,
 				010987C51D086DFA00C1BA84 /* AppDelegate.m in Sources */,
 				0109891F1D08792A00C1BA84 /* FontBitmapDraw.m in Sources */,
+				0170D2941D1C417700275F70 /* XWStrokeBtn.m in Sources */,
 				010988C91D08701D00C1BA84 /* NSString+SubStringMethod.m in Sources */,
 				010988961D08701C00C1BA84 /* XWNavigationViewController.m in Sources */,
 				010988921D08701C00C1BA84 /* XWBaseViewController.m in Sources */,
@@ -884,6 +895,7 @@
 				010988971D08701C00C1BA84 /* XWNotebookViewController.m in Sources */,
 				010988CC1D08701D00C1BA84 /* XWBounceBox.m in Sources */,
 				01098A4E1D1AE77B00C1BA84 /* XWSetInfo.m in Sources */,
+				014B826F1D1C446900C6D841 /* XWStrokeInfoView.m in Sources */,
 				010988CA1D08701D00C1BA84 /* PlistReader.m in Sources */,
 				010988CD1D08701D00C1BA84 /* XWDictBtn.m in Sources */,
 				010989201D08792A00C1BA84 /* sinofont.mm in Sources */,

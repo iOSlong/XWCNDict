@@ -9,10 +9,12 @@
 #import "XWCharacterPlat.h"
 #import "XWCharPlatSegment.h"
 #import "XWCharacterInfoView.h"
+#import "XWStrokeInfoView.h"
 
 @interface XWCharacterPlat ()<XWCharPlatSegmentDelegate,XWGestureCanvasDelegate>
 @property (nonatomic, strong) XWCharPlatSegment     *infoSegment;
 @property (nonatomic, strong) XWCharacterInfoView   *characterInfoView;
+@property (nonatomic, strong) XWStrokeInfoView      *strokeInfoView;
 @end
 
 @implementation XWCharacterPlat{
@@ -39,10 +41,12 @@
 
         [self configureCharSaveControlView];
 
+        [self addSubview:self.characterInfoView];
+        [self addSubview:self.strokeInfoView];
+
         /// UI布局的部分都搁置到最前面最好。
         [self configureMigeImageView];
 
-        [self addSubview:self.characterInfoView];
 
     }
     return self;
@@ -58,6 +62,16 @@
         }];
     }
     return _characterInfoView;
+}
+
+- (XWStrokeInfoView *)strokeInfoView {
+    if (!_strokeInfoView) {
+        _strokeInfoView = [[XWStrokeInfoView alloc] initWithFrame:CGRectMake(896/2 * kFixed_rate, 300/2 * kFixed_rate, 624/2 * kFixed_rate, 280/2 * kFixed_rate) andStrokeBtnCount:30];
+        _strokeInfoView.backgroundColor = [UIColor clearColor];
+
+        [_strokeInfoView setHidden:YES];
+    }
+    return _strokeInfoView;
 }
 
 
@@ -76,7 +90,7 @@
     self.fontCanvas.center = CGPointMake(kMiField_W/2, kMiField_W/2);
     [self.migeImgView addSubview:self.fontCanvas];
 
-    self.fontChar = @"腻";
+    self.fontChar = @"行";
 }
 
 - (void)configureInfoBannerView {
@@ -96,14 +110,14 @@
 - (void)selectSegmentWithIndex:(NSUInteger)index {
     if (index==0)
     {
-//        [_character_infoView setHidden:NO];
-//        [_stroke_infoView setHidden:YES];
+        [_characterInfoView setHidden:NO];
+        [_strokeInfoView setHidden:YES];
 //        [_pinyin_infoView setHidden:YES];
 //        [_radical_infoView setHidden:YES];
     }
     if (index==1) {
-//        [_stroke_infoView setHidden:NO];
-//        [_character_infoView setHidden:YES];
+        [_strokeInfoView setHidden:NO];
+        [_characterInfoView setHidden:YES];
 //        [_pinyin_infoView setHidden:YES];
 //        [_radical_infoView setHidden:YES];
 
@@ -151,8 +165,10 @@
     if (fontChar) {
         [self characterInfoShow];
     }
+
     
 }
+
 
 - (void)characterInfoShow {
     NSLog(@"%@",self.fontChar);
@@ -164,8 +180,28 @@
 
 #pragma mark - CanvasDelegate
 - (void)gestureCanvas:(XWGestureCanvas *)canvas withEvent:(XWCanvasEvent)event saveImg:(UIImage *)saveImg {
+
     self.imgvSaveControl.image = saveImg;
+
     [self.characterInfoView reloadCharacterWith:self.fontChar strokeNum:canvas.sinoFont.strokeNum];
+
+    [self reloadStrokeInfoWith:canvas.sinoFont];
+}
+
+- (void)reloadStrokeInfoWith:(STSinoFont *)sinoFont{
+    NSArray *normalArr = [sinoFont getStrokesContinueImageArrayWithSize:CGSizeMake(50, 50) bottomColor:[UIColor grayColor] frontColor:[UIColor blackColor]];
+    NSArray *selectArr = [sinoFont getStrokesContinueImageArrayWithSize:CGSizeMake(50, 50) bottomColor:[UIColor colorWithRed:190.0/255 green:220.0/255 blue:156.0/255 alpha:1] frontColor:[UIColor whiteColor]];
+    //    [_stroke_infoView setStrokesImgArr:normalArr withState:StrokeBtnNormalState];
+    //    [_stroke_infoView setStrokesImgArr:selectArr withState:StrokeBtnSelectedState];
+
+
+    [_strokeInfoView getNormalImgArray:normalArr];
+    [_strokeInfoView getSelectedImgArray:selectArr];
+    [_strokeInfoView getStrokesBtnReload];
+
+    if (self.infoSegment.selectedIndex==1) {
+        [_strokeInfoView setHidden:NO];
+    }
 }
 
 @end
