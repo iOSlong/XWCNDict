@@ -176,6 +176,8 @@
 		014B82E21D1D7A9D00C6D841 /* XWMyDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 014B82E11D1D7A9D00C6D841 /* XWMyDataController.m */; };
 		014B82E51D1D7B2B00C6D841 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 014B82E31D1D7B2B00C6D841 /* DataModel.xcdatamodeld */; };
 		014B82E81D1D817000C6D841 /* XWCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = 014B82E71D1D817000C6D841 /* XWCharacter.m */; };
+		014B82EE1D1D9CD600C6D841 /* 37x-Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B82EC1D1D9CD600C6D841 /* 37x-Checkmark.png */; };
+		014B82EF1D1D9CD600C6D841 /* 37x-Checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B82ED1D1D9CD600C6D841 /* 37x-Checkmark@2x.png */; };
 		0170D2881D1C135B00275F70 /* UIView+XWPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0170D2871D1C135B00275F70 /* UIView+XWPosition.m */; };
 		0170D28C1D1C2B1A00275F70 /* XWCharacterInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0170D28B1D1C2B1A00275F70 /* XWCharacterInfoView.m */; };
 		0170D2911D1C3A8F00275F70 /* STZhuankai.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0170D2901D1C3A8F00275F70 /* STZhuankai.ttf */; };
@@ -399,6 +401,8 @@
 		014B82E41D1D7B2B00C6D841 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		014B82E61D1D817000C6D841 /* XWCharacter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWCharacter.h; sourceTree = "<group>"; };
 		014B82E71D1D817000C6D841 /* XWCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWCharacter.m; sourceTree = "<group>"; };
+		014B82EC1D1D9CD600C6D841 /* 37x-Checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "37x-Checkmark.png"; sourceTree = "<group>"; };
+		014B82ED1D1D9CD600C6D841 /* 37x-Checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "37x-Checkmark@2x.png"; sourceTree = "<group>"; };
 		0170D2861D1C135B00275F70 /* UIView+XWPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XWPosition.h"; sourceTree = "<group>"; };
 		0170D2871D1C135B00275F70 /* UIView+XWPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XWPosition.m"; sourceTree = "<group>"; };
 		0170D28A1D1C2B1A00275F70 /* XWCharacterInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWCharacterInfoView.h; sourceTree = "<group>"; };
@@ -566,6 +570,8 @@
 				014B82811D1CFFB700C6D841 /* poemSetBackImg.png */,
 				014B82821D1CFFB700C6D841 /* zanting.png */,
 				014B82831D1CFFB700C6D841 /* playing.png */,
+				014B82EC1D1D9CD600C6D841 /* 37x-Checkmark.png */,
+				014B82ED1D1D9CD600C6D841 /* 37x-Checkmark@2x.png */,
 				0109892E1D0B10B700C1BA84 /* characters */,
 				010988D01D0873A900C1BA84 /* navbarItem */,
 				010988781D08701C00C1BA84 /* plistFile */,
@@ -936,6 +942,7 @@
 				010989021D0873A900C1BA84 /* bar_d1.png in Resources */,
 				010989051D0873A900C1BA84 /* bar_d4.png in Resources */,
 				010988FB1D0873A900C1BA84 /* bar_a2.png in Resources */,
+				014B82EE1D1D9CD600C6D841 /* 37x-Checkmark.png in Resources */,
 				014B82871D1CFFB700C6D841 /* colorKeyboardimg.png in Resources */,
 				014B82C91D1D40B300C6D841 /* 5_15.wav in Resources */,
 				010988FA1D0873A900C1BA84 /* bar_a1.png in Resources */,
@@ -1008,6 +1015,7 @@
 				010987CB1D086DFA00C1BA84 /* Main.storyboard in Resources */,
 				010988F71D0873A900C1BA84 /* 1-7.png in Resources */,
 				010989521D0B10ED00C1BA84 /* seg22.png in Resources */,
+				014B82EF1D1D9CD600C6D841 /* 37x-Checkmark@2x.png in Resources */,
 				0109890A1D0873A900C1BA84 /* blacknav.png in Resources */,
 				014B82D41D1D40B300C6D841 /* 5_25.wav in Resources */,
 				0170D2911D1C3A8F00275F70 /* STZhuankai.ttf in Resources */,

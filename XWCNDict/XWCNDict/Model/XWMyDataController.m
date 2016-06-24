@@ -50,7 +50,16 @@
 }
 
 
-
+- (NSArray *)arrObjectModel
+{
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"XWCharacter"];
+    NSError *error = nil;
+    NSArray *arr = [self.managedObjectContext executeFetchRequest:request error:&error];
+    if (error) {
+        NSAssert(arr != nil, @"Error fetch OCArray: %@\n%@", [error localizedDescription], [error userInfo]);
+    }
+    return arr;
+}
 
 
 

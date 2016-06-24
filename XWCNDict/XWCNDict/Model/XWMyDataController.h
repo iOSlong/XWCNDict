@@ -16,4 +16,6 @@
 
 + (instancetype)shareDataController;
 
+- (NSArray *)arrObjectModel;
+
 @end

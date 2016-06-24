@@ -14,4 +14,9 @@
 @dynamic dateModify;
 @dynamic dataImg;
 
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"%@ | %@ | haveImg:%d", self.fontChar,self.dateModify,self.dataImg?1:0];
+}
+
 @end

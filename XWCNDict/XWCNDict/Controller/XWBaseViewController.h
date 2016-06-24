@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "XWSectionPlatView.h"
 #import "XWSetInfo.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
 typedef NS_ENUM(NSUInteger, XWPlatViewModel) {
     XWPlatViewModelCharacters,
@@ -35,5 +36,17 @@ typedef NS_ENUM(NSUInteger, XWPlatViewModel) {
 
 - (void)searchBtn:(UIButton *)btn;
 - (void)setGearBtn:(UIButton *)btn;
+
+
+- (void)showLoading:(BOOL)animated;
+- (void)hideLoading:(BOOL)animated;
+- (void)showLoading:(BOOL)animated enableUserAction:(BOOL)enable;
+
+- (void)showLoadingSuccess:(BOOL)animated hintString:(NSString *)hintString hide:(CGFloat)delay;
+//
+- (void)showLoadingFailure:(BOOL)animated;
+- (void)showHint:(NSString *)hint hide:(CGFloat)delay;
+- (void)showHint:(NSString *)hint hide:(CGFloat)delay enableBackgroundUserAction:(BOOL)enable;
+
 
 @end

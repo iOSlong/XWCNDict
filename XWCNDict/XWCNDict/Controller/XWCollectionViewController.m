@@ -7,6 +7,8 @@
 //
 
 #import "XWCollectionViewController.h"
+#import "XWMyDataController.h"
+
 
 @interface XWCollectionViewController ()
 
@@ -17,6 +19,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
+
+    XWMyDataController *_DC = [XWMyDataController shareDataController];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"XWCharacter"];
+    NSArray *arr = [_DC.managedObjectContext executeFetchRequest:request error:nil];
+    XWCharacter *charModel = [arr lastObject];
+    for (XWCharacter *cModel in arr) {
+        NSLog(@"%@ | %@ | %@",cModel.fontChar,cModel.dateModify,cModel.dataImg);
+    }
+    UIImageView *imagev = [[UIImageView alloc] initWithFrame:CGRectMake(200, 300, 200, 200)];
+    imagev.backgroundColor = [UIColor lightGrayColor];
+    [self.view addSubview:imagev];
+    imagev.image = [UIImage imageWithData:charModel.dataImg];
+
 }
 
 - (void)didReceiveMemoryWarning {

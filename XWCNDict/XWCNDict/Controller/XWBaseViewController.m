@@ -156,4 +156,89 @@
 }
 
 
+#pragma mark - Category for MBProgressHUD
+// 默认不允许操作背景下面的view.
+- (void)showHint:(NSString *)hint hide:(CGFloat)delay
+{
+    BOOL enableBackgroundUserAction = NO;
+    // 需要改的地方有点多先在这里拦截.
+    if ([hint hasPrefix:@"canTouchMoveBackView"]) {
+        enableBackgroundUserAction = YES;
+    }
+    [self showHint:hint hide:delay enableBackgroundUserAction:enableBackgroundUserAction];
+}
+
+- (void)showHint:(NSString *)hint hide:(CGFloat)delay enableBackgroundUserAction:(BOOL)enable
+{
+    if (!hint || !hint.length) {
+        return;
+    }
+    __block NSString *hintBlock = hint;
+    __block BOOL blockEnableBackgroundInteraction = enable;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        //TBLog(@"show hint loading");
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        // 如果允许操作下面的view, 需要禁用 mb 本身的userInteraction.
+        hud.userInteractionEnabled = !blockEnableBackgroundInteraction;
+        [hud setDetailsLabelFont:[UIFont fontWithName:@"STZhuankai" size:15 * kFixed_rate]];
+        [hud setRemoveFromSuperViewOnHide:YES];
+        [hud setMode:MBProgressHUDModeText];
+        [hud setDetailsLabelText:hintBlock];
+        [hud hide:YES afterDelay:delay];
+    });
+}
+
+- (void)showLoading:(BOOL)animated
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        //TBLog(@"show loading.");
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:animated];
+        [hud setRemoveFromSuperViewOnHide:YES];
+        [hud setMode:MBProgressHUDModeIndeterminate];
+    });
+}
+
+- (void)showLoading:(BOOL)animated enableUserAction:(BOOL)enable {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        //TBLog(@"show loading.");
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:animated];
+        hud.userInteractionEnabled = !enable; // 如果允许操作下面的view, 需要禁用 mb 本身的userInteraction.
+        [hud setRemoveFromSuperViewOnHide:YES];
+        [hud setMode:MBProgressHUDModeIndeterminate];
+    });
+}
+
+- (void)hideLoading:(BOOL)animated
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    });
+}
+
+//
+
+- (void)showLoadingSuccess:(BOOL)animated hintString:(NSString *)hintString hide:(CGFloat)delay
+{
+    __block NSString *hintStringBlock = hintString;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        //TBLog(@"show success loading.");
+        MBProgressHUD *HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        [HUD setRemoveFromSuperViewOnHide:YES];
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
+        HUD.customView = imageView;
+        HUD.mode = MBProgressHUDModeCustomView;
+        HUD.minShowTime = 1;
+        HUD.labelText = hintStringBlock;
+        HUD.labelFont = [UIFont fontWithName:@"STZhuankai" size:15 * kFixed_rate];
+        [HUD hide:YES afterDelay:delay];
+    });
+}
+
+- (void)showLoadingFailure:(BOOL)animated
+{
+
+}
+
+
+
 @end

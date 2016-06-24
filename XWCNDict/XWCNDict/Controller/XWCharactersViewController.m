@@ -11,6 +11,8 @@
 #import "XWCharacterPlat.h"
 #import "XWCharacterSetView.h"
 #import "XWMyDataController.h"
+#import <MBProgressHUD/MBProgressHUD.h>
+
 
 
 
@@ -38,6 +40,8 @@ typedef struct pageIndex{
 
     UIImageView *_imgvTabBarMask;
     UIImageView *_imgvPageMask;
+
+    XWMyDataController *_DC;
 }
 
 - (instancetype)init
@@ -67,6 +71,8 @@ typedef struct pageIndex{
         UITapGestureRecognizer *tapTwo = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(maskTap:)];
         [_imgvTabBarMask addGestureRecognizer:tapGOne];
         [_imgvPageMask addGestureRecognizer:tapTwo];
+
+        _DC = [XWMyDataController shareDataController];
 
         /// 注意，在VC 里面的init方法中，不能执行 addSubview的UI绘制操作。
     }
@@ -327,39 +333,47 @@ typedef struct pageIndex{
 #pragma mark - CharacterPlat Delegate  save FontChar
 - (void)saveBtnSelected:(XWCharacterPlat *)characterPlat {
     NSLog(@"save ………%@",characterPlat.fontChar);
-    XWMyDataController *_DC = [XWMyDataController shareDataController];
 
     UIAlertController *alertControl = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"you sure save %@",characterPlat.fontChar] message:nil preferredStyle:UIAlertControllerStyleAlert];
 
     UIAlertAction *actionSure = [UIAlertAction actionWithTitle:@"YES" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         NSLog(@"YES");
-        /// 存储字符信息
-        XWCharacter *charModel =  [NSEntityDescription insertNewObjectForEntityForName:@"XWCharacter" inManagedObjectContext:_DC.managedObjectContext];
-        charModel.fontChar  = characterPlat.fontChar;
-        charModel.dateModify= [NSDate date];
-        charModel.dataImg   = UIImagePNGRepresentation(characterPlat.staticImg);
 
 
-        NSError *error = nil;
-        [_DC.managedObjectContext save:&error];
-        if (error) {
-            NSLog(@"fail storn charModel  :%@",error);
+        /// 判断是否有收藏
+        NSArray *modelArr = [_DC arrObjectModel];
+        BOOL needStorn = YES;
+        for (XWCharacter *cModel in modelArr) {
+            if ([characterPlat.fontChar isEqualToString:cModel.fontChar]) {
+                [self showHint:[NSString stringWithFormat:@"%@  您已经收藏有该汉字啦 ！",cModel.fontChar] hide:2.0f];
+                needStorn = NO;
+                break;
+            }
         }
+        
+        /// CoreData进行汉字本地存储
+        if (needStorn) {
+            /// 存储字符信息
+            XWCharacter *charModel =  [NSEntityDescription insertNewObjectForEntityForName:@"XWCharacter" inManagedObjectContext:_DC.managedObjectContext];
+            NSData *dataImg     = UIImagePNGRepresentation(characterPlat.staticImg);
+            charModel.dataImg   = dataImg;
+            charModel.fontChar  = characterPlat.fontChar;
+            charModel.dateModify= [NSDate date];
 
+            NSError *error = nil;
+            [_DC.managedObjectContext save:&error];
+            if (error) {
+                NSLog(@"fail storn charModel  :%@",error);
+            }else{
+                [self showLoadingSuccess:YES hintString:@"已收藏到： My Collection" hide:2.0];
+            }
+        }
         [alertControl dismissViewControllerAnimated:YES completion:nil];
+
     }];
 
     UIAlertAction *actionCancel = [UIAlertAction actionWithTitle:@"NO" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         NSLog(@"NO");
-
-        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"XWCharacter"];
-
-        NSError *error = nil;
-        NSArray *results = [_DC.managedObjectContext executeFetchRequest:request error:&error];
-        if (!results) {
-            NSLog(@"Error fetching Employee objects: %@\n%@", [error localizedDescription], [error userInfo]);
-            abort();
-        }
         [alertControl dismissViewControllerAnimated:YES completion:nil];
     }];
     [alertControl addAction:actionSure];

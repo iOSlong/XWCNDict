@@ -90,6 +90,7 @@
 }
 
 
+
 - (XWCharacterInfoView *)characterInfoView {
     if (!_characterInfoView) {
         _characterInfoView = [[XWCharacterInfoView alloc] init];
@@ -281,6 +282,7 @@
         [self.radicalInfoView reloadRadicalWith:self.fontChar];
     }
 
+    self.staticImg = [self.fontCanvas.sinoFont getBaseImageWithColor:_setInfo.color_char];
 }
 
 - (void)reloadStrokeInfoWith:(STSinoFont *)sinoFont{
