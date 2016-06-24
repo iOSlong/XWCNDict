@@ -14,8 +14,12 @@
 + (XWSetInfo *)shareSetInfo;
 
 @property (nonatomic, strong, readonly) NSMutableArray  *arrInfoImgName;
+@property (nonatomic, strong, readonly) NSMutableArray  *arrUnicodeFont;
 @property (nonatomic, strong, readonly) NSString        *imgNameCharacterPlat;
 @property (nonatomic, strong, readonly) NSString        *imgNameCharSave;
+@property (nonatomic, strong, readonly) NSString        *imgNameSetGear;
+@property (nonatomic, strong, readonly) NSString        *imgNameTabbarMask;
+@property (nonatomic, strong, readonly) NSString        *imgNameCharPlatMask;
 
 @property (nonatomic, strong) NSString  *imgNameField;
 @property (nonatomic, strong) UIColor   *color_char;

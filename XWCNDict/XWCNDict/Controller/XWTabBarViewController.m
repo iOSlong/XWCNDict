@@ -9,6 +9,19 @@
 #import "XWTabBarViewController.h"
 
 
+
+static XWTabBarViewController *selfxwTabBarViewController;
+@implementation UIViewController (XWTabBarViewControllerSupport)
+
+- (XWTabBarViewController *)tabBarVC {
+    return selfxwTabBarViewController;
+}
+
+@end
+
+
+
+
 @implementation XWTabBarViewController
 
 
@@ -40,6 +53,8 @@
 
 
         [self congigureNavSegmentView];
+
+        selfxwTabBarViewController = self;
 
     }
     return self;

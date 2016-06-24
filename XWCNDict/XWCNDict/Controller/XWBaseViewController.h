@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "XWSectionPlatView.h"
-
+#import "XWSetInfo.h"
 
 typedef NS_ENUM(NSUInteger, XWPlatViewModel) {
     XWPlatViewModelCharacters,
@@ -23,11 +23,17 @@ typedef NS_ENUM(NSUInteger, XWPlatViewModel) {
 
 @interface XWBaseViewController : UIViewController
 
-@property (nonatomic, strong) UIImageView *imgvBackground;
+@property (nonatomic, strong) UIImageView       *imgvBackground;
 
 ///默认隐藏
-@property (nonatomic) XWSectionPlatView *sectionPlatView;
-@property (nonatomic, assign) XWPlatViewModel platViewModel;
+@property (nonatomic, strong) XWSectionPlatView *sectionPlatView;
+@property (nonatomic, assign) XWPlatViewModel   platViewModel;
 
+@property (nonatomic, strong) UITextField       *textfield;
+@property (nonatomic, strong) UIButton          *btnSetGear;
+@property (nonatomic, strong) XWSetInfo         *setInfo;
+
+- (void)searchBtn:(UIButton *)btn;
+- (void)setGearBtn:(UIButton *)btn;
 
 @end

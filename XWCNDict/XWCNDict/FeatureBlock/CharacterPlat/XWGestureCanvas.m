@@ -92,6 +92,7 @@
 
 - (void)releaseSinoFont {
     if (self.sinoFont) {
+        self.imgvBackground.image = nil;
         [self.sinoFont releaseSinoFont_AnimationInfo];
     }
 }

@@ -30,12 +30,26 @@
 
         _imgNameCharacterPlat   = @"font_plat";
         _imgNameCharSave        = @"sabeBtn";
+        _imgNameSetGear         = @"shezhi";
+        _imgNameTabbarMask      = @"tabbarmask";
+        _imgNameCharPlatMask    = @"shademask";
+        
 
         _arrInfoImgName = [NSMutableArray array];
         for (int i=1;i<=4; i++) {
             UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"info2-%d",i]];
             [_arrInfoImgName addObject:image];
         }
+
+        //读取unicode字符文件
+        NSString *unicodePath = [[NSBundle mainBundle] pathForResource:@"unicodeFont" ofType:@"plist"];
+        NSArray *rootArr = [NSArray arrayWithContentsOfFile:unicodePath];
+        _arrUnicodeFont = [[NSMutableArray alloc] init];
+        for (int i=1; i<rootArr.count; i++) {
+            [_arrUnicodeFont addObject:[[rootArr objectAtIndex:i] objectAtIndex:2]];
+        }
+
+
 
     }
     return self;

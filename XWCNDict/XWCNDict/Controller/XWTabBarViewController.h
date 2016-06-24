@@ -20,4 +20,13 @@
 
 - (void)setItem:(XWSegmentItem *)itemInfo atIndex:(NSInteger)index;
 
+
+@end
+
+
+/// 利用类别添加成员变量。
+@interface UIViewController (XWTabBarViewControllerSupport)
+
+@property (nonatomic, strong, readonly)XWTabBarViewController * tabBarVC;
+
 @end

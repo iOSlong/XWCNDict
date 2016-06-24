@@ -34,7 +34,8 @@
 
         _selectedImgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, superRect.size.height, superRect.size.height)];
 
-        _fontCharLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, superRect.size.height, superRect.size.height)];
+        _fontCharLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, superRect.size.height * 0.7, superRect.size.height * 0.7)];
+        _fontCharLabel.center = CGPointMake(_normalImgView.width * 0.5, _normalImgView.height*0.45);
         _fontCharLabel.textColor = [UIColor whiteColor];
         _fontCharLabel.textAlignment = NSTextAlignmentCenter;
         //        _fontCharLabel.font = [UIFont systemFontOfSize:superRect.size.height/1.5];
@@ -46,6 +47,7 @@
 
 
         _rightLabel = [[UILabel alloc] initWithFrame:CGRectMake(superRect.size.height*0.8, 0, superRect.size.width-superRect.size.height*0.8, superRect.size.height*31.0/37.0)];
+        _rightLabel.centerY = superRect.size.height * 0.4;
         _rightLabel.textColor = [UIColor whiteColor];
         _rightLabel.font = [UIFont fontWithName:@"STZhuankai" size:superRect.size.height/2];
         _rightLabel.textAlignment = NSTextAlignmentCenter;

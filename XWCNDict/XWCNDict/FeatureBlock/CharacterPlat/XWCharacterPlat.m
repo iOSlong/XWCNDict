@@ -11,17 +11,20 @@
 #import "XWCharacterInfoView.h"
 #import "XWStrokeInfoView.h"
 #import "XWPinyinInfoView.h"
+#import "XWRadicalInfoView.h"
 
 @interface XWCharacterPlat ()<XWCharPlatSegmentDelegate,XWGestureCanvasDelegate>
 @property (nonatomic, strong) XWCharPlatSegment     *infoSegment;
 @property (nonatomic, strong) XWCharacterInfoView   *characterInfoView;
 @property (nonatomic, strong) XWStrokeInfoView      *strokeInfoView;
 @property (nonatomic, strong) XWPinyinInfoView      *pinyinInfoView;
+@property (nonatomic, strong) XWRadicalInfoView     *radicalInfoView;
 @end
 
 @implementation XWCharacterPlat{
     XWSetInfo *_setInfo;
-
+    __block BOOL needFreshRadical;
+    __block BOOL needFreshPinyin;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -32,6 +35,8 @@
         self.userInteractionEnabled = YES;
         
         _setInfo = [XWSetInfo shareSetInfo];
+        needFreshPinyin     = YES;
+        needFreshRadical    = YES;
 
 
         self.image = [UIImage imageNamed:_setInfo.imgNameCharacterPlat];
@@ -46,6 +51,7 @@
         [self addSubview:self.characterInfoView];
         [self addSubview:self.strokeInfoView];
         [self addSubview:self.pinyinInfoView];
+        [self addSubview:self.radicalInfoView];
         /// UI布局的部分都搁置到最前面最好。
         [self configureMigeImageView];
 
@@ -62,8 +68,13 @@
         __weak __typeof(self)weakSelf = self;
         [_characterInfoView charInfo:^(NSString *charPinyin) {
             __strong __typeof(weakSelf)strongSelf = weakSelf;
-            strongSelf.fontCharPinyin = charPinyin;
-            NSLog(@"%@",charPinyin);
+            if ([strongSelf.fontCharPinyin isEqualToString:charPinyin]) {
+                /// 没有必要更新pinyinInfoView
+            }else{
+                strongSelf.fontCharPinyin = charPinyin;
+                NSLog(@"更新pinyinInfoView %@",charPinyin);
+                [strongSelf.pinyinInfoView reloadPinyinWith:strongSelf.fontChar pinyin:charPinyin];
+            }
         }];
     }
     return _characterInfoView;
@@ -82,12 +93,42 @@
 - (XWPinyinInfoView *)pinyinInfoView {
     if (!_pinyinInfoView) {
         _pinyinInfoView = [[XWPinyinInfoView alloc] initWithFrame:CGRectMake(896/2 * kFixed_rate, 330/2 * kFixed_rate, 768/2 * kFixed_rate, 260/2 * kFixed_rate)];
+        __weak typeof(self)weakSelf = self;
         [_pinyinInfoView pinyinInfo:^(NSString *fontChar, NSString *pinyin) {
+            __strong typeof(weakSelf) strongSelf  = weakSelf;
             NSLog(@"fontchar:%@, pinyin:%@",fontChar, pinyin);
+            if ([strongSelf.fontChar isEqualToString:fontChar]) {
+                /// 没有必要刷新当前字符
+            }else{
+                needFreshPinyin     = NO;
+                needFreshRadical    = YES;
+                strongSelf.fontChar = fontChar;
+            }
         }];
         [_pinyinInfoView setHidden:YES];
     }
     return _pinyinInfoView;
+}
+
+- (XWRadicalInfoView *)radicalInfoView {
+    if (!_radicalInfoView) {
+        _radicalInfoView = [[XWRadicalInfoView alloc] initWithFrame:CGRectMake(896/2 * kFixed_rate, 320/2 * kFixed_rate, 780/2 * kFixed_rate, 285/2 * kFixed_rate)];
+        __weak __typeof(self)weakSelf = self;
+        [_radicalInfoView radicalInfo:^(NSString *fontChar) {
+            __strong __typeof(weakSelf)strongSelf = weakSelf;
+            if ([strongSelf.fontChar isEqualToString:fontChar]) {
+                /// 没有必要刷新当前字符
+            }else{
+                needFreshRadical    = NO;
+                needFreshPinyin     = YES;
+                strongSelf.fontCharPinyin = nil;
+                strongSelf.fontChar = fontChar;
+            }
+            NSLog(@"radicalFont %@",fontChar);
+        }];
+        [_radicalInfoView setHidden:YES];
+    }
+    return _radicalInfoView;
 }
 
 - (void)configureMigeImageView {
@@ -128,27 +169,27 @@
         [_characterInfoView setHidden:NO];
         [_strokeInfoView setHidden:YES];
         [_pinyinInfoView setHidden:YES];
-//        [_radical_infoView setHidden:YES];
+        [_radicalInfoView setHidden:YES];
     }
     if (index==1) {
         [_strokeInfoView setHidden:NO];
         [_characterInfoView setHidden:YES];
         [_pinyinInfoView setHidden:YES];
-//        [_radical_infoView setHidden:YES];
+        [_radicalInfoView setHidden:YES];
 
     }
     if (index==2) {
         [_pinyinInfoView setHidden:NO];
         [_characterInfoView setHidden:YES];
         [_strokeInfoView setHidden:YES];
-//        [_radical_infoView setHidden:YES];
+        [_radicalInfoView setHidden:YES];
 
     }
     if (index==3) {
-//        [_radical_infoView setHidden:NO];
-//        [_pinyin_infoView setHidden:YES];
-//        [_character_infoView setHidden:YES];
-//        [_stroke_infoView setHidden:YES];
+        [_radicalInfoView setHidden:NO];
+        [_pinyinInfoView setHidden:YES];
+        [_characterInfoView setHidden:YES];
+        [_strokeInfoView setHidden:YES];
 
     }
     self.imgvInfoBanner.image = [_setInfo.arrInfoImgName objectAtIndex:index];
@@ -180,8 +221,6 @@
     if (fontChar) {
         [self characterInfoShow];
     }
-
-    
 }
 
 
@@ -202,7 +241,13 @@
 
     [self reloadStrokeInfoWith:canvas.sinoFont];
 
-    [self.pinyinInfoView reloadPinyinWith:self.fontChar pinyin:self.fontCharPinyin];
+    if (needFreshPinyin) {
+        [self.pinyinInfoView reloadPinyinWith:self.fontChar pinyin:self.fontCharPinyin];
+    }
+
+    if (needFreshRadical) {
+        [self.radicalInfoView reloadRadicalWith:self.fontChar];
+    }
 
 }
 
@@ -221,5 +266,27 @@
         [_strokeInfoView setHidden:NO];
     }
 }
+
+
+
+- (void)stopOtherThreads {
+    [self.fontCanvas.sinoFont drawPause];
+
+    [UIView animateWithDuration:0.3 animations:^{
+        self.fontCanvas.sinoFont.imageCanvas.image = nil;
+    }];
+
+    [self.fontCanvas.sinoFont releaseSinoFont_AnimationInfo];
+
+}
+- (void)readyForRelease {
+    [self stopOtherThreads];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+
+}
+
+
+
+
 
 @end

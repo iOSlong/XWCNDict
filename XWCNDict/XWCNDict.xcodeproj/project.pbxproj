@@ -126,6 +126,16 @@
 		014B826F1D1C446900C6D841 /* XWStrokeInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 014B826E1D1C446900C6D841 /* XWStrokeInfoView.m */; };
 		014B82721D1C58C900C6D841 /* XWPinyinInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 014B82711D1C58C900C6D841 /* XWPinyinInfoView.m */; };
 		014B82751D1C5A7C00C6D841 /* XWPinyinBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 014B82741D1C5A7C00C6D841 /* XWPinyinBtn.m */; };
+		014B82781D1C684200C6D841 /* XWRadicalInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 014B82771D1C684200C6D841 /* XWRadicalInfoView.m */; };
+		014B827B1D1C68F500C6D841 /* XWRadicalBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 014B827A1D1C68F500C6D841 /* XWRadicalBtn.m */; };
+		014B82841D1CFFB700C6D841 /* shezhi.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B827C1D1CFFB700C6D841 /* shezhi.png */; };
+		014B82851D1CFFB700C6D841 /* poemNavMask.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B827D1D1CFFB700C6D841 /* poemNavMask.png */; };
+		014B82861D1CFFB700C6D841 /* poemMask.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B827E1D1CFFB700C6D841 /* poemMask.png */; };
+		014B82871D1CFFB700C6D841 /* colorKeyboardimg.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B827F1D1CFFB700C6D841 /* colorKeyboardimg.png */; };
+		014B82881D1CFFB700C6D841 /* bofang.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B82801D1CFFB700C6D841 /* bofang.png */; };
+		014B82891D1CFFB700C6D841 /* poemSetBackImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B82811D1CFFB700C6D841 /* poemSetBackImg.png */; };
+		014B828A1D1CFFB700C6D841 /* zanting.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B82821D1CFFB700C6D841 /* zanting.png */; };
+		014B828B1D1CFFB700C6D841 /* playing.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B82831D1CFFB700C6D841 /* playing.png */; };
 		0170D2881D1C135B00275F70 /* UIView+XWPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0170D2871D1C135B00275F70 /* UIView+XWPosition.m */; };
 		0170D28C1D1C2B1A00275F70 /* XWCharacterInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0170D28B1D1C2B1A00275F70 /* XWCharacterInfoView.m */; };
 		0170D2911D1C3A8F00275F70 /* STZhuankai.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0170D2901D1C3A8F00275F70 /* STZhuankai.ttf */; };
@@ -291,6 +301,18 @@
 		014B82711D1C58C900C6D841 /* XWPinyinInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWPinyinInfoView.m; sourceTree = "<group>"; };
 		014B82731D1C5A7C00C6D841 /* XWPinyinBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWPinyinBtn.h; sourceTree = "<group>"; };
 		014B82741D1C5A7C00C6D841 /* XWPinyinBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWPinyinBtn.m; sourceTree = "<group>"; };
+		014B82761D1C684200C6D841 /* XWRadicalInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWRadicalInfoView.h; sourceTree = "<group>"; };
+		014B82771D1C684200C6D841 /* XWRadicalInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWRadicalInfoView.m; sourceTree = "<group>"; };
+		014B82791D1C68F500C6D841 /* XWRadicalBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWRadicalBtn.h; sourceTree = "<group>"; };
+		014B827A1D1C68F500C6D841 /* XWRadicalBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWRadicalBtn.m; sourceTree = "<group>"; };
+		014B827C1D1CFFB700C6D841 /* shezhi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shezhi.png; sourceTree = "<group>"; };
+		014B827D1D1CFFB700C6D841 /* poemNavMask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = poemNavMask.png; sourceTree = "<group>"; };
+		014B827E1D1CFFB700C6D841 /* poemMask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = poemMask.png; sourceTree = "<group>"; };
+		014B827F1D1CFFB700C6D841 /* colorKeyboardimg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = colorKeyboardimg.png; sourceTree = "<group>"; };
+		014B82801D1CFFB700C6D841 /* bofang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bofang.png; sourceTree = "<group>"; };
+		014B82811D1CFFB700C6D841 /* poemSetBackImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = poemSetBackImg.png; sourceTree = "<group>"; };
+		014B82821D1CFFB700C6D841 /* zanting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zanting.png; sourceTree = "<group>"; };
+		014B82831D1CFFB700C6D841 /* playing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playing.png; sourceTree = "<group>"; };
 		0170D2861D1C135B00275F70 /* UIView+XWPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XWPosition.h"; sourceTree = "<group>"; };
 		0170D2871D1C135B00275F70 /* UIView+XWPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XWPosition.m"; sourceTree = "<group>"; };
 		0170D28A1D1C2B1A00275F70 /* XWCharacterInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWCharacterInfoView.h; sourceTree = "<group>"; };
@@ -442,6 +464,14 @@
 				010988561D08701C00C1BA84 /* info.png */,
 				010988571D08701C00C1BA84 /* navbackground.png */,
 				0109887F1D08701C00C1BA84 /* search.png */,
+				014B827C1D1CFFB700C6D841 /* shezhi.png */,
+				014B827D1D1CFFB700C6D841 /* poemNavMask.png */,
+				014B827E1D1CFFB700C6D841 /* poemMask.png */,
+				014B827F1D1CFFB700C6D841 /* colorKeyboardimg.png */,
+				014B82801D1CFFB700C6D841 /* bofang.png */,
+				014B82811D1CFFB700C6D841 /* poemSetBackImg.png */,
+				014B82821D1CFFB700C6D841 /* zanting.png */,
+				014B82831D1CFFB700C6D841 /* playing.png */,
 				0109892E1D0B10B700C1BA84 /* characters */,
 				010988D01D0873A900C1BA84 /* navbarItem */,
 				010988781D08701C00C1BA84 /* plistFile */,
@@ -505,6 +535,8 @@
 				0170D2931D1C417700275F70 /* XWStrokeBtn.m */,
 				014B82731D1C5A7C00C6D841 /* XWPinyinBtn.h */,
 				014B82741D1C5A7C00C6D841 /* XWPinyinBtn.m */,
+				014B82791D1C68F500C6D841 /* XWRadicalBtn.h */,
+				014B827A1D1C68F500C6D841 /* XWRadicalBtn.m */,
 				0109888E1D08701C00C1BA84 /* XWNavSegmentView.h */,
 				0109888F1D08701C00C1BA84 /* XWNavSegmentView.m */,
 				010988901D08701C00C1BA84 /* XWSectionPlatView.h */,
@@ -643,6 +675,8 @@
 				014B826E1D1C446900C6D841 /* XWStrokeInfoView.m */,
 				014B82701D1C58C900C6D841 /* XWPinyinInfoView.h */,
 				014B82711D1C58C900C6D841 /* XWPinyinInfoView.m */,
+				014B82761D1C684200C6D841 /* XWRadicalInfoView.h */,
+				014B82771D1C684200C6D841 /* XWRadicalInfoView.m */,
 			);
 			path = infoSection;
 			sourceTree = "<group>";
@@ -734,6 +768,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				014B82841D1CFFB700C6D841 /* shezhi.png in Resources */,
 				0109897B1D0B10F900C1BA84 /* colorkeyboard.png in Resources */,
 				010989751D0B10F900C1BA84 /* box_1r.png in Resources */,
 				0109892B1D0A5A4700C1BA84 /* CodeMapping.dat in Resources */,
@@ -745,12 +780,14 @@
 				010989761D0B10F900C1BA84 /* box_2r.png in Resources */,
 				010988A21D08701C00C1BA84 /* navbackground.png in Resources */,
 				010989641D0B10ED00C1BA84 /* font_plat.png in Resources */,
+				014B828B1D1CFFB700C6D841 /* playing.png in Resources */,
 				010989001D0873A900C1BA84 /* bar_a7.png in Resources */,
 				010988A11D08701C00C1BA84 /* info.png in Resources */,
 				010988F91D0873A900C1BA84 /* 111.png in Resources */,
 				010989021D0873A900C1BA84 /* bar_d1.png in Resources */,
 				010989051D0873A900C1BA84 /* bar_d4.png in Resources */,
 				010988FB1D0873A900C1BA84 /* bar_a2.png in Resources */,
+				014B82871D1CFFB700C6D841 /* colorKeyboardimg.png in Resources */,
 				010988FA1D0873A900C1BA84 /* bar_a1.png in Resources */,
 				0109890D1D0873A900C1BA84 /* nav1.png in Resources */,
 				010988C21D08701D00C1BA84 /* pinyin.plist in Resources */,
@@ -768,6 +805,7 @@
 				0109890E1D0873A900C1BA84 /* navbackground.png in Resources */,
 				010987D01D086DFA00C1BA84 /* LaunchScreen.storyboard in Resources */,
 				010989631D0B10ED00C1BA84 /* btn_ele4.png in Resources */,
+				014B82861D1CFFB700C6D841 /* poemMask.png in Resources */,
 				0109894F1D0B10ED00C1BA84 /* seg3.png in Resources */,
 				010989561D0B10ED00C1BA84 /* cir2.png in Resources */,
 				010989791D0B10F900C1BA84 /* box_3.png in Resources */,
@@ -779,10 +817,12 @@
 				010988C61D08701D00C1BA84 /* radicalPinyin.plist in Resources */,
 				010989591D0B10ED00C1BA84 /* info2-2.png in Resources */,
 				010988F81D0873A900C1BA84 /* 1-8.png in Resources */,
+				014B82891D1CFFB700C6D841 /* poemSetBackImg.png in Resources */,
 				010989721D0B10F900C1BA84 /* 11.png in Resources */,
 				010989741D0B10F900C1BA84 /* anniu.png in Resources */,
 				010988FE1D0873A900C1BA84 /* bar_a5.png in Resources */,
 				0109897A1D0B10F900C1BA84 /* box_3r.png in Resources */,
+				014B82881D1CFFB700C6D841 /* bofang.png in Resources */,
 				010988C51D08701D00C1BA84 /* radical.plist in Resources */,
 				010988FC1D0873A900C1BA84 /* bar_a3.png in Resources */,
 				010988F21D0873A900C1BA84 /* 1-2.png in Resources */,
@@ -793,6 +833,7 @@
 				010987CD1D086DFA00C1BA84 /* Assets.xcassets in Resources */,
 				010989091D0873A900C1BA84 /* bar_d8.png in Resources */,
 				010989011D0873A900C1BA84 /* bar_a8.png in Resources */,
+				014B82851D1CFFB700C6D841 /* poemNavMask.png in Resources */,
 				010989061D0873A900C1BA84 /* bar_d5.png in Resources */,
 				010988F41D0873A900C1BA84 /* 1-4.png in Resources */,
 				010989041D0873A900C1BA84 /* bar_d3.png in Resources */,
@@ -811,6 +852,7 @@
 				010988F51D0873A900C1BA84 /* 1-5.png in Resources */,
 				010989081D0873A900C1BA84 /* bar_d7.png in Resources */,
 				0109894C1D0B10ED00C1BA84 /* search.png in Resources */,
+				014B828A1D1CFFB700C6D841 /* zanting.png in Resources */,
 				0109895D1D0B10ED00C1BA84 /* jing.png in Resources */,
 				010989621D0B10ED00C1BA84 /* btn_ele3.png in Resources */,
 				010989551D0B10ED00C1BA84 /* cir1.png in Resources */,
@@ -884,6 +926,7 @@
 				010988CE1D08701D00C1BA84 /* XWNavSegmentView.m in Sources */,
 				010988941D08701C00C1BA84 /* XWCollectionViewController.m in Sources */,
 				010988981D08701C00C1BA84 /* XWPhoneticViewController.m in Sources */,
+				014B827B1D1C68F500C6D841 /* XWRadicalBtn.m in Sources */,
 				0109891E1D08792A00C1BA84 /* BmpDataManager.mm in Sources */,
 				0109889C1D08701C00C1BA84 /* XWYizijingViewController.m in Sources */,
 				010987C81D086DFA00C1BA84 /* ViewController.m in Sources */,
@@ -903,6 +946,7 @@
 				01098A4A1D1AD4CF00C1BA84 /* XWGestureCanvas.m in Sources */,
 				010989211D08792A00C1BA84 /* StrokeFontIO.mm in Sources */,
 				014B82721D1C58C900C6D841 /* XWPinyinInfoView.m in Sources */,
+				014B82781D1C684200C6D841 /* XWRadicalInfoView.m in Sources */,
 				010988971D08701C00C1BA84 /* XWNotebookViewController.m in Sources */,
 				010988CC1D08701D00C1BA84 /* XWBounceBox.m in Sources */,
 				01098A4E1D1AE77B00C1BA84 /* XWSetInfo.m in Sources */,

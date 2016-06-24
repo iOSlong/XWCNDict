@@ -19,6 +19,7 @@
     self = [super init];
     if (self) {
         NSLog(@"%s",__FUNCTION__);
+        _setInfo = [XWSetInfo shareSetInfo];
     }
     return self;
 }
@@ -29,8 +30,62 @@
     [self setBasicView];
 
     self.platViewModel = XWPlatViewModelCharacters;
+
     
 }
+
+#pragma mark - 添加收索条 -
+-(void)addSearchBar
+{
+    UIImage *searchImg = [UIImage imageNamed:@"search.png"];
+    CGFloat sw = CGImageGetWidth(searchImg.CGImage)/2 * kFixed_rate;
+    CGFloat sh = CGImageGetHeight(searchImg.CGImage)/2 * kFixed_rate;
+
+    self.textfield = [[UITextField alloc] init];
+    self.textfield.frame = CGRectMake(744 * kFixed_rate, (235-52)*kFixed_rate, sw, sh);
+    self.textfield.placeholder = @"Search";
+    self.textfield.keyboardType = UIKeyboardTypeWebSearch;
+//    self.textfield.delegate = self;
+    self.textfield.returnKeyType = UIReturnKeyGo;
+    [self.textfield setBackground:searchImg];
+
+    [self.view addSubview:_textfield];
+    UIButton *shv  = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, sh, sh)];
+    [shv addTarget:self action:@selector(searchBtn:) forControlEvents:UIControlEventTouchUpInside];
+    self.textfield.leftView = shv;
+
+    self.textfield.leftViewMode = UITextFieldViewModeAlways;
+    
+}
+
+- (void)searchBtn:(UIButton *)btn;
+{
+    
+}
+
+
+#pragma  mark - 设置按钮
+- (void)addSetGear {
+    self.btnSetGear = [[UIButton alloc] initWithFrame:CGRectMake(170/2 * kFixed_rate, 1359/2 * kFixed_rate, 52/2 * kFixed_rate, 52/2 * kFixed_rate)];
+    //    _setGearView.center = CGPointMake(1800/2, 1370/2);
+    self.btnSetGear.alpha = 0.8;
+    [self.btnSetGear setBackgroundImage:[UIImage imageNamed:_setInfo.imgNameSetGear] forState:UIControlStateNormal];
+    [self.btnSetGear addTarget:self action:@selector(setGearBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.btnSetGear];
+    //    [self.view bringSubviewToFront:_setGearView];
+
+//    _charSet = [[CharacterSet alloc] initWithFrame:CGRectMake(-615.0/2-300, 554/2, 0, 0)];
+    //    [_cSetView setHidden:YES];
+    //    _charSet.backgroundColor = [UIColor redColor];
+//    [self.view addSubview:_charSet];
+
+}
+
+- (void)setGearBtn:(UIButton *)btn {
+
+}
+
+
 
 #pragma mark - Configure XWSectionPlatView
 - (XWSectionPlatView *)sectionPlatView {
@@ -73,6 +128,9 @@
         }
             break;
     }
+
+    [self addSearchBar];
+    [self addSetGear];
 }
 
 

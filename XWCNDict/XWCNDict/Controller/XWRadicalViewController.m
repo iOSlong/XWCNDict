@@ -14,7 +14,7 @@
 @interface XWRadicalViewController ()<UIScrollViewDelegate,UITextFieldDelegate>
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) XWBounceBox *bounceBox;
-@property (nonatomic, strong) UITextField *textfiled;
+//@property (nonatomic, strong) UITextField *textfiled;
 @property (nonatomic, strong) NSArray *rootKeys;
 @property (nonatomic, strong) NSDictionary *rootDict;
 @property (nonatomic, strong) NSMutableArray *arrRadical;
@@ -42,7 +42,7 @@
 
 -(void)viewWillDisappear:(BOOL)animated
 {
-    [self.textfiled resignFirstResponder];
+    [self.textfield resignFirstResponder];
 }
 
 
@@ -52,10 +52,9 @@
 
     [self configureSectionPlatView];
 
-    [self addSearchBar];
-    
-    
+    self.textfield.delegate = self;
 }
+
 - (void)configureSectionPlatView {
     self.platViewModel = XWPlatViewModelRadical;
     
@@ -275,67 +274,38 @@
 }
 
 
-
-
-
-
-
-#pragma mark - 添加收索条 -
--(void)addSearchBar
-{
-    UIImage *searchImg = [UIImage imageNamed:@"search.png"];
-    CGFloat sw = CGImageGetWidth(searchImg.CGImage)/2 * kFixed_rate;
-    CGFloat sh = CGImageGetHeight(searchImg.CGImage)/2 * kFixed_rate;
-
-    self.textfiled = [[UITextField alloc] init];
-    self.textfiled.frame = CGRectMake(744 * kFixed_rate, (235-52)*kFixed_rate, sw, sh);
-    self.textfiled.placeholder = @"Search";
-    self.textfiled.keyboardType = UIKeyboardTypeWebSearch;
-    self.textfiled.delegate = self;
-    self.textfiled.returnKeyType = UIReturnKeyGo;
-    [self.textfiled setBackground:searchImg];
-    
-    [self.view addSubview:_textfiled];
-    UIButton *shv  = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, sh, sh)];
-    [shv addTarget:self action:@selector(searchBtn:) forControlEvents:UIControlEventTouchUpInside];
-    self.textfiled.leftView = shv;
-    
-    self.textfiled.leftViewMode = UITextFieldViewModeAlways;
-    
-}
-
+#pragma mark - SearchBar Events
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
 
 
-    if (!self.textfiled.text.length) {
+    if (!self.textfield.text.length) {
         return YES;
     }
-    [self doSearchLocation:_textfiled.text];
+    [self doSearchLocation:self.textfield.text];
 
 
-    _textfiled.text = nil;
+    self.textfield.text = nil;
 
 
     return YES;
 }
 
--(void)searchBtn:(UIButton *)sender
+- (void)searchBtn:(UIButton *)btn
 {
 
-    [self.textfiled resignFirstResponder];
+    [self.textfield resignFirstResponder];
     //    printf("char:%s\n",[tf.text UTF8String]);
 
-    if (!self.textfiled.text.length) {
+    if (!self.textfield.text.length) {
         return;
     }
 
-    [self doSearchLocation:_textfiled.text];
+    [self doSearchLocation:self.textfield.text];
 
 
-    _textfiled.text = nil;
-
+    self.textfield.text = nil;
 }
 
 -(void)doSearchLocation:(NSString *)title;
