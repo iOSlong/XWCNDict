@@ -9,6 +9,7 @@
 #import "XWCharactersViewController.h"
 #import "XWTabBarViewController.h"
 #import "XWCharacterPlat.h"
+#import "XWCharacterSetView.h"
 
 
 
@@ -26,6 +27,7 @@ typedef struct pageIndex{
 @property (nonatomic) UIPageControl     *pageControl;
 @property (nonatomic) XWCharacterPlat   *currentCharPlat;
 @property (nonatomic) NSMutableArray    *arrCharPlat;
+@property (nonatomic) XWCharacterSetView    *characterSetView;
 
 @end
 
@@ -47,14 +49,12 @@ typedef struct pageIndex{
         _imgvTabBarMask.alpha = 0.8;
         _imgvTabBarMask.userInteractionEnabled = YES;
         [_imgvTabBarMask setHidden:NO];
-        [self.tabBarVC.view addSubview:_imgvTabBarMask];
 
         _imgvPageMask = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kScreenSize.width, kScreenSize.height)];
         _imgvPageMask.image = [UIImage imageNamed:self.setInfo.imgNameTabbarMask];
         _imgvPageMask.alpha = 0.8;
         _imgvPageMask.userInteractionEnabled = YES;
         [_imgvPageMask setHidden:YES];
-        [self.view addSubview:_imgvPageMask];
 
         [_imgvPageMask setHidden:YES];
         [_imgvTabBarMask setHidden:YES];
@@ -67,15 +67,20 @@ typedef struct pageIndex{
         [_imgvTabBarMask addGestureRecognizer:tapGOne];
         [_imgvPageMask addGestureRecognizer:tapTwo];
 
+        /// 注意，在VC 里面的init方法中，不能执行 addSubview的UI绘制操作。
     }
     return self;
 }
 
 - (void)maskTap:(UIGestureRecognizer *)gestureR {
-    [_imgvPageMask setHidden:YES];
-    [_imgvTabBarMask setHidden:YES];
-    _imgvTabBarMask.alpha   = 0;
-    _imgvPageMask.alpha     = 0;
+    [UIView animateWithDuration:0.5f animations:^{
+        self.characterSetView.frame = CGRectMake((-607.0/2-300)*kFixed_rate, 554/2 * kFixed_rate, self.characterSetView.width, self.characterSetView.height);
+        _imgvTabBarMask.alpha   = 0;
+        _imgvPageMask.alpha     = 0;
+    } completion:^(BOOL finished) {
+        [_imgvPageMask setHidden:YES];
+        [_imgvTabBarMask setHidden:YES];
+    }];
 }
 
 - (void)viewDidLoad {
@@ -88,7 +93,19 @@ typedef struct pageIndex{
     [self.view addSubview:self.pageControl];
 
     self.textfield.delegate = self;
-    
+
+    [self.view addSubview:_imgvPageMask];
+    [self.tabBarVC.view addSubview:_imgvTabBarMask];
+    [self.view addSubview:self.characterSetView];
+
+
+}
+
+- (XWCharacterSetView *)characterSetView {
+    if (!_characterSetView) {
+        _characterSetView = [[XWCharacterSetView alloc] initWithFrame:CGRectMake((-615.0/2-300)*kFixed_rate, 554/2 * kFixed_rate, 0, 0)];
+    }
+    return _characterSetView;
 }
 
 - (UIPageControl *)pageControl {
@@ -149,9 +166,6 @@ typedef struct pageIndex{
 
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.5f];
-//    _charSet.frame = CGRectMake(0, 552/2, _charSet.frame.size.width, _charSet.frame.size.height);
-
-    //    _charSet.backgroundColor = [UIColor yellowColor];
 
     [self displayMask];
 
@@ -160,41 +174,13 @@ typedef struct pageIndex{
 
 - (void)displayMask {
     [self.view bringSubviewToFront:_imgvPageMask];
+    [self.view bringSubviewToFront:self.characterSetView];
     [self.tabBarVC.view bringSubviewToFront:_imgvTabBarMask];
     [_imgvTabBarMask setHidden:NO];
     [_imgvPageMask setHidden:NO];
     _imgvPageMask.alpha = 0.8;
     _imgvTabBarMask.alpha = 0.8;
-
-//    [self.view bringSubviewToFront:_charSet];
-
-//    for (UIView *view in self.view.subviews)
-//    {
-//
-//        if ([view isKindOfClass:[XWCharacterPlat class]])
-//        {
-//            continue;
-//        }
-//        else
-//        {
-//            //            view.alpha = 0.3;
-//            view.userInteractionEnabled = NO;
-//            //            self.xueInferiteTabBarController.view.alpha = 0.3;
-//            //if need all screen be mask，then can use method of the following。
-//            //but you should make the _maskImgView.frame.size.height = tabbar.height.
-//            //if need only ViewController uder the TabBarConroller,will be easy more!
-//            //            [self.xueInferiteTabBarController.view addSubview:_tabbarmaskView];
-//        }
-////        _setGearView.userInteractionEnabled = YES;
-////        _setGearView.alpha = 1;
-//    }
-
-//    [self.tabBarVC setInteruserble:NO];
-//
-    [self.tabBarVC.view addSubview:_imgvTabBarMask];
-
-//    self.view.userInteractionEnabled = YES;
-
+    self.characterSetView.frame = CGRectMake(0, 552/2 * kFixed_rate, self.characterSetView.width, self.characterSetView.height);
 }
 
 

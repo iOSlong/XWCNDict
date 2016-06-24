@@ -14,19 +14,22 @@ PODS:
     - ReactiveCocoa/Core
     - Result (~> 1.0)
   - Result (1.0.2)
+  - SevenSwitch (2.0.0)
   - UIView+Positioning (1.1)
 
 DEPENDENCIES:
   - FMDB (~> 2.6)
   - ReactiveCocoa (~> 4.0.4-alpha-4)
+  - SevenSwitch (~> 2.0.0)
   - UIView+Positioning (~> 1.1)
 
 SPEC CHECKSUMS:
   FMDB: c1968bab3ab0aed38f66cb778ae1e7fa9a652b6e
   ReactiveCocoa: e459ea92099447802df20c4735e31e8139b06094
   Result: dd3dd71af3fa2e262f1a999e14fba2c25ec14f16
+  SevenSwitch: 4ae92ffcad0ef93b38553b39a25e753c94eb7847
   UIView+Positioning: e93fe9e3186d1ed7d60e344aa12787911e902056
 
-PODFILE CHECKSUM: f46ec38a6647733f4044133e1afc45d70c4444dc
+PODFILE CHECKSUM: 05ff0ce27b7c50b226d03efc0f82bdd5cac990f9
 
 COCOAPODS: 1.0.1

@@ -13,6 +13,7 @@
 #import "XWPinyinInfoView.h"
 #import "XWRadicalInfoView.h"
 
+
 @interface XWCharacterPlat ()<XWCharPlatSegmentDelegate,XWGestureCanvasDelegate>
 @property (nonatomic, strong) XWCharPlatSegment     *infoSegment;
 @property (nonatomic, strong) XWCharacterInfoView   *characterInfoView;
@@ -56,9 +57,32 @@
         [self configureMigeImageView];
 
 
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeBoxStyle) name:@"changeBoxStyle" object:nil];
+
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(charColorChange) name:@"Character_Radical_Color" object:nil];
+
+
     }
     return self;
 }
+
+#pragma mark - NotificationCenter notiEvent
+- (void)changeBoxStyle {
+    UIImage *image = [UIImage imageNamed:_setInfo.imgNameField];
+    self.migeImgView.image = image;
+
+}
+- (void)charColorChange {
+    self.imgvSaveControl.image = [self.fontCanvas.sinoFont getRadicalImageWithSize:CGSizeMake(50, 50) bottomColor:[UIColor colorWithRed:141.0/255 green:198.0/255 blue:228.0/255 alpha:1] radicalColor:_setInfo.color_radical];
+
+    if (_setInfo.color_radical&&!_setInfo.color_char) {
+        _setInfo.color_char = [UIColor blackColor];
+    }
+    self.staticImg = [self.fontCanvas.sinoFont getBaseImageWithColor:_setInfo.color_char];
+
+    [self stopOtherThreads];
+}
+
 
 - (XWCharacterInfoView *)characterInfoView {
     if (!_characterInfoView) {
@@ -274,14 +298,19 @@
 
     [UIView animateWithDuration:0.3 animations:^{
         self.fontCanvas.sinoFont.imageCanvas.image = nil;
+        self.fontCanvas.imgvBackground.image = self.staticImg;
     }];
 
     [self.fontCanvas.sinoFont releaseSinoFont_AnimationInfo];
 
 }
+
 - (void)readyForRelease {
     [self stopOtherThreads];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"Character_Radical_Color" object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"changeBoxStyle" object:nil];
 
 }
 

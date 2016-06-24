@@ -136,6 +136,10 @@
 		014B82891D1CFFB700C6D841 /* poemSetBackImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B82811D1CFFB700C6D841 /* poemSetBackImg.png */; };
 		014B828A1D1CFFB700C6D841 /* zanting.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B82821D1CFFB700C6D841 /* zanting.png */; };
 		014B828B1D1CFFB700C6D841 /* playing.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B82831D1CFFB700C6D841 /* playing.png */; };
+		014B828E1D1D222D00C6D841 /* XWCharacterSetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 014B828D1D1D222C00C6D841 /* XWCharacterSetView.m */; };
+		014B82911D1D227900C6D841 /* XWColorKeyBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 014B82901D1D227900C6D841 /* XWColorKeyBoard.m */; };
+		014B82941D1D228D00C6D841 /* XWColorBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 014B82931D1D228D00C6D841 /* XWColorBtn.m */; };
+		014B82971D1D298900C6D841 /* XWSevenSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014B82961D1D298900C6D841 /* XWSevenSwitch.swift */; };
 		0170D2881D1C135B00275F70 /* UIView+XWPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0170D2871D1C135B00275F70 /* UIView+XWPosition.m */; };
 		0170D28C1D1C2B1A00275F70 /* XWCharacterInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0170D28B1D1C2B1A00275F70 /* XWCharacterInfoView.m */; };
 		0170D2911D1C3A8F00275F70 /* STZhuankai.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0170D2901D1C3A8F00275F70 /* STZhuankai.ttf */; };
@@ -313,6 +317,14 @@
 		014B82811D1CFFB700C6D841 /* poemSetBackImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = poemSetBackImg.png; sourceTree = "<group>"; };
 		014B82821D1CFFB700C6D841 /* zanting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zanting.png; sourceTree = "<group>"; };
 		014B82831D1CFFB700C6D841 /* playing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playing.png; sourceTree = "<group>"; };
+		014B828C1D1D222C00C6D841 /* XWCharacterSetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWCharacterSetView.h; sourceTree = "<group>"; };
+		014B828D1D1D222C00C6D841 /* XWCharacterSetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWCharacterSetView.m; sourceTree = "<group>"; };
+		014B828F1D1D227900C6D841 /* XWColorKeyBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWColorKeyBoard.h; sourceTree = "<group>"; };
+		014B82901D1D227900C6D841 /* XWColorKeyBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWColorKeyBoard.m; sourceTree = "<group>"; };
+		014B82921D1D228D00C6D841 /* XWColorBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWColorBtn.h; sourceTree = "<group>"; };
+		014B82931D1D228D00C6D841 /* XWColorBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWColorBtn.m; sourceTree = "<group>"; };
+		014B82951D1D298800C6D841 /* XWCNDict-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XWCNDict-Bridging-Header.h"; sourceTree = "<group>"; };
+		014B82961D1D298900C6D841 /* XWSevenSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XWSevenSwitch.swift; sourceTree = "<group>"; };
 		0170D2861D1C135B00275F70 /* UIView+XWPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XWPosition.h"; sourceTree = "<group>"; };
 		0170D2871D1C135B00275F70 /* UIView+XWPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XWPosition.m"; sourceTree = "<group>"; };
 		0170D28A1D1C2B1A00275F70 /* XWCharacterInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWCharacterInfoView.h; sourceTree = "<group>"; };
@@ -445,6 +457,8 @@
 				0109884F1D08701C00C1BA84 /* XWCharacterPlat.m */,
 				01098A481D1AD4CF00C1BA84 /* XWGestureCanvas.h */,
 				01098A491D1AD4CF00C1BA84 /* XWGestureCanvas.m */,
+				014B828C1D1D222C00C6D841 /* XWCharacterSetView.h */,
+				014B828D1D1D222C00C6D841 /* XWCharacterSetView.m */,
 			);
 			path = CharacterPlat;
 			sourceTree = "<group>";
@@ -459,6 +473,7 @@
 		010988511D08701C00C1BA84 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				014B829A1D1D401700C6D841 /* strokeAudio */,
 				0170D28D1D1C36D800275F70 /* ttffont */,
 				010988521D08701C00C1BA84 /* background.png */,
 				010988561D08701C00C1BA84 /* info.png */,
@@ -541,6 +556,12 @@
 				0109888F1D08701C00C1BA84 /* XWNavSegmentView.m */,
 				010988901D08701C00C1BA84 /* XWSectionPlatView.h */,
 				010988911D08701C00C1BA84 /* XWSectionPlatView.m */,
+				014B828F1D1D227900C6D841 /* XWColorKeyBoard.h */,
+				014B82901D1D227900C6D841 /* XWColorKeyBoard.m */,
+				014B82921D1D228D00C6D841 /* XWColorBtn.h */,
+				014B82931D1D228D00C6D841 /* XWColorBtn.m */,
+				014B82961D1D298900C6D841 /* XWSevenSwitch.swift */,
+				014B82951D1D298800C6D841 /* XWCNDict-Bridging-Header.h */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -664,6 +685,13 @@
 				01098A4D1D1AE77B00C1BA84 /* XWSetInfo.m */,
 			);
 			path = singleton;
+			sourceTree = "<group>";
+		};
+		014B829A1D1D401700C6D841 /* strokeAudio */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = strokeAudio;
 			sourceTree = "<group>";
 		};
 		0170D2891D1C2AD600275F70 /* infoSection */ = {
@@ -920,7 +948,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				014B82941D1D228D00C6D841 /* XWColorBtn.m in Sources */,
 				010989221D08792A00C1BA84 /* STSinoFont.mm in Sources */,
+				014B82971D1D298900C6D841 /* XWSevenSwitch.swift in Sources */,
 				010988951D08701C00C1BA84 /* XWGameViewController.m in Sources */,
 				010988931D08701C00C1BA84 /* XWCharactersViewController.m in Sources */,
 				010988CE1D08701D00C1BA84 /* XWNavSegmentView.m in Sources */,
@@ -931,6 +961,7 @@
 				0109889C1D08701C00C1BA84 /* XWYizijingViewController.m in Sources */,
 				010987C81D086DFA00C1BA84 /* ViewController.m in Sources */,
 				0109889D1D08701C00C1BA84 /* XWCharacterPlat.m in Sources */,
+				014B82911D1D227900C6D841 /* XWColorKeyBoard.m in Sources */,
 				0170D2881D1C135B00275F70 /* UIView+XWPosition.m in Sources */,
 				010988CF1D08701D00C1BA84 /* XWSectionPlatView.m in Sources */,
 				010988991D08701C00C1BA84 /* XWPoemViewController.m in Sources */,
@@ -944,6 +975,7 @@
 				0170D28C1D1C2B1A00275F70 /* XWCharacterInfoView.m in Sources */,
 				010988CB1D08701D00C1BA84 /* RadicalPinyinDict.m in Sources */,
 				01098A4A1D1AD4CF00C1BA84 /* XWGestureCanvas.m in Sources */,
+				014B828E1D1D222D00C6D841 /* XWCharacterSetView.m in Sources */,
 				010989211D08792A00C1BA84 /* StrokeFontIO.mm in Sources */,
 				014B82721D1C58C900C6D841 /* XWPinyinInfoView.m in Sources */,
 				014B82781D1C684200C6D841 /* XWRadicalInfoView.m in Sources */,
@@ -1074,12 +1106,15 @@
 			baseConfigurationReference = E76EE84323E23508EDADCCD5 /* Pods-XWCNDict.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XWCNDict/XWCNDict-PrefixHeader.pch";
 				INFOPLIST_FILE = XWCNDict/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.linxi.XWCNDict;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "XWCNDict/View/XWCNDict-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -1088,12 +1123,14 @@
 			baseConfigurationReference = DC6815308AC0DB192C2529A1 /* Pods-XWCNDict.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XWCNDict/XWCNDict-PrefixHeader.pch";
 				INFOPLIST_FILE = XWCNDict/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.linxi.XWCNDict;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "XWCNDict/View/XWCNDict-Bridging-Header.h";
 			};
 			name = Release;
 		};

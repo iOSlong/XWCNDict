@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SevenSwitch.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>UIView+Positioning.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,7 +37,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0D28BF3D2482267A0A030E28EA66CA82</key>
+		<key>2095D72ADD3F221101D68AEF339508FA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -42,17 +47,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DBBD0D2A949A15BAA16DF219ED7AE293</key>
+		<key>71D27C8F47F73618EA53E7B14784EA57</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E23FB437D0451203AABD1CE750DA0C47</key>
+		<key>7CB69720292A3091EC78C2AFB4048DF9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EBA5C0FBDCC4C5B58DECD086EAB4B5A5</key>
+		<key>C718FD4348292B36083845FCA5D75DDC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ED22360399B3ED83DD40A2369F235EEB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
