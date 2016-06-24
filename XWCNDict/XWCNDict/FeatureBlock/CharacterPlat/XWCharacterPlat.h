@@ -55,6 +55,11 @@
 @property (nonatomic, assign) id<XWCharacterPlatDelegate>delegate;
 
 
+
+//设置一个新的初始方法
+- (instancetype)initWithFrame:(CGRect)frame andChar:(NSString *)fontChar;
+
+
 /// 呈现字符信息调用函数
 -(void)characterInfoShow;
 

@@ -33,7 +33,12 @@
         self.imgvBackground = [[UIImageView alloc] initWithFrame:self.bounds];
         [self addSubview:self.imgvBackground];
 
+        [_setInfo.arrSinoFont addObject:self.sinoFont];
+        self.sinoFont.volume = 0.5;
+        self.sinoFont.voice = _setInfo.isVoice;
+
     }
+    
     return self;
 }
 
@@ -90,13 +95,6 @@
     }
 }
 
-- (void)releaseSinoFont {
-    if (self.sinoFont) {
-        self.imgvBackground.image = nil;
-        [self.sinoFont releaseSinoFont_AnimationInfo];
-    }
-}
-
 - (void)reloadWithFontChar:(NSString *)fontChar {
     self.fontChar = fontChar;
     if (fontChar) {
@@ -107,7 +105,7 @@
             self.imgStatic =[_sinoFont getBaseImageWithColor:[UIColor blackColor]];
         }
         self.imgvBackground.image = self.imgStatic;
-
+        self.sinoFont.imageCanvas.image = nil;
 
         UIImage *saveImg;
         if (_setInfo.color_radical) {
@@ -124,6 +122,14 @@
             [self.delegate gestureCanvas:self withEvent:XWCanvasEventReload saveImg:saveImg];
         }
         
+    }
+}
+
+
+- (void)releaseSinoFont {
+    if (self.sinoFont) {
+        self.imgvBackground.image = nil;
+        [self.sinoFont releaseSinoFont_AnimationInfo];
     }
 }
 

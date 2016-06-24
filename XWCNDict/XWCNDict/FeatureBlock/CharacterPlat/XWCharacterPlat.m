@@ -66,6 +66,12 @@
     return self;
 }
 
+- (instancetype)initWithFrame:(CGRect)frame andChar:(NSString *)fontChar {
+    _fontChar = fontChar;
+    return [self initWithFrame:frame];
+}
+
+
 #pragma mark - NotificationCenter notiEvent
 - (void)changeBoxStyle {
     UIImage *image = [UIImage imageNamed:_setInfo.imgNameField];
@@ -165,12 +171,14 @@
     [self addSubview:_migeImgView];
 
 
-    self.fontCanvas = [[XWGestureCanvas alloc] initWithFrame:CGRectMake(0, 0, kChar_W, kChar_W) fontChar:_fontChar];
+    self.fontCanvas = [[XWGestureCanvas alloc] initWithFrame:CGRectMake(0, 0, kChar_W, kChar_W) fontChar:self.fontChar];
     self.fontCanvas.delegate = self;
     self.fontCanvas.center = CGPointMake(kMiField_W/2, kMiField_W/2);
     [self.migeImgView addSubview:self.fontCanvas];
 
-    self.fontChar = @"行";
+    if (self.fontChar) {
+        [self characterInfoShow];
+    }
 }
 
 - (void)configureInfoBannerView {
@@ -313,7 +321,6 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"changeBoxStyle" object:nil];
 
 }
-
 
 
 

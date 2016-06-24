@@ -844,6 +844,7 @@ void STFreeAnimationInfo(STAnimationInfo* animationInfo)
     if (_timer) {
         [_timer invalidate];
         _timer = nil;
+        self.imageCanvas.image = nil;
         _drawOver = YES;
     }
     if (_tempInfo.pStrokes) {

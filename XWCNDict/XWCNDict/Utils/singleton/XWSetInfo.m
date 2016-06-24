@@ -24,7 +24,7 @@
 {
     self = [super init];
     if (self) {
-        self.sinofontArray  = [NSMutableArray array];
+        self.arrSinoFont  = [NSMutableArray array];
 
         self.imgNameField       = @"mi";
 
@@ -58,14 +58,14 @@
 - (void)setSpeed:(float)speed {
     _speed = speed;
     int _stepLenth = (int)(speed/0.3);
-    for (STSinoFont *sino in self.sinofontArray) {
+    for (STSinoFont *sino in self.arrSinoFont) {
         [sino drawSpeed:speed addSteplength:_stepLenth];
     }
 }
 
 - (void)setVolume:(float)volume {
     _volume = volume;
-    for (STSinoFont *sino in self.sinofontArray) {
+    for (STSinoFont *sino in self.arrSinoFont) {
         sino.volume = volume;
     }
 }
@@ -73,27 +73,27 @@
 
 - (void)setSound_stroke:(BOOL)sound_stroke {
     _sound_stroke = sound_stroke;
-    for (STSinoFont *sino in self.sinofontArray) {
+    for (STSinoFont *sino in self.arrSinoFont) {
         sino.voice = sound_stroke;
     }
 }
 
 - (void)setColor_char:(UIColor *)color_char {
     _color_char = color_char;
-    for (STSinoFont *sino in self.sinofontArray) {
+    for (STSinoFont *sino in self.arrSinoFont) {
         sino.charColor = color_char;
     }
 }
 
 - (void)setColor_radical:(UIColor *)color_radical {
     _color_radical = color_radical;
-    for (STSinoFont *sino in self.sinofontArray) {
+    for (STSinoFont *sino in self.arrSinoFont) {
         sino.radicalColor = color_radical;
     }
 }
 
 - (void)freshAllPropertyState {
-    for (STSinoFont *sino in self.sinofontArray) {
+    for (STSinoFont *sino in self.arrSinoFont) {
         sino.radicalColor = self.color_radical;
         sino.charColor = self.color_char;
         //        sino.character_Sound = self.character_sound;

@@ -33,7 +33,7 @@
 
 
 ///数组将需要设置property的sinoFont传进来，进行统一的属性设置。
-@property (nonatomic, strong) NSMutableArray *sinofontArray;
+@property (nonatomic, strong) NSMutableArray *arrSinoFont;
 
 ///当sinofontArray添加的时候，可以通过调用下面这个方法让新添加的SinoFont获得全局属性。
 -(void)freshAllPropertyState;

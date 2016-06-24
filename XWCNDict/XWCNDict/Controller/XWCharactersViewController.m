@@ -10,6 +10,7 @@
 #import "XWTabBarViewController.h"
 #import "XWCharacterPlat.h"
 #import "XWCharacterSetView.h"
+#import "XWMyDataController.h"
 
 
 
@@ -110,7 +111,7 @@ typedef struct pageIndex{
 
 - (UIPageControl *)pageControl {
     if (!_pageControl) {
-        _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, 0, 500 * kFixed_rate, 30 * kFixed_rate)];
+        _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, 0, 500 * kFixed_rate, 30)];
         [self.pageControl setNumberOfPages:[self.arrCharPlat count]];
         self.pageControl.center = CGPointMake(768/2 * kFixed_rate, 1440/2 * kFixed_rate);
         self.pageControl.userInteractionEnabled = NO;
@@ -138,9 +139,13 @@ typedef struct pageIndex{
     self.scrollView.delegate = self;
     [self.view addSubview:_scrollView];
 
-    XWCharacterPlat *charPlat1 = [[XWCharacterPlat alloc] initWithFrame:CGRectMake(kPlat_X, 0, kPlat_W, kPlat_H)];
-    XWCharacterPlat *charPlat2 = [[XWCharacterPlat alloc] initWithFrame:CGRectMake(kPlat_X + kScreenSize.width, 0,  kPlat_W, kPlat_H)];
-    XWCharacterPlat *charPlat3 = [[XWCharacterPlat alloc] initWithFrame:CGRectMake(kPlat_X + 2*(kScreenSize.width), 0,  kPlat_W, kPlat_H)];
+    XWCharacterPlat *charPlat1 = [[XWCharacterPlat alloc] initWithFrame:CGRectMake(kPlat_X, 0, kPlat_W, kPlat_H) andChar:self.setInfo.arrUnicodeFont[0]];
+    XWCharacterPlat *charPlat2 = [[XWCharacterPlat alloc] initWithFrame:CGRectMake(kPlat_X + kScreenSize.width, 0,  kPlat_W, kPlat_H)andChar:self.setInfo.arrUnicodeFont[1]];
+    XWCharacterPlat *charPlat3 = [[XWCharacterPlat alloc] initWithFrame:CGRectMake(kPlat_X + 2*(kScreenSize.width), 0,  kPlat_W, kPlat_H)andChar:self.setInfo.arrUnicodeFont[2]];
+
+    charPlat1.delegate = self;
+    charPlat2.delegate = self;
+    charPlat3.delegate = self;
 
     [self.scrollView addSubview:charPlat1];
     [self.scrollView addSubview:charPlat2];
@@ -221,10 +226,6 @@ typedef struct pageIndex{
 
 
 #pragma  mark - ScrollView Delegate
-//- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-//
-//}
-
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     _pageLocation = scrollView.contentOffset.x/scrollView.frame.size.width;
 
@@ -321,6 +322,57 @@ typedef struct pageIndex{
 
     self.scrollView.userInteractionEnabled = YES;
 }
+
+
+#pragma mark - CharacterPlat Delegate  save FontChar
+- (void)saveBtnSelected:(XWCharacterPlat *)characterPlat {
+    NSLog(@"save ………%@",characterPlat.fontChar);
+    XWMyDataController *_DC = [XWMyDataController shareDataController];
+
+    UIAlertController *alertControl = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"you sure save %@",characterPlat.fontChar] message:nil preferredStyle:UIAlertControllerStyleAlert];
+
+    UIAlertAction *actionSure = [UIAlertAction actionWithTitle:@"YES" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"YES");
+        /// 存储字符信息
+        XWCharacter *charModel =  [NSEntityDescription insertNewObjectForEntityForName:@"XWCharacter" inManagedObjectContext:_DC.managedObjectContext];
+        charModel.fontChar  = characterPlat.fontChar;
+        charModel.dateModify= [NSDate date];
+        charModel.dataImg   = UIImagePNGRepresentation(characterPlat.staticImg);
+
+
+        NSError *error = nil;
+        [_DC.managedObjectContext save:&error];
+        if (error) {
+            NSLog(@"fail storn charModel  :%@",error);
+        }
+
+        [alertControl dismissViewControllerAnimated:YES completion:nil];
+    }];
+
+    UIAlertAction *actionCancel = [UIAlertAction actionWithTitle:@"NO" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"NO");
+
+        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"XWCharacter"];
+
+        NSError *error = nil;
+        NSArray *results = [_DC.managedObjectContext executeFetchRequest:request error:&error];
+        if (!results) {
+            NSLog(@"Error fetching Employee objects: %@\n%@", [error localizedDescription], [error userInfo]);
+            abort();
+        }
+        [alertControl dismissViewControllerAnimated:YES completion:nil];
+    }];
+    [alertControl addAction:actionSure];
+    [alertControl addAction:actionCancel];
+    
+    [self presentViewController:alertControl animated:YES completion:nil];
+
+}
+
+
+
+
+
 
 @end
 

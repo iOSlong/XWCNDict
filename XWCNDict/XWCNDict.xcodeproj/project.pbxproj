@@ -173,6 +173,9 @@
 		014B82DA1D1D40B300C6D841 /* 5_7.wav in Resources */ = {isa = PBXBuildFile; fileRef = 014B82B91D1D40B300C6D841 /* 5_7.wav */; };
 		014B82DB1D1D40B300C6D841 /* 5_8.wav in Resources */ = {isa = PBXBuildFile; fileRef = 014B82BA1D1D40B300C6D841 /* 5_8.wav */; };
 		014B82DC1D1D40B300C6D841 /* 5_9.wav in Resources */ = {isa = PBXBuildFile; fileRef = 014B82BB1D1D40B300C6D841 /* 5_9.wav */; };
+		014B82E21D1D7A9D00C6D841 /* XWMyDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 014B82E11D1D7A9D00C6D841 /* XWMyDataController.m */; };
+		014B82E51D1D7B2B00C6D841 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 014B82E31D1D7B2B00C6D841 /* DataModel.xcdatamodeld */; };
+		014B82E81D1D817000C6D841 /* XWCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = 014B82E71D1D817000C6D841 /* XWCharacter.m */; };
 		0170D2881D1C135B00275F70 /* UIView+XWPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0170D2871D1C135B00275F70 /* UIView+XWPosition.m */; };
 		0170D28C1D1C2B1A00275F70 /* XWCharacterInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0170D28B1D1C2B1A00275F70 /* XWCharacterInfoView.m */; };
 		0170D2911D1C3A8F00275F70 /* STZhuankai.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0170D2901D1C3A8F00275F70 /* STZhuankai.ttf */; };
@@ -391,6 +394,11 @@
 		014B82B91D1D40B300C6D841 /* 5_7.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 5_7.wav; sourceTree = "<group>"; };
 		014B82BA1D1D40B300C6D841 /* 5_8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 5_8.wav; sourceTree = "<group>"; };
 		014B82BB1D1D40B300C6D841 /* 5_9.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 5_9.wav; sourceTree = "<group>"; };
+		014B82E01D1D7A9D00C6D841 /* XWMyDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWMyDataController.h; sourceTree = "<group>"; };
+		014B82E11D1D7A9D00C6D841 /* XWMyDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWMyDataController.m; sourceTree = "<group>"; };
+		014B82E41D1D7B2B00C6D841 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		014B82E61D1D817000C6D841 /* XWCharacter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWCharacter.h; sourceTree = "<group>"; };
+		014B82E71D1D817000C6D841 /* XWCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWCharacter.m; sourceTree = "<group>"; };
 		0170D2861D1C135B00275F70 /* UIView+XWPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XWPosition.h"; sourceTree = "<group>"; };
 		0170D2871D1C135B00275F70 /* UIView+XWPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XWPosition.m"; sourceTree = "<group>"; };
 		0170D28A1D1C2B1A00275F70 /* XWCharacterInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWCharacterInfoView.h; sourceTree = "<group>"; };
@@ -532,6 +540,11 @@
 		010988501D08701C00C1BA84 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				014B82E01D1D7A9D00C6D841 /* XWMyDataController.h */,
+				014B82E11D1D7A9D00C6D841 /* XWMyDataController.m */,
+				014B82E61D1D817000C6D841 /* XWCharacter.h */,
+				014B82E71D1D817000C6D841 /* XWCharacter.m */,
+				014B82E31D1D7B2B00C6D841 /* DataModel.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1102,6 +1115,7 @@
 				0109891F1D08792A00C1BA84 /* FontBitmapDraw.m in Sources */,
 				0170D2941D1C417700275F70 /* XWStrokeBtn.m in Sources */,
 				010988C91D08701D00C1BA84 /* NSString+SubStringMethod.m in Sources */,
+				014B82E21D1D7A9D00C6D841 /* XWMyDataController.m in Sources */,
 				010988961D08701C00C1BA84 /* XWNavigationViewController.m in Sources */,
 				010988921D08701C00C1BA84 /* XWBaseViewController.m in Sources */,
 				0170D28C1D1C2B1A00275F70 /* XWCharacterInfoView.m in Sources */,
@@ -1112,6 +1126,7 @@
 				014B82721D1C58C900C6D841 /* XWPinyinInfoView.m in Sources */,
 				014B82781D1C684200C6D841 /* XWRadicalInfoView.m in Sources */,
 				010988971D08701C00C1BA84 /* XWNotebookViewController.m in Sources */,
+				014B82E51D1D7B2B00C6D841 /* DataModel.xcdatamodeld in Sources */,
 				010988CC1D08701D00C1BA84 /* XWBounceBox.m in Sources */,
 				01098A4E1D1AE77B00C1BA84 /* XWSetInfo.m in Sources */,
 				014B826F1D1C446900C6D841 /* XWStrokeInfoView.m in Sources */,
@@ -1120,6 +1135,7 @@
 				010988CD1D08701D00C1BA84 /* XWDictBtn.m in Sources */,
 				010989201D08792A00C1BA84 /* sinofont.mm in Sources */,
 				010987C21D086DFA00C1BA84 /* main.m in Sources */,
+				014B82E81D1D817000C6D841 /* XWCharacter.m in Sources */,
 				0109889B1D08701C00C1BA84 /* XWTabBarViewController.m in Sources */,
 				0109897F1D0B14E300C1BA84 /* XWCharPlatSegment.m in Sources */,
 			);
@@ -1288,6 +1304,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		014B82E31D1D7B2B00C6D841 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				014B82E41D1D7B2B00C6D841 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 014B82E41D1D7B2B00C6D841 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 010987B51D086DFA00C1BA84 /* Project object */;
 }
