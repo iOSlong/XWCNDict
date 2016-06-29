@@ -178,6 +178,9 @@
 		014B82E81D1D817000C6D841 /* XWCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = 014B82E71D1D817000C6D841 /* XWCharacter.m */; };
 		014B82EE1D1D9CD600C6D841 /* 37x-Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B82EC1D1D9CD600C6D841 /* 37x-Checkmark.png */; };
 		014B82EF1D1D9CD600C6D841 /* 37x-Checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B82ED1D1D9CD600C6D841 /* 37x-Checkmark@2x.png */; };
+		014B82F31D1DC8F900C6D841 /* XWCollectionPlat.m in Sources */ = {isa = PBXBuildFile; fileRef = 014B82F21D1DC8F900C6D841 /* XWCollectionPlat.m */; };
+		014B82F61D1DCB2400C6D841 /* XWCollectionStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 014B82F51D1DCB2400C6D841 /* XWCollectionStore.m */; };
+		014B82F91D1DCECD00C6D841 /* XWCanvasControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 014B82F81D1DCECD00C6D841 /* XWCanvasControl.m */; };
 		0170D2881D1C135B00275F70 /* UIView+XWPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0170D2871D1C135B00275F70 /* UIView+XWPosition.m */; };
 		0170D28C1D1C2B1A00275F70 /* XWCharacterInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0170D28B1D1C2B1A00275F70 /* XWCharacterInfoView.m */; };
 		0170D2911D1C3A8F00275F70 /* STZhuankai.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0170D2901D1C3A8F00275F70 /* STZhuankai.ttf */; };
@@ -403,6 +406,12 @@
 		014B82E71D1D817000C6D841 /* XWCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWCharacter.m; sourceTree = "<group>"; };
 		014B82EC1D1D9CD600C6D841 /* 37x-Checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "37x-Checkmark.png"; sourceTree = "<group>"; };
 		014B82ED1D1D9CD600C6D841 /* 37x-Checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "37x-Checkmark@2x.png"; sourceTree = "<group>"; };
+		014B82F11D1DC8F900C6D841 /* XWCollectionPlat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWCollectionPlat.h; sourceTree = "<group>"; };
+		014B82F21D1DC8F900C6D841 /* XWCollectionPlat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWCollectionPlat.m; sourceTree = "<group>"; };
+		014B82F41D1DCB2400C6D841 /* XWCollectionStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWCollectionStore.h; sourceTree = "<group>"; };
+		014B82F51D1DCB2400C6D841 /* XWCollectionStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWCollectionStore.m; sourceTree = "<group>"; };
+		014B82F71D1DCECD00C6D841 /* XWCanvasControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWCanvasControl.h; sourceTree = "<group>"; };
+		014B82F81D1DCECD00C6D841 /* XWCanvasControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWCanvasControl.m; sourceTree = "<group>"; };
 		0170D2861D1C135B00275F70 /* UIView+XWPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XWPosition.h"; sourceTree = "<group>"; };
 		0170D2871D1C135B00275F70 /* UIView+XWPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XWPosition.m"; sourceTree = "<group>"; };
 		0170D28A1D1C2B1A00275F70 /* XWCharacterInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWCharacterInfoView.h; sourceTree = "<group>"; };
@@ -520,6 +529,7 @@
 		0109884C1D08701C00C1BA84 /* FeatureBlock */ = {
 			isa = PBXGroup;
 			children = (
+				014B82F01D1DC87900C6D841 /* Collection */,
 				0109884D1D08701C00C1BA84 /* CharacterPlat */,
 			);
 			path = FeatureBlock;
@@ -647,6 +657,8 @@
 				014B82931D1D228D00C6D841 /* XWColorBtn.m */,
 				014B82961D1D298900C6D841 /* XWSevenSwitch.swift */,
 				014B82951D1D298800C6D841 /* XWCNDict-Bridging-Header.h */,
+				014B82F71D1DCECD00C6D841 /* XWCanvasControl.h */,
+				014B82F81D1DCECD00C6D841 /* XWCanvasControl.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -810,6 +822,17 @@
 				014B82BB1D1D40B300C6D841 /* 5_9.wav */,
 			);
 			path = strokeAudio;
+			sourceTree = "<group>";
+		};
+		014B82F01D1DC87900C6D841 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				014B82F11D1DC8F900C6D841 /* XWCollectionPlat.h */,
+				014B82F21D1DC8F900C6D841 /* XWCollectionPlat.m */,
+				014B82F41D1DCB2400C6D841 /* XWCollectionStore.h */,
+				014B82F51D1DCB2400C6D841 /* XWCollectionStore.m */,
+			);
+			path = Collection;
 			sourceTree = "<group>";
 		};
 		0170D2891D1C2AD600275F70 /* infoSection */ = {
@@ -1109,6 +1132,7 @@
 				010988CE1D08701D00C1BA84 /* XWNavSegmentView.m in Sources */,
 				010988941D08701C00C1BA84 /* XWCollectionViewController.m in Sources */,
 				010988981D08701C00C1BA84 /* XWPhoneticViewController.m in Sources */,
+				014B82F91D1DCECD00C6D841 /* XWCanvasControl.m in Sources */,
 				014B827B1D1C68F500C6D841 /* XWRadicalBtn.m in Sources */,
 				0109891E1D08792A00C1BA84 /* BmpDataManager.mm in Sources */,
 				0109889C1D08701C00C1BA84 /* XWYizijingViewController.m in Sources */,
@@ -1120,6 +1144,7 @@
 				010988991D08701C00C1BA84 /* XWPoemViewController.m in Sources */,
 				0109889A1D08701C00C1BA84 /* XWRadicalViewController.m in Sources */,
 				010987C51D086DFA00C1BA84 /* AppDelegate.m in Sources */,
+				014B82F31D1DC8F900C6D841 /* XWCollectionPlat.m in Sources */,
 				0109891F1D08792A00C1BA84 /* FontBitmapDraw.m in Sources */,
 				0170D2941D1C417700275F70 /* XWStrokeBtn.m in Sources */,
 				010988C91D08701D00C1BA84 /* NSString+SubStringMethod.m in Sources */,
@@ -1132,6 +1157,7 @@
 				014B828E1D1D222D00C6D841 /* XWCharacterSetView.m in Sources */,
 				010989211D08792A00C1BA84 /* StrokeFontIO.mm in Sources */,
 				014B82721D1C58C900C6D841 /* XWPinyinInfoView.m in Sources */,
+				014B82F61D1DCB2400C6D841 /* XWCollectionStore.m in Sources */,
 				014B82781D1C684200C6D841 /* XWRadicalInfoView.m in Sources */,
 				010988971D08701C00C1BA84 /* XWNotebookViewController.m in Sources */,
 				014B82E51D1D7B2B00C6D841 /* DataModel.xcdatamodeld in Sources */,

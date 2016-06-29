@@ -30,8 +30,11 @@
     [self setBasicView];
 
     self.platViewModel = XWPlatViewModelCharacters;
+}
 
-    
+- (CGRect)rectPlat
+{
+    return  CGRectMake(kPlat_X, 0, kPlat_W, kPlat_H);
 }
 
 #pragma mark - 添加收索条 -

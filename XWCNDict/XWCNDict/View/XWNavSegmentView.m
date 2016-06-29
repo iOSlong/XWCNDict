@@ -109,7 +109,8 @@
     self.selectedIndex =kGetIndexFromTag(btn.tag);
 }
 
-- (void)btnItemClick:(UIButton *)btnItem{
+- (void)btnItemClick:(UIButton *)btnItem
+{
     NSInteger index = kGetIndexFromTag(btnItem.tag);
     btnItem.selected = YES;
     for (UIButton *btn in _arrBtnItems) {
@@ -120,6 +121,20 @@
     if ([self.delegate respondsToSelector:@selector(xwNavSegment:didSelectedIndex:)]) {
         [self.delegate xwNavSegment:self didSelectedIndex:index];
     }
+}
+
+- (void)setSelectedIndex:(NSInteger)selectedIndex
+{
+    _selectedIndex = selectedIndex;
+    for (UIButton *btn in _arrBtnItems) {
+        NSInteger index = kGetIndexFromTag(btn.tag);
+        if (index != selectedIndex) {
+            btn.selected = NO;
+        }else{
+            btn.selected = YES;
+        }
+    }
+    [self.segmentControl setSelectedSegmentIndex:selectedIndex];
 }
 
 - (void)configureSegmentItemsWithArr:(NSArray *)segmentItemArr{

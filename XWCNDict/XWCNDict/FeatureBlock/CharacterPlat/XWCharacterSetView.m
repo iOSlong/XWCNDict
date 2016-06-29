@@ -156,7 +156,7 @@
     [_charatercolor_keyboard setHidden:YES];
     [_charatercolor_keyboard colorKeyBoard:^(UIColor *colorSelected) {
         _setInfo.color_char = colorSelected;
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"Character_Radical_Color" object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kNotiNameCharacter_Radical_ColorChange object:nil];
     }];
 
 
@@ -165,7 +165,7 @@
     [_radicalcolor_keyboard setHidden:YES];
     [_radicalcolor_keyboard colorKeyBoard:^(UIColor *colorSelected) {
         _setInfo.color_radical = colorSelected;
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"Character_Radical_Color" object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kNotiNameCharacter_Radical_ColorChange object:nil];
 
     }];
 
@@ -214,7 +214,7 @@
 
     //添加一个通知，让CharacterPlat重新设置一下_migeImageView的UIImage属性。
     //注意这个地方应为是新添加的通知，所以如果新建了一个CharacterPlat的话，这个通知是没有注册进去的，即是它不再MessageInfo中。
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"changeBoxStyle" object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNotiNameCharacter_CanvasBox_StyleChange object:nil];
 
 }
 

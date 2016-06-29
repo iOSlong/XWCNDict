@@ -37,9 +37,16 @@
         self.sinoFont.volume = 0.5;
         self.sinoFont.voice = _setInfo.isVoice;
 
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notiChangeCharacterColor) name:@"Character_Radical_Color" object:nil];
+
     }
     
     return self;
+}
+
+- (void)notiChangeCharacterColor
+{
+    self.imgStatic = [_sinoFont getBaseImageWithColor:_setInfo.color_char];
 }
 
 - (void)configureGestures {

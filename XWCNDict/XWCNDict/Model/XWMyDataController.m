@@ -20,6 +20,15 @@
     return shareOBJ;
 }
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _synchronousArrCanvas = [NSMutableArray array];
+    }
+    return self;
+}
+
 - (NSManagedObjectContext *)managedObjectContext
 {
     if (!_managedObjectContext) {
@@ -55,6 +64,12 @@
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"XWCharacter"];
     NSError *error = nil;
     NSArray *arr = [self.managedObjectContext executeFetchRequest:request error:&error];
+
+    /// 进行一下排序
+    arr = [arr sortedArrayUsingComparator:^NSComparisonResult(XWCharacter *obj1, XWCharacter *obj2) {
+        return  obj1.dateModify.timeIntervalSinceNow > obj2.dateModify.timeIntervalSinceNow;
+    }];
+    
     if (error) {
         NSAssert(arr != nil, @"Error fetch OCArray: %@\n%@", [error localizedDescription], [error userInfo]);
     }

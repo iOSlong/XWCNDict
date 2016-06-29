@@ -22,6 +22,7 @@
 @property (nonatomic, strong, readonly) NSString        *imgNameCharPlatMask;
 
 @property (nonatomic, strong) NSString  *imgNameField;
+@property (nonatomic, strong) NSString  *fontCharShow;
 @property (nonatomic, strong) UIColor   *color_char;
 @property (nonatomic, strong) UIColor   *color_radical;
 

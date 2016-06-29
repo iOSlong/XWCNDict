@@ -28,7 +28,7 @@ typedef struct pageIndex{
 
 @property (nonatomic) UIScrollView      *scrollView;
 @property (nonatomic) UIPageControl     *pageControl;
-@property (nonatomic) XWCharacterPlat   *currentCharPlat;
+@property (nonatomic) XWCharacterPlat   *currentPlat;
 @property (nonatomic) NSMutableArray    *arrCharPlat;
 @property (nonatomic) XWCharacterSetView    *characterSetView;
 
@@ -89,6 +89,17 @@ typedef struct pageIndex{
         [_imgvTabBarMask setHidden:YES];
     }];
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if (self.setInfo.fontCharShow && ![self.setInfo.fontCharShow isEqualToString:_currentPlat.fontChar]) {
+        [self loadTheFontChar:self.setInfo.fontCharShow];
+    }
+    /// 使用过后值空
+    self.setInfo.fontCharShow = nil;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -162,12 +173,14 @@ typedef struct pageIndex{
     [self.arrCharPlat addObject:charPlat3];
 
 
-    self.currentCharPlat = charPlat1;
+    self.currentPlat = charPlat1;
 
     _pageStruct.maxCharIndex        = 2;
     _pageStruct.minCharIndex        = 0;
     _pageStruct.currentCharIndex    = 0;
     _pageStruct.offsetLocation      = 0;
+
+    self.pageControl.currentPage    = 1;
 
 }
 
@@ -209,24 +222,25 @@ typedef struct pageIndex{
 {
     [self.textfield resignFirstResponder];
 
-    [self loadTheFontChar:self.textfield.text];
-}
-
-- (void)loadTheFontChar:(NSString *)fontChar {
     if (!self.textfield.text.length) {
         return;
     }
 
-    if ([self.textfield.text intValue]) {
+    if ([self.textfield.text intValue])
+    {
         NSInteger index = [self.setInfo.arrUnicodeFont count]>[self.textfield.text intValue]? [self.textfield.text intValue]:[self.setInfo.arrUnicodeFont count];
 
         self.textfield.text = [self.setInfo.arrUnicodeFont objectAtIndex:index-1];
     }
-
-
-    self.currentCharPlat.fontCharPinyin = nil;
-    self.currentCharPlat.fontChar = self.textfield.text;
     self.textfield.text = nil;
+
+    [self loadTheFontChar:self.textfield.text];
+}
+
+- (void)loadTheFontChar:(NSString *)fontChar {
+
+    self.currentPlat.fontCharPinyin = nil;
+    self.currentPlat.fontChar = fontChar;
 
 }
 
@@ -240,7 +254,7 @@ typedef struct pageIndex{
         if (_pageStruct.minCharIndex == 0)
         {
             _pageStruct.currentCharIndex = 0;
-            self.currentCharPlat = self.arrCharPlat[0];
+            self.currentPlat = self.arrCharPlat[0];
 
         }
         else
@@ -269,7 +283,7 @@ typedef struct pageIndex{
     else if (_pageLocation == 1)
     {
         _pageStruct.currentCharIndex = _pageStruct.maxCharIndex -1;
-        self.currentCharPlat = self.arrCharPlat[1];
+        self.currentPlat = self.arrCharPlat[1];
         self.pageControl.currentPage = _pageStruct.currentCharIndex;
     }
     else if (_pageLocation == 2)
@@ -324,7 +338,7 @@ typedef struct pageIndex{
         [self.scrollView setContentSize:CGSizeMake((1024+1024*i)*kFixed_rate, fontp.frame.size.height)];
     }
     [self.scrollView setContentOffset:CGPointMake(1024 * kFixed_rate, 0) animated:NO];
-    self.currentCharPlat  = [self.arrCharPlat objectAtIndex:1];
+    self.currentPlat  = [self.arrCharPlat objectAtIndex:1];
 
     self.scrollView.userInteractionEnabled = YES;
 }
@@ -351,7 +365,7 @@ typedef struct pageIndex{
             }
         }
         
-        /// CoreData进行汉字本地存储
+        /// CoreData进行汉字本地存储, 事实证明，使用CoreData的效果比直接使用sqlite easy太多了。
         if (needStorn) {
             /// 存储字符信息
             XWCharacter *charModel =  [NSEntityDescription insertNewObjectForEntityForName:@"XWCharacter" inManagedObjectContext:_DC.managedObjectContext];

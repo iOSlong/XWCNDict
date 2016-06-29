@@ -57,9 +57,9 @@
         [self configureMigeImageView];
 
 
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeBoxStyle) name:@"changeBoxStyle" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeBoxStyle) name:kNotiNameCharacter_CanvasBox_StyleChange object:nil];
 
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(charColorChange) name:@"Character_Radical_Color" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(charColorChange) name:kNotiNameCharacter_Radical_ColorChange object:nil];
 
 
     }
@@ -318,12 +318,11 @@
 - (void)readyForRelease {
     [self stopOtherThreads];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"Character_Radical_Color" object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"changeBoxStyle" object:nil];
-
 }
 
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 
 

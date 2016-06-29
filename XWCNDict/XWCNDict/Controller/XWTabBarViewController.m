@@ -56,10 +56,18 @@ static XWTabBarViewController *selfxwTabBarViewController;
 
         selfxwTabBarViewController = self;
 
+
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(jumpToCharacterViewController) name:kNotiNameCollection_JumpTo_CharacterVC object:nil];
+
     }
     return self;
 }
 
+- (void)jumpToCharacterViewController
+{
+    [self setSelectedIndex:0];
+    [self.navSegMentView setSelectedIndex:0];
+}
 
 - (void)setImgBackground:(UIImage *)imgBackground{
     if (imgBackground) {
@@ -123,6 +131,10 @@ static XWTabBarViewController *selfxwTabBarViewController;
     // Do any additional setup after loading the view.
 }
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 
 @end

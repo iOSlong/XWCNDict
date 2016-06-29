@@ -94,6 +94,7 @@ void STFreeAnimationInfo(STAnimationInfo* animationInfo);
     const char *fontfile = [stroke_font UTF8String];
     const char *mapfile = [codeMapping UTF8String];
 
+    NSAssert(fontChar, @"you can't send nil or unCharacter to STSinoFOnt");
     self = [self initWithChar:fontChar andSize:fontSize strokeWithCodePath:fontfile :mapfile :thousandBase];
     
     return self;
@@ -382,7 +383,6 @@ void STFreeAnimationInfo(STAnimationInfo* animationInfo);
     
     //如果计时器为空 启动一新的计时器
     _timer = [NSTimer scheduledTimerWithTimeInterval:self.drawingSpeed target:self selector:@selector(timerEventRunloop) userInfo:nil repeats:YES];
-
     [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
     
 
@@ -456,7 +456,8 @@ void STFreeAnimationInfo(STAnimationInfo* animationInfo);
         [_timer invalidate];
         _timer = nil;
         _timer = [NSTimer scheduledTimerWithTimeInterval:_drawingSpeed target:self selector:@selector(timerEventRunloop) userInfo:nil repeats:YES];
-        
+        [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
+
         if (self.drawing) {
             [_timer setFireDate:[NSDate distantPast]];
         }else{
@@ -508,6 +509,7 @@ void STFreeAnimationInfo(STAnimationInfo* animationInfo);
     
     //如果计时器为空 启动一新的计时器
     _timer = [NSTimer scheduledTimerWithTimeInterval:self.drawingSpeed target:self selector:@selector(timerEventRunloop) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
 
     [_timer fire];
     _drawing = YES;

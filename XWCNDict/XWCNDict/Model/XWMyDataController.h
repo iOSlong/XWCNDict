@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 #import "XWCharacter.h"
+#import "XWCanvasControl.h"
+
 
 @interface XWMyDataController : NSObject
 
@@ -17,5 +19,8 @@
 + (instancetype)shareDataController;
 
 - (NSArray *)arrObjectModel;
+
+@property (nonatomic, strong) NSMutableArray <XWCanvasControl *> *synchronousArrCanvas;
+
 
 @end

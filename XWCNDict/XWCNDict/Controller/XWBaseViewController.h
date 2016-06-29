@@ -29,6 +29,7 @@ typedef NS_ENUM(NSUInteger, XWPlatViewModel) {
 ///默认隐藏
 @property (nonatomic, strong) XWSectionPlatView *sectionPlatView;
 @property (nonatomic, assign) XWPlatViewModel   platViewModel;
+@property (nonatomic, assign) CGRect            rectPlat;
 
 @property (nonatomic, strong) UITextField       *textfield;
 @property (nonatomic, strong) UIButton          *btnSetGear;
