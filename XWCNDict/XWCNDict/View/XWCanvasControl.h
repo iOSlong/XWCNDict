@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "XWSetInfo.h"
 #import "STSinoFont.h"
-#import "XWCollectionStore.h"
 
 
 @class XWCanvasControl;
@@ -29,6 +28,7 @@ typedef NS_ENUM(NSUInteger, XWCanvasControlEvent) {
     XWCanvasControlEventSingleTap,
     XWCanvasControlEventDoubleTap,
     XWCanvasControlEventLongPress,
+    XWCanvasControlEventDeleteChar,
     XWCanvasControlEventTouchUpInside
 };
 
@@ -44,10 +44,15 @@ typedef NS_ENUM(NSUInteger, XWCanvasControlEvent) {
 
 @property (nonatomic, strong) STSinoFont    *sinoFont;
 @property (nonatomic, strong) UIImageView   *imgvBackground;
+@property (nonatomic, strong) UIImageView   *imgvDynamicView;
+@property (nonatomic, strong) UIButton      *delBtn;
 @property (nonatomic, strong) NSString      *fontChar;
 @property (nonatomic, assign) NSInteger     index;
+@property (nonatomic, assign) BOOL          delState;
 @property (nonatomic, weak) id<XWCanvasControlDelegate>delegate;
+@property (nonatomic, copy)void(^CanvasBlock)(XWCanvasControl *canvas, XWCanvasControlEvent event);
 
 + ( SizeContraints )innerSizeContraints;
+- (void)setCanvasBlock:(void (^)(XWCanvasControl *, XWCanvasControlEvent))CanvasBlock;
 
 @end

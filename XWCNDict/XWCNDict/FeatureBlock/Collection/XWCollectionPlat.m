@@ -7,12 +7,16 @@
 //
 
 #import "XWCollectionPlat.h"
+#import "XWMyDataController.h"
 
 #define kbox_w      (170.5 * kFixed_rate)
 #define ksideSpan   (10 * kFixed_rate)
 
 @implementation XWCollectionPlat{
-    XWSetInfo *_setInfo;
+    XWMyDataController  *_DC;
+    XWSetInfo           *_setInfo;
+    NSMutableArray      *_muArrCanvas;
+    BOOL                _haveDelete;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -23,9 +27,10 @@
         self.backgroundColor = [UIColor colorWithRed:42.0/255 green:178.0/255 blue:192.0/255 alpha:1];
         self.userInteractionEnabled = YES;
 
-        _setInfo = [XWSetInfo shareSetInfo];
-
-//        [self loadCollectionCaseFrom:nil];
+        _DC             = [XWMyDataController shareDataController];
+        _setInfo        = [XWSetInfo shareSetInfo];
+        _muArrCanvas    = [NSMutableArray array];
+        _haveDelete     = NO;
     }
     return self;
 }
@@ -43,46 +48,148 @@
             canvas.delegate    = self;
 
             [self addSubview:canvas];
+            [_muArrCanvas addObject:canvas];
+
+            __weak __typeof(self)weakSelf = self;
+            [canvas setCanvasBlock:^(XWCanvasControl *canvas, XWCanvasControlEvent event) {
+                __strong __typeof(weakSelf)strongSelf = weakSelf;
+                if (event == XWCanvasControlEventDeleteChar) {
+                    [strongSelf showAllCanvasDelState];
+                }
+            }];
         }
     }
 }
 
+- (void)canvasControl:(XWCanvasControl *)canvas event:(XWCanvasControlEvent)event
+{
+    if (event == XWCanvasControlEventDeleteChar)
+    {
+        [canvas removeFromSuperview];
+        [_muArrCanvas removeObjectAtIndex:canvas.index];
 
-//- (void)loadCollectionCaseFrom:(NSArray *)arrCase
-//{
-//    _arrCanvas = arrCase;
-//
-//    CGFloat leftspan = 130/2;
-//    CGFloat upspan = 77/2;
-//    CGFloat rowspan = 32/2;
-//    CGFloat collumspan = 40/2;
-//    CGFloat box_width = 341/2;
-//    for (int i=0; i<arrCase.count; i++)
-//    {
-//        CGRect thisRect = CGRectMake(leftspan+(i%4)*(box_width+collumspan), upspan+(i/4)*(rowspan+box_width)-15, box_width+collumspan, box_width+15);
-//
-//        XWCanvasControl *canvas = [arrCase objectAtIndex:i];
-//        canvas.frame = thisRect;
-//        fontCase.delegate = self;
-//
-//
-//        [self addSubview:fontCase];
-//
-//        [_collectCaseArr addObject:fontCase];
-//
-//
-//        //4.触动回调函数，将调用这个事件。
-//        [fontCase makeBackFun:^(CollectCase *thisCase) {
-//            NSLog(@"fCase%d:Do LongPress",fontCase.index);
-//            [self showAllCollectCaseDelState];
-//        }];
-//    }
-//
-//    
-//    XWCanvasControl *canvas = [[XWCanvasControl alloc] initWithFrame:CGRectMake(10, 10, kbox_w, kbox_w)];
-//    [canvas.layer setContents:(id)[UIImage imageNamed:_setInfo.imgNameField].CGImage];
-//    canvas.fontChar = @"啊";
-//    [self addSubview:canvas];
-//}
+        NSInteger i = 0;
+        for (XWCanvasControl *canvas in _muArrCanvas) {
+            canvas.index = i;
+            i++;
+        }
+
+        NSInteger location = [_DC.synchronousArrCanvas indexOfObject:canvas];
+        [_DC.synchronousArrCanvas removeObjectAtIndex:location];
+        /// 同时删除CoreData 存储的字符类容
+        NSArray *arrCharacter = [_DC arrObjectModel];
+        for (XWCharacter *character in arrCharacter)
+        {
+            if ([character.fontChar isEqualToString:canvas.fontChar])
+            {
+                [_DC.managedObjectContext deleteObject:character];
+                break;
+            }
+        }
+        NSError *error = nil;
+        [_DC.managedObjectContext save:&error];
+        if (error) {
+            NSLog(@"fail storn charModel  :%@",error);
+        }
+        
+        [self reloadCollectCasesFromCollectCaseArr];
+        
+        _DC.delCanvasCount ++;
+        _haveDelete = YES;
+    }
+}
+
+#pragma mark 每一次进行删除动作后都调用一下这个函数，进行动画效果解决。
+-(void)reloadCollectCasesFromCollectCaseArr
+{
+    SizeContraints sizeCon = [XWCanvasControl innerSizeContraints];
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationCurve:UIViewAnimationCurveLinear];
+    [UIView setAnimationDuration:0.2f];
+
+    for (int i=0; i<_muArrCanvas.count; i++)
+    {
+        CGRect rectCanvas = CGRectMake(sizeCon.spanLeft + (i%4)*(sizeCon.canvasWidth + sizeCon.spanColumn), (i/4)*(sizeCon.spanRow + sizeCon.canvasWidth) + sizeCon.spanUp, sizeCon.canvasWidth, sizeCon.canvasWidth);
+
+        XWCanvasControl *canvas = [_muArrCanvas objectAtIndex:i];
+        canvas.frame = rectCanvas;
+    }
+
+    [UIView commitAnimations];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    if (_haveDelete) {
+        if (self.pageIndex == [_DC.synchronousArrCanvas count]/8 + 1) {
+            _DC.delCanvasCount = 0;
+            return;
+        }else if (self.pageIndex <= [_DC.synchronousArrCanvas count]/8){
+
+            if (self.CollectionPlatBlock) {
+                self.CollectionPlatBlock(self);
+            }
+
+            NSInteger remainCount = 8 - _DC.delCanvasCount;
+            [self effectMovingCanvasFromLocation:remainCount];
+            _DC.delCanvasCount = 0;
+        }
+    }
+
+    [self cancelAllCanvasDelState];
+
+}
+
+- (void)effectMovingCanvasFromLocation:(NSInteger)remainCount
+{
+    NSRange range = NSMakeRange(8*(self.pageIndex-1), 8);
+    NSArray *subArr = [_DC.synchronousArrCanvas subarrayWithRange:range];
+
+    SizeContraints sizeCon = [XWCanvasControl innerSizeContraints];
+
+
+    for (NSInteger i = remainCount; i<subArr.count; i++)
+    {
+        CGRect rectCanvas = CGRectMake(sizeCon.spanLeft+(4+(i-remainCount)%4)*(sizeCon.canvasWidth + sizeCon.spanColumn), sizeCon.spanUp+(sizeCon.spanRow + sizeCon.canvasWidth)-15, sizeCon.canvasWidth+sizeCon.spanColumn, sizeCon.canvasWidth);
+
+        XWCanvasControl *canvas = [subArr objectAtIndex:i];
+        canvas.frame = rectCanvas;
+    }
+
+
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationCurve:UIViewAnimationCurveLinear];
+    [UIView setAnimationDuration:0.2f];
+    for (NSInteger i = remainCount; i<subArr.count; i++)
+    {
+        CGRect rectCanvas = CGRectMake(sizeCon.spanLeft + (i%4)*(sizeCon.canvasWidth + sizeCon.spanColumn), (i/4)*(sizeCon.spanRow + sizeCon.canvasWidth) + sizeCon.spanUp, sizeCon.canvasWidth, sizeCon.canvasWidth);
+
+        XWCanvasControl *canvas = [subArr objectAtIndex:i];
+        canvas.frame = rectCanvas;
+
+    }
+    [UIView commitAnimations];
+}
+
+- (void)cancelAllCanvasDelState
+{
+    for (XWCanvasControl *canvas in _DC.synchronousArrCanvas) {
+        canvas.delState = NO;
+    }
+    _haveDelete = NO;
+}
+
+- (void)showAllCanvasDelState
+{
+    for (XWCanvasControl *canvas in _DC.synchronousArrCanvas) {
+        canvas.delState = YES;
+    }
+    _haveDelete = NO;
+}
+
+- (void)setCollectionPlatBlock:(void (^)(XWCollectionPlat *))CollectionPlatBlock
+{
+    _CollectionPlatBlock = CollectionPlatBlock;
+}
 
 @end

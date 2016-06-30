@@ -373,6 +373,9 @@ typedef struct pageIndex{
             charModel.dataImg   = dataImg;
             charModel.fontChar  = characterPlat.fontChar;
             charModel.dateModify= [NSDate date];
+//            NSEntityDescription *description = [NSEntityDescription entityForName:@"XWCharacter" inManagedObjectContext:_DC.managedObjectContext];
+//            NSManagedObjectID *objectID = [[NSManagedObjectID alloc] init];
+
 
             NSError *error = nil;
             [_DC.managedObjectContext save:&error];

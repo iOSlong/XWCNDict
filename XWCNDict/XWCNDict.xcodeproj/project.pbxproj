@@ -179,8 +179,16 @@
 		014B82EE1D1D9CD600C6D841 /* 37x-Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B82EC1D1D9CD600C6D841 /* 37x-Checkmark.png */; };
 		014B82EF1D1D9CD600C6D841 /* 37x-Checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B82ED1D1D9CD600C6D841 /* 37x-Checkmark@2x.png */; };
 		014B82F31D1DC8F900C6D841 /* XWCollectionPlat.m in Sources */ = {isa = PBXBuildFile; fileRef = 014B82F21D1DC8F900C6D841 /* XWCollectionPlat.m */; };
-		014B82F61D1DCB2400C6D841 /* XWCollectionStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 014B82F51D1DCB2400C6D841 /* XWCollectionStore.m */; };
 		014B82F91D1DCECD00C6D841 /* XWCanvasControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 014B82F81D1DCECD00C6D841 /* XWCanvasControl.m */; };
+		014B83271D24450700C6D841 /* backIndex.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B831E1D24450700C6D841 /* backIndex.png */; };
+		014B83281D24450700C6D841 /* bagcreate.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B831F1D24450700C6D841 /* bagcreate.png */; };
+		014B83291D24450700C6D841 /* bagLibrary.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B83201D24450700C6D841 /* bagLibrary.png */; };
+		014B832A1D24450700C6D841 /* charBag.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B83211D24450700C6D841 /* charBag.png */; };
+		014B832B1D24450700C6D841 /* printbtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B83221D24450700C6D841 /* printbtn.png */; };
+		014B832C1D24450700C6D841 /* SetGear.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B83231D24450700C6D841 /* SetGear.png */; };
+		014B832D1D24450700C6D841 /* collection_del.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B83241D24450700C6D841 /* collection_del.png */; };
+		014B832E1D24450700C6D841 /* collection_mige.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B83251D24450700C6D841 /* collection_mige.png */; };
+		014B832F1D24450700C6D841 /* collection_plat.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B83261D24450700C6D841 /* collection_plat.png */; };
 		0170D2881D1C135B00275F70 /* UIView+XWPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0170D2871D1C135B00275F70 /* UIView+XWPosition.m */; };
 		0170D28C1D1C2B1A00275F70 /* XWCharacterInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0170D28B1D1C2B1A00275F70 /* XWCharacterInfoView.m */; };
 		0170D2911D1C3A8F00275F70 /* STZhuankai.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0170D2901D1C3A8F00275F70 /* STZhuankai.ttf */; };
@@ -408,10 +416,17 @@
 		014B82ED1D1D9CD600C6D841 /* 37x-Checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "37x-Checkmark@2x.png"; sourceTree = "<group>"; };
 		014B82F11D1DC8F900C6D841 /* XWCollectionPlat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWCollectionPlat.h; sourceTree = "<group>"; };
 		014B82F21D1DC8F900C6D841 /* XWCollectionPlat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWCollectionPlat.m; sourceTree = "<group>"; };
-		014B82F41D1DCB2400C6D841 /* XWCollectionStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWCollectionStore.h; sourceTree = "<group>"; };
-		014B82F51D1DCB2400C6D841 /* XWCollectionStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWCollectionStore.m; sourceTree = "<group>"; };
 		014B82F71D1DCECD00C6D841 /* XWCanvasControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWCanvasControl.h; sourceTree = "<group>"; };
 		014B82F81D1DCECD00C6D841 /* XWCanvasControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWCanvasControl.m; sourceTree = "<group>"; };
+		014B831E1D24450700C6D841 /* backIndex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backIndex.png; sourceTree = "<group>"; };
+		014B831F1D24450700C6D841 /* bagcreate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bagcreate.png; sourceTree = "<group>"; };
+		014B83201D24450700C6D841 /* bagLibrary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bagLibrary.png; sourceTree = "<group>"; };
+		014B83211D24450700C6D841 /* charBag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = charBag.png; sourceTree = "<group>"; };
+		014B83221D24450700C6D841 /* printbtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = printbtn.png; sourceTree = "<group>"; };
+		014B83231D24450700C6D841 /* SetGear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SetGear.png; sourceTree = "<group>"; };
+		014B83241D24450700C6D841 /* collection_del.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = collection_del.png; sourceTree = "<group>"; };
+		014B83251D24450700C6D841 /* collection_mige.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = collection_mige.png; sourceTree = "<group>"; };
+		014B83261D24450700C6D841 /* collection_plat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = collection_plat.png; sourceTree = "<group>"; };
 		0170D2861D1C135B00275F70 /* UIView+XWPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XWPosition.h"; sourceTree = "<group>"; };
 		0170D2871D1C135B00275F70 /* UIView+XWPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XWPosition.m"; sourceTree = "<group>"; };
 		0170D28A1D1C2B1A00275F70 /* XWCharacterInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWCharacterInfoView.h; sourceTree = "<group>"; };
@@ -566,6 +581,7 @@
 		010988511D08701C00C1BA84 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				014B831D1D2444CC00C6D841 /* collection */,
 				014B829A1D1D401700C6D841 /* strokeAudio */,
 				0170D28D1D1C36D800275F70 /* ttffont */,
 				010988521D08701C00C1BA84 /* background.png */,
@@ -829,10 +845,24 @@
 			children = (
 				014B82F11D1DC8F900C6D841 /* XWCollectionPlat.h */,
 				014B82F21D1DC8F900C6D841 /* XWCollectionPlat.m */,
-				014B82F41D1DCB2400C6D841 /* XWCollectionStore.h */,
-				014B82F51D1DCB2400C6D841 /* XWCollectionStore.m */,
 			);
 			path = Collection;
+			sourceTree = "<group>";
+		};
+		014B831D1D2444CC00C6D841 /* collection */ = {
+			isa = PBXGroup;
+			children = (
+				014B831E1D24450700C6D841 /* backIndex.png */,
+				014B831F1D24450700C6D841 /* bagcreate.png */,
+				014B83201D24450700C6D841 /* bagLibrary.png */,
+				014B83211D24450700C6D841 /* charBag.png */,
+				014B83221D24450700C6D841 /* printbtn.png */,
+				014B83231D24450700C6D841 /* SetGear.png */,
+				014B83241D24450700C6D841 /* collection_del.png */,
+				014B83251D24450700C6D841 /* collection_mige.png */,
+				014B83261D24450700C6D841 /* collection_plat.png */,
+			);
+			path = collection;
 			sourceTree = "<group>";
 		};
 		0170D2891D1C2AD600275F70 /* infoSection */ = {
@@ -958,10 +988,12 @@
 				014B82D51D1D40B300C6D841 /* 5_26.wav in Resources */,
 				010989641D0B10ED00C1BA84 /* font_plat.png in Resources */,
 				014B828B1D1CFFB700C6D841 /* playing.png in Resources */,
+				014B832D1D24450700C6D841 /* collection_del.png in Resources */,
 				010989001D0873A900C1BA84 /* bar_a7.png in Resources */,
 				010988A11D08701C00C1BA84 /* info.png in Resources */,
 				010988F91D0873A900C1BA84 /* 111.png in Resources */,
 				014B82C71D1D40B300C6D841 /* 5_13.wav in Resources */,
+				014B832C1D24450700C6D841 /* SetGear.png in Resources */,
 				010989021D0873A900C1BA84 /* bar_d1.png in Resources */,
 				010989051D0873A900C1BA84 /* bar_d4.png in Resources */,
 				010988FB1D0873A900C1BA84 /* bar_a2.png in Resources */,
@@ -972,6 +1004,7 @@
 				0109890D1D0873A900C1BA84 /* nav1.png in Resources */,
 				010988C21D08701D00C1BA84 /* pinyin.plist in Resources */,
 				010989501D0B10ED00C1BA84 /* seg4.png in Resources */,
+				014B832A1D24450700C6D841 /* charBag.png in Resources */,
 				014B82CC1D1D40B300C6D841 /* 5_18.wav in Resources */,
 				014B82C01D1D40B300C6D841 /* 3_0.wav in Resources */,
 				010988C41D08701D00C1BA84 /* poem.plist in Resources */,
@@ -986,6 +1019,7 @@
 				014B82D21D1D40B300C6D841 /* 5_23.wav in Resources */,
 				010989601D0B10ED00C1BA84 /* btn_ele1.png in Resources */,
 				010989511D0B10ED00C1BA84 /* seg11.png in Resources */,
+				014B832B1D24450700C6D841 /* printbtn.png in Resources */,
 				010988C31D08701D00C1BA84 /* pinyinArr.plist in Resources */,
 				014B82C41D1D40B300C6D841 /* 5_10.wav in Resources */,
 				0109890E1D0873A900C1BA84 /* navbackground.png in Resources */,
@@ -995,11 +1029,13 @@
 				014B82CF1D1D40B300C6D841 /* 5_20.wav in Resources */,
 				010989631D0B10ED00C1BA84 /* btn_ele4.png in Resources */,
 				014B82861D1CFFB700C6D841 /* poemMask.png in Resources */,
+				014B83281D24450700C6D841 /* bagcreate.png in Resources */,
 				0109894F1D0B10ED00C1BA84 /* seg3.png in Resources */,
 				010989561D0B10ED00C1BA84 /* cir2.png in Resources */,
 				010989791D0B10F900C1BA84 /* box_3.png in Resources */,
 				010989541D0B10ED00C1BA84 /* seg44.png in Resources */,
 				010988F61D0873A900C1BA84 /* 1-6.png in Resources */,
+				014B83291D24450700C6D841 /* bagLibrary.png in Resources */,
 				0109889E1D08701C00C1BA84 /* background.png in Resources */,
 				010988F01D0873A900C1BA84 /* 1-1.png in Resources */,
 				014B82C31D1D40B300C6D841 /* 5_1.wav in Resources */,
@@ -1016,6 +1052,7 @@
 				010988FE1D0873A900C1BA84 /* bar_a5.png in Resources */,
 				0109897A1D0B10F900C1BA84 /* box_3r.png in Resources */,
 				014B82881D1CFFB700C6D841 /* bofang.png in Resources */,
+				014B83271D24450700C6D841 /* backIndex.png in Resources */,
 				010988C51D08701D00C1BA84 /* radical.plist in Resources */,
 				010988FC1D0873A900C1BA84 /* bar_a3.png in Resources */,
 				010988F21D0873A900C1BA84 /* 1-2.png in Resources */,
@@ -1030,6 +1067,7 @@
 				010989091D0873A900C1BA84 /* bar_d8.png in Resources */,
 				014B82CB1D1D40B300C6D841 /* 5_17.wav in Resources */,
 				010989011D0873A900C1BA84 /* bar_a8.png in Resources */,
+				014B832F1D24450700C6D841 /* collection_plat.png in Resources */,
 				014B82851D1CFFB700C6D841 /* poemNavMask.png in Resources */,
 				010989061D0873A900C1BA84 /* bar_d5.png in Resources */,
 				010988F41D0873A900C1BA84 /* 1-4.png in Resources */,
@@ -1044,6 +1082,7 @@
 				0170D2911D1C3A8F00275F70 /* STZhuankai.ttf in Resources */,
 				0109897C1D0B10F900C1BA84 /* mask.png in Resources */,
 				0109895E1D0B10ED00C1BA84 /* mi.png in Resources */,
+				014B832E1D24450700C6D841 /* collection_mige.png in Resources */,
 				0109890C1D0873A900C1BA84 /* jiantou2.png in Resources */,
 				010989781D0B10F900C1BA84 /* box_2.png in Resources */,
 				010989731D0B10F900C1BA84 /* 22.png in Resources */,
@@ -1157,7 +1196,6 @@
 				014B828E1D1D222D00C6D841 /* XWCharacterSetView.m in Sources */,
 				010989211D08792A00C1BA84 /* StrokeFontIO.mm in Sources */,
 				014B82721D1C58C900C6D841 /* XWPinyinInfoView.m in Sources */,
-				014B82F61D1DCB2400C6D841 /* XWCollectionStore.m in Sources */,
 				014B82781D1C684200C6D841 /* XWRadicalInfoView.m in Sources */,
 				010988971D08701C00C1BA84 /* XWNotebookViewController.m in Sources */,
 				014B82E51D1D7B2B00C6D841 /* DataModel.xcdatamodeld in Sources */,

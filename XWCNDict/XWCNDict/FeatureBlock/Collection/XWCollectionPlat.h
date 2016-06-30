@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "XWCanvasControl.h"
-
+#import <CoreData/CoreData.h>
 
 
 
@@ -16,6 +16,7 @@
 
 @property (nonatomic, strong) NSArray <XWCanvasControl *>* arrCanvas;
 @property (nonatomic, assign) NSInteger pageIndex;
-
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, copy) void (^CollectionPlatBlock)(XWCollectionPlat *plat);
 
 @end

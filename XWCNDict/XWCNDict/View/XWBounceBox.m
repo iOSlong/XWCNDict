@@ -8,6 +8,7 @@
 
 #import "XWBounceBox.h"
 #import "AppDelegate.h"
+#import "XWSetInfo.h"
 
 @implementation Arrow
 
@@ -121,7 +122,7 @@
 }
 
 
-#define kupSpan 15.0f
+#define kBounceBoxUpSpan 15.0f
 #define kleftSpan 20.0f
 #pragma mark - 部首数组查找
 -(void)reloadInfoWithRadicalArr:(NSArray *)r_c_pArr;
@@ -150,7 +151,7 @@
         NSArray *detail = [[r_c_pArr objectAtIndex:i] objectForKey:title];
 
 
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(kleftSpan,kupSpan+lastPosition_y, 120, 30)];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(kleftSpan,kBounceBoxUpSpan+lastPosition_y, 120, 30)];
         [label setFont:[UIFont systemFontOfSize:20]];
         [label setTextColor:[UIColor colorWithRed:215.0/255 green:121.0/255 blue:21.0/255 alpha:1]];
         label.text = title;
@@ -160,7 +161,7 @@
         CGFloat relative_y = 0;
         for (int j=0; j<detail.count; j++)
         {
-            CGRect rect = CGRectMake(kleftSpan+j%_column*(kbtnW+5),kupSpan+lastPosition_y+j/_column*(kbtnH+5)+30, kbtnW+3, kbtnH);
+            CGRect rect = CGRectMake(kleftSpan+j%_column*(kbtnW+5),kBounceBoxUpSpan+lastPosition_y+j/_column*(kbtnH+5)+30, kbtnW+3, kbtnH);
 
             XWDictBtn *dbtn = [[XWDictBtn alloc] initWithFrame:rect];
             dbtn.key = [[detail objectAtIndex:j] substringToIndex:1];
@@ -199,13 +200,8 @@
 }
 -(void)dbtnClick:(XWDictBtn *)db
 {
-    //    printf("%s\n",[db.key UTF8String]);
-
-    AppDelegate *app = [[UIApplication sharedApplication] delegate];
-//    app.firstFontChar = db.key;
-
-    //发送一个通知，让注册有通知的viewController可以进行跳转到第一个页面
-//    [[NSNotificationCenter defaultCenter] postNotificationName:@"JumpTwoCharactersView" object:nil];
+    [XWSetInfo shareSetInfo].fontCharShow = db.key;
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNotiNameCollection_JumpTo_CharacterVC object:nil];
 }
 
 #pragma mark - 拼音查找
@@ -213,7 +209,7 @@
 {
     //    NSLog(@"%@",char_pinArr);
     _column = 3;
-    int count = char_pinArr.count;
+    NSInteger count = char_pinArr.count;
     if (count<=20) {
         _column = 3;
     }else{

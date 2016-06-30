@@ -61,7 +61,7 @@
         CGRect rectCanvas = CGRectMake(sizeCon.spanLeft + (i%4)*(sizeCon.canvasWidth + sizeCon.spanColumn), (i/4)*(sizeCon.spanRow + sizeCon.canvasWidth) + sizeCon.spanUp, sizeCon.canvasWidth, sizeCon.canvasWidth);
 
         XWCanvasControl *canvas     = [[XWCanvasControl alloc] initWithFrame:rectCanvas];
-        canvas.imgvBackground.image = [UIImage imageWithData:character.dataImg];
+        canvas.imgvDynamicView.image = [UIImage imageWithData:character.dataImg];
         canvas.fontChar             = character.fontChar;
         canvas.tag                  = i;
         canvas.index                = i;
@@ -106,6 +106,14 @@
 
         [self.scrollView addSubview:collectionPlat];
         [_arrPlat addObject:collectionPlat];
+
+
+        __weak __typeof(self)weakSelf = self;
+        [collectionPlat setCollectionPlatBlock:^(XWCollectionPlat *colPlat) {
+            __strong __typeof(weakSelf)strongSelf = weakSelf;
+            [strongSelf reloadCollectionPlats];
+
+        }];
     }
 
     [self.scrollView setContentSize:CGSizeMake( kScreenSize.width * _arrSectionCanvas.count, self.scrollView.height)];
