@@ -24,7 +24,8 @@
 {
     self = [super init];
     if (self) {
-        _synchronousArrCanvas = [NSMutableArray array];
+        _synchronousArrCanvas       = [NSMutableArray array];
+        _needReloadCollectionCanvas = YES;
     }
     return self;
 }

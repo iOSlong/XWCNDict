@@ -373,9 +373,6 @@ typedef struct pageIndex{
             charModel.dataImg   = dataImg;
             charModel.fontChar  = characterPlat.fontChar;
             charModel.dateModify= [NSDate date];
-//            NSEntityDescription *description = [NSEntityDescription entityForName:@"XWCharacter" inManagedObjectContext:_DC.managedObjectContext];
-//            NSManagedObjectID *objectID = [[NSManagedObjectID alloc] init];
-
 
             NSError *error = nil;
             [_DC.managedObjectContext save:&error];
@@ -383,6 +380,7 @@ typedef struct pageIndex{
                 NSLog(@"fail storn charModel  :%@",error);
             }else{
                 [self showLoadingSuccess:YES hintString:@"已收藏到： My Collection" hide:2.0];
+                _DC.needReloadCollectionCanvas = YES;
             }
         }
         [alertControl dismissViewControllerAnimated:YES completion:nil];

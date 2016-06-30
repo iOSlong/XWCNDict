@@ -120,6 +120,7 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
+    [self cancelAllCanvasDelState];
     if (_haveDelete) {
         if (self.pageIndex == [_DC.synchronousArrCanvas count]/8 + 1) {
             _DC.delCanvasCount = 0;
@@ -135,9 +136,6 @@
             _DC.delCanvasCount = 0;
         }
     }
-
-    [self cancelAllCanvasDelState];
-
 }
 
 - (void)effectMovingCanvasFromLocation:(NSInteger)remainCount

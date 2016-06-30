@@ -11,7 +11,8 @@
 #import "XWCollectionPlat.h"
 
 @interface XWCollectionViewController ()<UIScrollViewDelegate>
-@property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) UIScrollView  *scrollView;
+@property (nonatomic, strong) UILabel       *labelPageIndex;
 @end
 
 @implementation XWCollectionViewController{
@@ -33,6 +34,26 @@
     return _scrollView;
 }
 
+- (UILabel *)labelPageIndex
+{
+    if (!_labelPageIndex) {
+        _labelPageIndex = [[UILabel alloc] initWithFrame:CGRectMake(kScreenSize.width-170*kFixed_rate, (1394/2-20)*kFixed_rate, 100 * kFixed_rate, 25 * kFixed_rate)];
+        _labelPageIndex.textColor = [UIColor lightGrayColor];
+        _labelPageIndex.textAlignment = NSTextAlignmentCenter;
+        _labelPageIndex.font = [UIFont fontWithName:@"Arial-ItalicMT" size:20];
+    }
+    return _labelPageIndex;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+
+    if (_DC.needReloadCollectionCanvas) {
+        [self getCollectionCanvasReady];
+    }
+    _DC.needReloadCollectionCanvas = NO;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -45,9 +66,7 @@
 
 
     [self.view addSubview:self.scrollView];
-
-
-    [self getCollectionCanvasReady];
+    [self.view addSubview:self.labelPageIndex];
 
 
 }
@@ -118,6 +137,8 @@
 
     [self.scrollView setContentSize:CGSizeMake( kScreenSize.width * _arrSectionCanvas.count, self.scrollView.height)];
 
+    NSString *indexTitle = [NSString stringWithFormat:@"%d / %d",1,_arrSectionCanvas.count ? (int)[_arrSectionCanvas count]:1];
+    _labelPageIndex.text = indexTitle;
 }
 
 - (void)loadCollectionPlat
@@ -126,5 +147,17 @@
     [self.scrollView addSubview:collectionPlat];
 }
 
+#pragma mark - _scrollViewDelegate -
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    CGPoint point = scrollView.contentOffset;
+    printf("point.x = %f\n",point.x);
+    NSString *indexTitle = [NSString stringWithFormat:@"%d / %ld",(int)point.x/(int)kScreenSize.width+1,_arrSectionCanvas.count];
+    //    NSString *indexTitle = @"12/21";//[NSString stringWithFormat:@"%d/%d",(int)point.x/1024+1,_caseRowArr.count];
+
+    _labelPageIndex.text = indexTitle;
+
+    [self.view bringSubviewToFront:_scrollView];
+}
 
 @end
