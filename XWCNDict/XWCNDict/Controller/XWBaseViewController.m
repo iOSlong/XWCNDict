@@ -20,9 +20,55 @@
     if (self) {
         NSLog(@"%s",__FUNCTION__);
         _setInfo = [XWSetInfo shareSetInfo];
+
     }
     return self;
 }
+
+- (UIImageView *)imgvTabBarMask
+{
+    if(!_imgvTabBarMask){
+        _imgvTabBarMask = [[UIImageView alloc] initWithFrame:CGRectMake(0, 20*kFixed_rate, kScreenSize.width, 133 * kFixed_rate)];
+        _imgvTabBarMask.image = [UIImage imageNamed:self.setInfo.imgNameEqTabMask];
+        _imgvTabBarMask.userInteractionEnabled = YES;
+        _imgvTabBarMask.alpha   = 0;
+        [_imgvTabBarMask setHidden:YES];
+
+        UITapGestureRecognizer *tapGOne = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(maskTap:)];
+        [_imgvTabBarMask addGestureRecognizer:tapGOne];
+
+    }
+    return _imgvTabBarMask;
+}
+
+- (UIImageView *)imgvPageMask
+{
+    if (!_imgvPageMask) {
+        _imgvPageMask = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kScreenSize.width, kScreenSize.height)];
+        _imgvPageMask.image = [UIImage imageNamed:self.setInfo.imgNameEqTabMask];
+        _imgvPageMask.userInteractionEnabled = YES;
+        _imgvPageMask.alpha     = 0;
+        [_imgvPageMask setHidden:YES];
+
+        UITapGestureRecognizer *tapTwo = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(maskTap:)];
+        [_imgvPageMask addGestureRecognizer:tapTwo];
+    }
+    return _imgvPageMask;
+}
+
+- (void)maskTap:(UIGestureRecognizer *)gestureR {
+    [UIView animateWithDuration:0.5f animations:^{
+        if (self.MaskHiddenBlock) {
+            self.MaskHiddenBlock();
+        }
+        self.imgvTabBarMask.alpha   = 0;
+        self.imgvPageMask.alpha     = 0;
+    } completion:^(BOOL finished) {
+        [self.imgvPageMask setHidden:YES];
+        [self.imgvTabBarMask setHidden:YES];
+    }];
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,6 +76,10 @@
     [self setBasicView];
 
     self.platViewModel = XWPlatViewModelCharacters;
+
+    [self.view addSubview:self.imgvPageMask];
+    [self.tabBarVC.view addSubview:self.imgvTabBarMask];
+
 }
 
 - (CGRect)rectPlat
@@ -40,7 +90,7 @@
 #pragma mark - 添加收索条 -
 -(void)addSearchBar
 {
-    UIImage *searchImg = [UIImage imageNamed:@"search.png"];
+    UIImage *searchImg = [UIImage imageNamed:@"search"];
     CGFloat sw = CGImageGetWidth(searchImg.CGImage)/2 * kFixed_rate;
     CGFloat sh = CGImageGetHeight(searchImg.CGImage)/2 * kFixed_rate;
 
@@ -75,18 +125,31 @@
     [self.btnSetGear setBackgroundImage:[UIImage imageNamed:_setInfo.imgNameSetGear] forState:UIControlStateNormal];
     [self.btnSetGear addTarget:self action:@selector(setGearBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.btnSetGear];
-    //    [self.view bringSubviewToFront:_setGearView];
-
-//    _charSet = [[CharacterSet alloc] initWithFrame:CGRectMake(-615.0/2-300, 554/2, 0, 0)];
-    //    [_cSetView setHidden:YES];
-    //    _charSet.backgroundColor = [UIColor redColor];
-//    [self.view addSubview:_charSet];
 
 }
 
-- (void)setGearBtn:(UIButton *)btn {
+- (void)setGearBtn:(UIButton *)btn
+{
+    [self.view bringSubviewToFront:self.imgvPageMask];
+    [self.tabBarVC.view bringSubviewToFront:self.imgvTabBarMask];
+    [self.imgvTabBarMask setHidden:NO];
+    [self.imgvPageMask setHidden:NO];
 
+
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.5f];
+
+    self.imgvPageMask.alpha = 0.8;
+    self.imgvTabBarMask.alpha = 0.8;
+    if (self.MaskShowBlock) {
+        self.MaskShowBlock();
+    }
+
+    [UIView commitAnimations];
 }
+
+
+
 
 
 
@@ -125,6 +188,10 @@
             self.sectionPlatView.backgroundColor = [UIColor whiteColor];
         }
             break;
+        case XWPlatViewModelPeom:{
+            self.imgvPageMask.image     = [UIImage imageNamed:_setInfo.imgNamePoemPlatMask];
+            self.imgvTabBarMask.image   = [UIImage imageNamed:_setInfo.imgNamePoemTabMask];
+        }
 
         default:{
             self.sectionPlatView.backgroundColor = [UIColor whiteColor];

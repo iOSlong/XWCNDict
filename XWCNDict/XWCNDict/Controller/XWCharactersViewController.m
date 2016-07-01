@@ -7,7 +7,7 @@
 //
 
 #import "XWCharactersViewController.h"
-#import "XWTabBarViewController.h"
+//#import "XWTabBarViewController.h"
 #import "XWCharacterPlat.h"
 #import "XWCharacterSetView.h"
 #import "XWMyDataController.h"
@@ -38,9 +38,6 @@ typedef struct pageIndex{
     NSUInteger _pageLocation;
     PageStruct _pageStruct;
 
-    UIImageView *_imgvTabBarMask;
-    UIImageView *_imgvPageMask;
-
     XWMyDataController *_DC;
 }
 
@@ -49,29 +46,6 @@ typedef struct pageIndex{
     self = [super init];
     if (self) {
 
-        _imgvTabBarMask = [[UIImageView alloc] initWithFrame:CGRectMake(0, 20*kFixed_rate, kScreenSize.width, 133 * kFixed_rate)];
-        _imgvTabBarMask.image = [UIImage imageNamed:self.setInfo.imgNameTabbarMask];
-        _imgvTabBarMask.alpha = 0.8;
-        _imgvTabBarMask.userInteractionEnabled = YES;
-        [_imgvTabBarMask setHidden:NO];
-
-        _imgvPageMask = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kScreenSize.width, kScreenSize.height)];
-        _imgvPageMask.image = [UIImage imageNamed:self.setInfo.imgNameTabbarMask];
-        _imgvPageMask.alpha = 0.8;
-        _imgvPageMask.userInteractionEnabled = YES;
-        [_imgvPageMask setHidden:YES];
-
-        [_imgvPageMask setHidden:YES];
-        [_imgvTabBarMask setHidden:YES];
-        _imgvTabBarMask.alpha   = 0;
-        _imgvPageMask.alpha     = 0;
-
-
-        UITapGestureRecognizer *tapGOne = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(maskTap:)];
-        UITapGestureRecognizer *tapTwo = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(maskTap:)];
-        [_imgvTabBarMask addGestureRecognizer:tapGOne];
-        [_imgvPageMask addGestureRecognizer:tapTwo];
-
         _DC = [XWMyDataController shareDataController];
 
         /// 注意，在VC 里面的init方法中，不能执行 addSubview的UI绘制操作。
@@ -79,16 +53,7 @@ typedef struct pageIndex{
     return self;
 }
 
-- (void)maskTap:(UIGestureRecognizer *)gestureR {
-    [UIView animateWithDuration:0.5f animations:^{
-        self.characterSetView.frame = CGRectMake((-607.0/2-300)*kFixed_rate, 554/2 * kFixed_rate, self.characterSetView.width, self.characterSetView.height);
-        _imgvTabBarMask.alpha   = 0;
-        _imgvPageMask.alpha     = 0;
-    } completion:^(BOOL finished) {
-        [_imgvPageMask setHidden:YES];
-        [_imgvTabBarMask setHidden:YES];
-    }];
-}
+
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -112,10 +77,19 @@ typedef struct pageIndex{
 
     self.textfield.delegate = self;
 
-    [self.view addSubview:_imgvPageMask];
-    [self.tabBarVC.view addSubview:_imgvTabBarMask];
-    [self.view addSubview:self.characterSetView];
 
+    [self.view addSubview:self.characterSetView];
+    /// 设置Mask 遮罩动画block 添加快。
+    __weak __typeof(self)weakSelf = self;
+    self.MaskHiddenBlock = ^(){
+        __strong __typeof(weakSelf)strongSelf = weakSelf;
+        strongSelf.characterSetView.frame = CGRectMake((-607.0/2-300)*kFixed_rate, 554/2 * kFixed_rate, strongSelf.characterSetView.width, strongSelf.characterSetView.height);
+    };
+    self.MaskShowBlock  = ^(){
+        __strong __typeof(weakSelf)strongSelf = weakSelf;
+        [strongSelf.view bringSubviewToFront:strongSelf.characterSetView];
+        strongSelf.characterSetView.frame = CGRectMake(0, 552/2 * kFixed_rate, strongSelf.characterSetView.width, strongSelf.characterSetView.height);
+    };
 
 }
 
@@ -182,29 +156,6 @@ typedef struct pageIndex{
 
     self.pageControl.currentPage    = 1;
 
-}
-
-
-#pragma mark - SetGear Events
-- (void)setGearBtn:(UIButton *)btn {
-
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:0.5f];
-
-    [self displayMask];
-
-    [UIView commitAnimations];
-}
-
-- (void)displayMask {
-    [self.view bringSubviewToFront:_imgvPageMask];
-    [self.view bringSubviewToFront:self.characterSetView];
-    [self.tabBarVC.view bringSubviewToFront:_imgvTabBarMask];
-    [_imgvTabBarMask setHidden:NO];
-    [_imgvPageMask setHidden:NO];
-    _imgvPageMask.alpha = 0.8;
-    _imgvTabBarMask.alpha = 0.8;
-    self.characterSetView.frame = CGRectMake(0, 552/2 * kFixed_rate, self.characterSetView.width, self.characterSetView.height);
 }
 
 

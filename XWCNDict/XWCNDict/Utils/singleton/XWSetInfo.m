@@ -33,7 +33,9 @@
         _imgNameSetGear         = @"shezhi";
         _imgNameTabbarMask      = @"tabbarmask";
         _imgNameCharPlatMask    = @"shademask";
-        
+        _imgNamePoemTabMask     = @"poemNavMask";
+        _imgNamePoemPlatMask    = @"poemMask";
+        _imgNameEqTabMask       = @"eqtabmask";
 
         _arrInfoImgName = [NSMutableArray array];
         for (int i=1;i<=4; i++) {

@@ -189,6 +189,8 @@
 		014B832D1D24450700C6D841 /* collection_del.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B83241D24450700C6D841 /* collection_del.png */; };
 		014B832E1D24450700C6D841 /* collection_mige.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B83251D24450700C6D841 /* collection_mige.png */; };
 		014B832F1D24450700C6D841 /* collection_plat.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B83261D24450700C6D841 /* collection_plat.png */; };
+		014B83311D26CF6300C6D841 /* eqtabmask.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B83301D26CF6300C6D841 /* eqtabmask.png */; };
+		014B83341D26D1D600C6D841 /* XWCollectionSetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 014B83331D26D1D600C6D841 /* XWCollectionSetView.m */; };
 		0170D2881D1C135B00275F70 /* UIView+XWPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0170D2871D1C135B00275F70 /* UIView+XWPosition.m */; };
 		0170D28C1D1C2B1A00275F70 /* XWCharacterInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0170D28B1D1C2B1A00275F70 /* XWCharacterInfoView.m */; };
 		0170D2911D1C3A8F00275F70 /* STZhuankai.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0170D2901D1C3A8F00275F70 /* STZhuankai.ttf */; };
@@ -427,6 +429,9 @@
 		014B83241D24450700C6D841 /* collection_del.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = collection_del.png; sourceTree = "<group>"; };
 		014B83251D24450700C6D841 /* collection_mige.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = collection_mige.png; sourceTree = "<group>"; };
 		014B83261D24450700C6D841 /* collection_plat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = collection_plat.png; sourceTree = "<group>"; };
+		014B83301D26CF6300C6D841 /* eqtabmask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eqtabmask.png; sourceTree = "<group>"; };
+		014B83321D26D1D600C6D841 /* XWCollectionSetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWCollectionSetView.h; sourceTree = "<group>"; };
+		014B83331D26D1D600C6D841 /* XWCollectionSetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWCollectionSetView.m; sourceTree = "<group>"; };
 		0170D2861D1C135B00275F70 /* UIView+XWPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XWPosition.h"; sourceTree = "<group>"; };
 		0170D2871D1C135B00275F70 /* UIView+XWPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XWPosition.m"; sourceTree = "<group>"; };
 		0170D28A1D1C2B1A00275F70 /* XWCharacterInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWCharacterInfoView.h; sourceTree = "<group>"; };
@@ -762,6 +767,7 @@
 				010989701D0B10F900C1BA84 /* mask.png */,
 				0109892F1D0B10ED00C1BA84 /* shademask.png */,
 				010989301D0B10ED00C1BA84 /* tabbarmask.png */,
+				014B83301D26CF6300C6D841 /* eqtabmask.png */,
 				010989311D0B10ED00C1BA84 /* search.png */,
 				010989321D0B10ED00C1BA84 /* seg1.png */,
 				010989331D0B10ED00C1BA84 /* seg2.png */,
@@ -845,6 +851,8 @@
 			children = (
 				014B82F11D1DC8F900C6D841 /* XWCollectionPlat.h */,
 				014B82F21D1DC8F900C6D841 /* XWCollectionPlat.m */,
+				014B83321D26D1D600C6D841 /* XWCollectionSetView.h */,
+				014B83331D26D1D600C6D841 /* XWCollectionSetView.m */,
 			);
 			path = Collection;
 			sourceTree = "<group>";
@@ -1074,6 +1082,7 @@
 				014B82C61D1D40B300C6D841 /* 5_12.wav in Resources */,
 				010989041D0873A900C1BA84 /* bar_d3.png in Resources */,
 				010987CB1D086DFA00C1BA84 /* Main.storyboard in Resources */,
+				014B83311D26CF6300C6D841 /* eqtabmask.png in Resources */,
 				010988F71D0873A900C1BA84 /* 1-7.png in Resources */,
 				010989521D0B10ED00C1BA84 /* seg22.png in Resources */,
 				014B82EF1D1D9CD600C6D841 /* 37x-Checkmark@2x.png in Resources */,
@@ -1197,6 +1206,7 @@
 				010989211D08792A00C1BA84 /* StrokeFontIO.mm in Sources */,
 				014B82721D1C58C900C6D841 /* XWPinyinInfoView.m in Sources */,
 				014B82781D1C684200C6D841 /* XWRadicalInfoView.m in Sources */,
+				014B83341D26D1D600C6D841 /* XWCollectionSetView.m in Sources */,
 				010988971D08701C00C1BA84 /* XWNotebookViewController.m in Sources */,
 				014B82E51D1D7B2B00C6D841 /* DataModel.xcdatamodeld in Sources */,
 				010988CC1D08701D00C1BA84 /* XWBounceBox.m in Sources */,

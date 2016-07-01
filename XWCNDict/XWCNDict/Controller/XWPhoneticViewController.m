@@ -286,7 +286,7 @@
 
     return YES;
 }
-
+#pragma mark - ReImplement SuperMethods
 - (void)searchBtn:(UIButton *)btn {
     [self.textfield resignFirstResponder];
     //    printf("char:%s\n",[tf.text UTF8String]);
@@ -300,6 +300,11 @@
 
     self.textfield.text = nil;
 }
+
+//- (void)setGearBtn:(UIButton *)btn
+//{
+//
+//}
 
 -(void)doSearchLocation:(NSString *)title;
 {
@@ -397,6 +402,7 @@
     }
     [self.scrollView setContentOffset:CGPointMake(0, location_y) animated:YES];
 }
+
 
 
 @end

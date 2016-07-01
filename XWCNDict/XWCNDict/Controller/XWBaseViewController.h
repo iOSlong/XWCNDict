@@ -10,6 +10,7 @@
 #import "XWSectionPlatView.h"
 #import "XWSetInfo.h"
 #import <MBProgressHUD/MBProgressHUD.h>
+#import "XWTabBarViewController.h"
 
 typedef NS_ENUM(NSUInteger, XWPlatViewModel) {
     XWPlatViewModelCharacters,
@@ -25,6 +26,12 @@ typedef NS_ENUM(NSUInteger, XWPlatViewModel) {
 @interface XWBaseViewController : UIViewController
 
 @property (nonatomic, strong) UIImageView       *imgvBackground;
+@property (nonatomic, strong) UIImageView       *imgvTabBarMask; ///
+@property (nonatomic, strong) UIImageView       *imgvPageMask;
+
+@property (nonatomic, copy) void (^MaskShowBlock)();
+@property (nonatomic, copy) void (^MaskHiddenBlock)();
+
 
 ///默认隐藏
 @property (nonatomic, strong) XWSectionPlatView *sectionPlatView;

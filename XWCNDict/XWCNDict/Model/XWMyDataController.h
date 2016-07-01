@@ -22,6 +22,8 @@
 
 @property (nonatomic, strong) NSMutableArray <XWCanvasControl *> *synchronousArrCanvas;
 @property (nonatomic, assign) NSInteger delCanvasCount; ///记录当前CollectionPlat中删除掉的CanvasControl 的个数。
-@property (nonatomic, assign) BOOL  needReloadCollectionCanvas;
+@property (nonatomic, assign) BOOL      needReloadCollectionCanvas;
+@property (nonatomic, assign) CGFloat   speed;
+@property (nonatomic, assign) NSInteger stepLength;
 
 @end

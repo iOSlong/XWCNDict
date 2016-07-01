@@ -292,6 +292,9 @@
     return YES;
 }
 
+
+#pragma mark - ReImplement SuperMethods
+
 - (void)searchBtn:(UIButton *)btn
 {
 
@@ -307,6 +310,12 @@
 
     self.textfield.text = nil;
 }
+
+//- (void)setGearBtn:(UIButton *)btn
+//{
+//
+//}
+
 
 -(void)doSearchLocation:(NSString *)title;
 {

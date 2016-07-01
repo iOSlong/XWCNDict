@@ -20,6 +20,10 @@
 @property (nonatomic, strong, readonly) NSString        *imgNameSetGear;
 @property (nonatomic, strong, readonly) NSString        *imgNameTabbarMask;
 @property (nonatomic, strong, readonly) NSString        *imgNameCharPlatMask;
+@property (nonatomic, strong, readonly) NSString        *imgNamePoemPlatMask;
+@property (nonatomic, strong, readonly) NSString        *imgNamePoemTabMask;
+@property (nonatomic, strong, readonly) NSString        *imgNameEqTabMask;
+
 
 @property (nonatomic, strong) NSString  *imgNameField;
 @property (nonatomic, strong) NSString  *fontCharShow;

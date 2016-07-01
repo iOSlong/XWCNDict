@@ -9,10 +9,12 @@
 #import "XWCollectionViewController.h"
 #import "XWMyDataController.h"
 #import "XWCollectionPlat.h"
+#import "XWCollectionSetView.h"
 
-@interface XWCollectionViewController ()<UIScrollViewDelegate>
-@property (nonatomic, strong) UIScrollView  *scrollView;
-@property (nonatomic, strong) UILabel       *labelPageIndex;
+@interface XWCollectionViewController ()<UIScrollViewDelegate, UITextFieldDelegate>
+@property (nonatomic, strong) UIScrollView          *scrollView;
+@property (nonatomic, strong) UILabel               *labelPageIndex;
+@property (nonatomic, strong) XWCollectionSetView   *collectionSetView;
 @end
 
 @implementation XWCollectionViewController{
@@ -20,6 +22,14 @@
 
     NSMutableArray      *_arrSectionCanvas; //[ [8],[8],[<8] ]
     NSMutableArray      *_arrPlat;
+}
+
+- (XWCollectionSetView *)collectionSetView
+{
+    if (!_collectionSetView) {
+        _collectionSetView = [[XWCollectionSetView alloc] initWithFrame:CGRectMake((-615.0/2-300)*kFixed_rate, 554/2 * kFixed_rate, 250*kFixed_rate, 300*kFixed_rate)];
+    }
+    return _collectionSetView;
 }
 
 - (UIScrollView *)scrollView
@@ -67,13 +77,26 @@
 
     [self.view addSubview:self.scrollView];
     [self.view addSubview:self.labelPageIndex];
+    [self.view addSubview:self.collectionSetView];
+    self.textfield.delegate = self;
 
+    __weak __typeof(self)weakSelf = self;
+    self.MaskHiddenBlock = ^(){
+        __strong __typeof(weakSelf)strongSelf = weakSelf;
+        strongSelf.collectionSetView.frame = CGRectMake((-607.0/2-300)*kFixed_rate, 554/2 * kFixed_rate, strongSelf.collectionSetView.width, strongSelf.collectionSetView.height);
+    };
+    self.MaskShowBlock  = ^(){
+        __strong __typeof(weakSelf)strongSelf = weakSelf;
+        [strongSelf.view bringSubviewToFront:strongSelf.collectionSetView];
+        strongSelf.collectionSetView.frame = CGRectMake(0, 552/2 * kFixed_rate, strongSelf.collectionSetView.width, strongSelf.collectionSetView.height);
+    };
 
 }
 
 - (void)getCollectionCanvasReady
 {
     NSArray *arrCharacter = [_DC arrObjectModel];
+    [_DC.synchronousArrCanvas removeAllObjects];
     SizeContraints sizeCon = [XWCanvasControl innerSizeContraints];
     for (NSInteger i = 0; i < arrCharacter.count; i ++) {
         XWCharacter *character = arrCharacter[i];
@@ -158,6 +181,39 @@
     _labelPageIndex.text = indexTitle;
 
     [self.view bringSubviewToFront:_scrollView];
+}
+
+#pragma mark - TestFieldDelegate 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    NSInteger i = 0;
+    for (XWCanvasControl *canvas in _DC.synchronousArrCanvas) {
+        if ([canvas.fontChar isEqualToString:textField.text]) {
+            [_scrollView setContentOffset:CGPointMake(kScreenSize.width*(i/8), 0) animated:YES];
+            return YES;
+            break;
+        }
+        i++;
+    }
+    [self showHint:@"没有搜索到该字符" hide:1.5];
+    return YES;
+}
+
+#pragma mark 重写 searchBtn
+- (void)searchBtn:(UIButton *)btn
+{
+    [self.textfield resignFirstResponder];
+    NSInteger i = 0;
+    for (XWCanvasControl *canvas in _DC.synchronousArrCanvas) {
+        if ([canvas.fontChar isEqualToString:self.textfield.text]) {
+            [_scrollView setContentOffset:CGPointMake(kScreenSize.width*(i/8), 0) animated:YES];
+            return ;
+            break;
+        }
+        i++;
+    }
+    [self showHint:@"没有搜索到该字符" hide:1.5];
 }
 
 @end
