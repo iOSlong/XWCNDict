@@ -47,6 +47,18 @@
     return charArray;
 }
 
+- (NSArray *)getCharArray
+{
+    NSMutableArray *muArray = [NSMutableArray array];
+    NSInteger length = self.length;
+    while (length) {
+        NSString *charStr = [self substringWithRange:NSMakeRange(self.length - length, 1)];
+        [muArray addObject:charStr];
+        length --;
+    }
+    return muArray;
+}
+
 -(unsigned int)getUnicodeCode{
     const char *character = [self cStringUsingEncoding:NSUnicodeStringEncoding];
     unsigned int *unicode = (unsigned int *)character;

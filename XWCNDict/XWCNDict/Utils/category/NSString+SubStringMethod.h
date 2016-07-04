@@ -19,5 +19,6 @@
 
 -(NSString *)quanjiaoToBanjiao;
 
+- (NSArray *)getCharArray;
 
 @end

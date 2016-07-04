@@ -206,7 +206,7 @@
             self.imgvPageMask.image     = [UIImage imageNamed:_setInfo.imgNamePoemPlatMask];
             self.imgvTabBarMask.image   = [UIImage imageNamed:_setInfo.imgNamePoemTabMask];
         }
-
+            break;
         default:{
             self.sectionPlatView.backgroundColor = [UIColor whiteColor];
         }
