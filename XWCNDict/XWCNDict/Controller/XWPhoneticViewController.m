@@ -12,9 +12,7 @@
 #import "PlistReader.h"
 
 @interface XWPhoneticViewController ()<UIScrollViewDelegate,UITextFieldDelegate>
-@property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) XWBounceBox *bounceBox;
-//@property (nonatomic, strong) UITextField *textfiled;
 @property (nonatomic, strong) NSArray *rootKeys;
 @property (nonatomic, strong) NSDictionary *rootDict;
 @property (nonatomic, strong) NSMutableArray *arrPinyin;
@@ -62,10 +60,10 @@
 
 
 
-    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, kupSpan, kPlat_W, kPlat_H-112*kFixed_rate)];
+    self.scrollView.frame = CGRectMake(0, kupSpan, kPlat_W, kPlat_H-112*kFixed_rate);
     [self.scrollView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(sectionPlatScrollTap:)]];
     self.scrollView.delegate = self;
-    [self.sectionPlatView addSubview:_scrollView];
+    [self.sectionPlatView addSubview:self.scrollView];
 
 
     UILabel *infolabel  = [[UILabel alloc] initWithFrame:CGRectMake(78 * kFixed_rate, 198 * kFixed_rate, 300 *kFixed_rate, 30 *kFixed_rate)];
@@ -170,12 +168,12 @@
     NSLog(@"%@",btn.superKey);
 
     CGFloat Animationweitiao = 0;
-    if (btn.center.y-_scrollView.contentOffset.y >= (kPlat_H-110)-btn.frame.size.height/2) {
-        [_scrollView setContentOffset:CGPointMake(_scrollView.contentOffset.x, _scrollView.contentOffset.y+20) animated:YES];
+    if (btn.center.y-self.scrollView.contentOffset.y >= (kPlat_H-110)-btn.frame.size.height/2) {
+        [self.scrollView setContentOffset:CGPointMake(self.scrollView.contentOffset.x, self.scrollView.contentOffset.y+20) animated:YES];
         Animationweitiao = 20;
     }
-    if (btn.center.y-_scrollView.contentOffset.y <= btn.frame.size.height/2) {
-        [_scrollView setContentOffset:CGPointMake(_scrollView.contentOffset.x, _scrollView.contentOffset.y-20) animated:YES];
+    if (btn.center.y-self.scrollView.contentOffset.y <= btn.frame.size.height/2) {
+        [self.scrollView setContentOffset:CGPointMake(self.scrollView.contentOffset.x, self.scrollView.contentOffset.y-20) animated:YES];
         Animationweitiao  = -20;
     }
 
@@ -216,7 +214,7 @@
     CGFloat db_w = btn.frame.size.width;
     CGFloat db_h = btn.frame.size.height;
     CGFloat bbspan = 20;  //bouncedBox 与按钮边框的距离
-    CGPoint relativeCenter = CGPointMake(btn.center.x, btn.center.y-_scrollView.contentOffset.y+kupSpan-Animationweitiao);
+    CGPoint relativeCenter = CGPointMake(btn.center.x, btn.center.y-self.scrollView.contentOffset.y+kupSpan-Animationweitiao);
 
 
 

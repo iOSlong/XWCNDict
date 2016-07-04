@@ -191,6 +191,11 @@
 		014B832F1D24450700C6D841 /* collection_plat.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B83261D24450700C6D841 /* collection_plat.png */; };
 		014B83311D26CF6300C6D841 /* eqtabmask.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B83301D26CF6300C6D841 /* eqtabmask.png */; };
 		014B83341D26D1D600C6D841 /* XWCollectionSetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 014B83331D26D1D600C6D841 /* XWCollectionSetView.m */; };
+		014B833B1D2A0DA600C6D841 /* dengguanquelou.wav in Resources */ = {isa = PBXBuildFile; fileRef = 014B83361D2A0DA600C6D841 /* dengguanquelou.wav */; };
+		014B833C1D2A0DA600C6D841 /* huixiangoushu.wav in Resources */ = {isa = PBXBuildFile; fileRef = 014B83371D2A0DA600C6D841 /* huixiangoushu.wav */; };
+		014B833D1D2A0DA600C6D841 /* jiangxue.wav in Resources */ = {isa = PBXBuildFile; fileRef = 014B83381D2A0DA600C6D841 /* jiangxue.wav */; };
+		014B833E1D2A0DA600C6D841 /* jingyesi.wav in Resources */ = {isa = PBXBuildFile; fileRef = 014B83391D2A0DA600C6D841 /* jingyesi.wav */; };
+		014B833F1D2A0DA600C6D841 /* jueju.wav in Resources */ = {isa = PBXBuildFile; fileRef = 014B833A1D2A0DA600C6D841 /* jueju.wav */; };
 		0170D2881D1C135B00275F70 /* UIView+XWPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0170D2871D1C135B00275F70 /* UIView+XWPosition.m */; };
 		0170D28C1D1C2B1A00275F70 /* XWCharacterInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0170D28B1D1C2B1A00275F70 /* XWCharacterInfoView.m */; };
 		0170D2911D1C3A8F00275F70 /* STZhuankai.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0170D2901D1C3A8F00275F70 /* STZhuankai.ttf */; };
@@ -432,6 +437,11 @@
 		014B83301D26CF6300C6D841 /* eqtabmask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eqtabmask.png; sourceTree = "<group>"; };
 		014B83321D26D1D600C6D841 /* XWCollectionSetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWCollectionSetView.h; sourceTree = "<group>"; };
 		014B83331D26D1D600C6D841 /* XWCollectionSetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWCollectionSetView.m; sourceTree = "<group>"; };
+		014B83361D2A0DA600C6D841 /* dengguanquelou.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dengguanquelou.wav; sourceTree = "<group>"; };
+		014B83371D2A0DA600C6D841 /* huixiangoushu.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = huixiangoushu.wav; sourceTree = "<group>"; };
+		014B83381D2A0DA600C6D841 /* jiangxue.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jiangxue.wav; sourceTree = "<group>"; };
+		014B83391D2A0DA600C6D841 /* jingyesi.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jingyesi.wav; sourceTree = "<group>"; };
+		014B833A1D2A0DA600C6D841 /* jueju.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jueju.wav; sourceTree = "<group>"; };
 		0170D2861D1C135B00275F70 /* UIView+XWPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XWPosition.h"; sourceTree = "<group>"; };
 		0170D2871D1C135B00275F70 /* UIView+XWPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XWPosition.m"; sourceTree = "<group>"; };
 		0170D28A1D1C2B1A00275F70 /* XWCharacterInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWCharacterInfoView.h; sourceTree = "<group>"; };
@@ -586,6 +596,7 @@
 		010988511D08701C00C1BA84 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				014B83351D2A0D3400C6D841 /* poems */,
 				014B831D1D2444CC00C6D841 /* collection */,
 				014B829A1D1D401700C6D841 /* strokeAudio */,
 				0170D28D1D1C36D800275F70 /* ttffont */,
@@ -873,6 +884,18 @@
 			path = collection;
 			sourceTree = "<group>";
 		};
+		014B83351D2A0D3400C6D841 /* poems */ = {
+			isa = PBXGroup;
+			children = (
+				014B83361D2A0DA600C6D841 /* dengguanquelou.wav */,
+				014B83371D2A0DA600C6D841 /* huixiangoushu.wav */,
+				014B83381D2A0DA600C6D841 /* jiangxue.wav */,
+				014B83391D2A0DA600C6D841 /* jingyesi.wav */,
+				014B833A1D2A0DA600C6D841 /* jueju.wav */,
+			);
+			path = poems;
+			sourceTree = "<group>";
+		};
 		0170D2891D1C2AD600275F70 /* infoSection */ = {
 			isa = PBXGroup;
 			children = (
@@ -949,6 +972,7 @@
 				TargetAttributes = {
 					010987BC1D086DFA00C1BA84 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = P7ST84G85A;
 					};
 				};
 			};
@@ -975,6 +999,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				014B833E1D2A0DA600C6D841 /* jingyesi.wav in Resources */,
 				014B82841D1CFFB700C6D841 /* shezhi.png in Resources */,
 				0109897B1D0B10F900C1BA84 /* colorkeyboard.png in Resources */,
 				014B82D31D1D40B300C6D841 /* 5_24.wav in Resources */,
@@ -998,10 +1023,12 @@
 				014B828B1D1CFFB700C6D841 /* playing.png in Resources */,
 				014B832D1D24450700C6D841 /* collection_del.png in Resources */,
 				010989001D0873A900C1BA84 /* bar_a7.png in Resources */,
+				014B833F1D2A0DA600C6D841 /* jueju.wav in Resources */,
 				010988A11D08701C00C1BA84 /* info.png in Resources */,
 				010988F91D0873A900C1BA84 /* 111.png in Resources */,
 				014B82C71D1D40B300C6D841 /* 5_13.wav in Resources */,
 				014B832C1D24450700C6D841 /* SetGear.png in Resources */,
+				014B833D1D2A0DA600C6D841 /* jiangxue.wav in Resources */,
 				010989021D0873A900C1BA84 /* bar_d1.png in Resources */,
 				010989051D0873A900C1BA84 /* bar_d4.png in Resources */,
 				010988FB1D0873A900C1BA84 /* bar_a2.png in Resources */,
@@ -1015,6 +1042,7 @@
 				014B832A1D24450700C6D841 /* charBag.png in Resources */,
 				014B82CC1D1D40B300C6D841 /* 5_18.wav in Resources */,
 				014B82C01D1D40B300C6D841 /* 3_0.wav in Resources */,
+				014B833C1D2A0DA600C6D841 /* huixiangoushu.wav in Resources */,
 				010988C41D08701D00C1BA84 /* poem.plist in Resources */,
 				010989581D0B10ED00C1BA84 /* info2-1.png in Resources */,
 				014B82D81D1D40B300C6D841 /* 5_5.wav in Resources */,
@@ -1049,6 +1077,7 @@
 				014B82C31D1D40B300C6D841 /* 5_1.wav in Resources */,
 				014B82BC1D1D40B300C6D841 /* 1_0.wav in Resources */,
 				014B82D71D1D40B300C6D841 /* 5_4.wav in Resources */,
+				014B833B1D2A0DA600C6D841 /* dengguanquelou.wav in Resources */,
 				0109894A1D0B10ED00C1BA84 /* shademask.png in Resources */,
 				010988C61D08701D00C1BA84 /* radicalPinyin.plist in Resources */,
 				010989591D0B10ED00C1BA84 /* info2-2.png in Resources */,
@@ -1337,12 +1366,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XWCNDict/XWCNDict-PrefixHeader.pch";
 				INFOPLIST_FILE = XWCNDict/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.linxi.XWCNDict;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xuewu.CNDict;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "XWCNDict/View/XWCNDict-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -1354,12 +1386,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XWCNDict/XWCNDict-PrefixHeader.pch";
 				INFOPLIST_FILE = XWCNDict/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.linxi.XWCNDict;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xuewu.CNDict;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "XWCNDict/View/XWCNDict-Bridging-Header.h";
 			};
 			name = Release;

@@ -12,7 +12,6 @@
 #import "XWCollectionSetView.h"
 
 @interface XWCollectionViewController ()<UIScrollViewDelegate, UITextFieldDelegate>
-@property (nonatomic, strong) UIScrollView          *scrollView;
 @property (nonatomic, strong) UILabel               *labelPageIndex;
 @property (nonatomic, strong) XWCollectionSetView   *collectionSetView;
 @end
@@ -32,17 +31,6 @@
     return _collectionSetView;
 }
 
-- (UIScrollView *)scrollView
-{
-    if (!_scrollView) {
-        _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, kPlat_Y, kScreenSize.width, kPlat_H)];
-        _scrollView.contentSize = CGSizeMake(kScreenSize.width, kPlat_H);
-        _scrollView.showsHorizontalScrollIndicator = NO;
-        _scrollView.pagingEnabled = YES;
-        _scrollView.delegate = self;
-    }
-    return _scrollView;
-}
 
 - (UILabel *)labelPageIndex
 {
@@ -63,6 +51,9 @@
         [self getCollectionCanvasReady];
     }
     _DC.needReloadCollectionCanvas = NO;
+    if (_DC.synchronousArrCanvas.count == 0) {
+        [self showHint:@"您没有收藏的文字！" hide:1.5];
+    }
 }
 
 - (void)viewDidLoad {
@@ -74,8 +65,9 @@
     _arrPlat            = [NSMutableArray array];
 
 
+    self.scrollView.delegate = self;
+    
 
-    [self.view addSubview:self.scrollView];
     [self.view addSubview:self.labelPageIndex];
     [self.view addSubview:self.collectionSetView];
     self.textfield.delegate = self;
@@ -140,6 +132,14 @@
         }
     }
 
+    /// 没有收藏文字的情况
+    if (_DC.synchronousArrCanvas.count == 0) {
+        XWCollectionPlat *collectionPlat = [[XWCollectionPlat alloc] initWithFrame:self.rectPlat];
+        collectionPlat.left      = kScreenSize.width * i + self.rectPlat.origin.x;
+        [self.scrollView addSubview:collectionPlat];
+        [_arrPlat addObject:collectionPlat];
+    }
+
     for (NSInteger i = 0; i < _arrSectionCanvas.count; i ++ ) {
         XWCollectionPlat *collectionPlat = [[XWCollectionPlat alloc] initWithFrame:self.rectPlat];
         collectionPlat.left      = kScreenSize.width * i + self.rectPlat.origin.x;
@@ -180,7 +180,7 @@
 
     _labelPageIndex.text = indexTitle;
 
-    [self.view bringSubviewToFront:_scrollView];
+    [self.view bringSubviewToFront:self.scrollView];
 }
 
 #pragma mark - TestFieldDelegate 
@@ -190,7 +190,7 @@
     NSInteger i = 0;
     for (XWCanvasControl *canvas in _DC.synchronousArrCanvas) {
         if ([canvas.fontChar isEqualToString:textField.text]) {
-            [_scrollView setContentOffset:CGPointMake(kScreenSize.width*(i/8), 0) animated:YES];
+            [self.scrollView setContentOffset:CGPointMake(kScreenSize.width*(i/8), 0) animated:YES];
             return YES;
             break;
         }
@@ -207,7 +207,7 @@
     NSInteger i = 0;
     for (XWCanvasControl *canvas in _DC.synchronousArrCanvas) {
         if ([canvas.fontChar isEqualToString:self.textfield.text]) {
-            [_scrollView setContentOffset:CGPointMake(kScreenSize.width*(i/8), 0) animated:YES];
+            [self.scrollView setContentOffset:CGPointMake(kScreenSize.width*(i/8), 0) animated:YES];
             return ;
             break;
         }

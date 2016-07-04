@@ -38,6 +38,7 @@ typedef NS_ENUM(NSUInteger, XWPlatViewModel) {
 @property (nonatomic, assign) XWPlatViewModel   platViewModel;
 @property (nonatomic, assign) CGRect            rectPlat;
 
+@property (nonatomic, strong) UIScrollView      *scrollView;
 @property (nonatomic, strong) UITextField       *textfield;
 @property (nonatomic, strong) UIButton          *btnSetGear;
 @property (nonatomic, strong) XWSetInfo         *setInfo;

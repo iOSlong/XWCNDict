@@ -26,7 +26,6 @@ typedef struct pageIndex{
 
 @interface XWCharactersViewController ()<UIScrollViewDelegate,UITextFieldDelegate,XWCharacterPlatDelegate>
 
-@property (nonatomic) UIScrollView      *scrollView;
 @property (nonatomic) UIPageControl     *pageControl;
 @property (nonatomic) XWCharacterPlat   *currentPlat;
 @property (nonatomic) NSMutableArray    *arrCharPlat;
@@ -123,12 +122,9 @@ typedef struct pageIndex{
 }
 
 - (void)configureScrollView {
-    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, kPlat_Y, kScreenSize.width, kPlat_H)];
+    
     self.scrollView.contentSize = CGSizeMake(kScreenSize.width*3 * kFixed_rate, kPlat_H);
-    self.scrollView.showsHorizontalScrollIndicator = NO;
-    self.scrollView.pagingEnabled = YES;
     self.scrollView.delegate = self;
-    [self.view addSubview:_scrollView];
 
     XWCharacterPlat *charPlat1 = [[XWCharacterPlat alloc] initWithFrame:CGRectMake(kPlat_X, 0, kPlat_W, kPlat_H) andChar:self.setInfo.arrUnicodeFont[0]];
     XWCharacterPlat *charPlat2 = [[XWCharacterPlat alloc] initWithFrame:CGRectMake(kPlat_X + kScreenSize.width, 0,  kPlat_W, kPlat_H)andChar:self.setInfo.arrUnicodeFont[1]];
@@ -154,7 +150,7 @@ typedef struct pageIndex{
     _pageStruct.currentCharIndex    = 0;
     _pageStruct.offsetLocation      = 0;
 
-    self.pageControl.currentPage    = 1;
+    self.pageControl.currentPage    = 0;
 
 }
 
@@ -285,7 +281,7 @@ typedef struct pageIndex{
     for (int i=0; i<self.arrCharPlat.count; i++) {
         XWCharacterPlat *fontp = [self.arrCharPlat objectAtIndex:i];
         fontp.frame = CGRectMake((i*1024+158/2)*kFixed_rate, 0, fontp.frame.size.width, fontp.frame.size.height);
-        [_scrollView addSubview:fontp];
+        [self.scrollView addSubview:fontp];
         [self.scrollView setContentSize:CGSizeMake((1024+1024*i)*kFixed_rate, fontp.frame.size.height)];
     }
     [self.scrollView setContentOffset:CGPointMake(1024 * kFixed_rate, 0) animated:NO];

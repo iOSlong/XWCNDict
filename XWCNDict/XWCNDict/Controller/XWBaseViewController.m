@@ -77,8 +77,12 @@
 
     self.platViewModel = XWPlatViewModelCharacters;
 
+    [self.view addSubview:self.scrollView];
+
     [self.view addSubview:self.imgvPageMask];
+
     [self.tabBarVC.view addSubview:self.imgvTabBarMask];
+
 
 }
 
@@ -149,6 +153,16 @@
 }
 
 
+- (UIScrollView *)scrollView
+{
+    if (!_scrollView) {
+        _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, kPlat_Y, kScreenSize.width, kPlat_H)];
+        _scrollView.contentSize = CGSizeMake(kScreenSize.width, kPlat_H);
+        _scrollView.showsHorizontalScrollIndicator = NO;
+        _scrollView.pagingEnabled = YES;
+    }
+    return _scrollView;
+}
 
 
 
