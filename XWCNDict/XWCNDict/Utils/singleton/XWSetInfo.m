@@ -37,6 +37,15 @@
         _imgNamePoemPlatMask    = @"poemMask";
         _imgNameEqTabMask       = @"eqtabmask";
 
+
+        _themeColorCharacter    = RGBCOLOR(120.0, 184.0, 52.0);
+        _themeColorRadical      = RGBCOLOR(215.0, 121.0, 21.0);
+        _themeColorPhonetic     = RGBCOLOR(204.0, 166.0, 31.0);
+        _themeColorCollection   = RGBCOLOR(42.0, 178.0, 192.0);
+        _themeColorPoems        = RGBCOLOR(184, 57, 52);
+        _themeColorBackground   = RGBCOLOR(48,52,55);
+
+
         _arrInfoImgName = [NSMutableArray array];
         for (int i=1;i<=4; i++) {
             UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"info2-%d",i]];

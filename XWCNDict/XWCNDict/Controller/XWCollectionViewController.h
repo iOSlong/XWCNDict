@@ -10,4 +10,5 @@
 
 @interface XWCollectionViewController : XWBaseViewController
 
+
 @end

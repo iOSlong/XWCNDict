@@ -20,7 +20,8 @@ typedef NS_ENUM(NSUInteger, XWPlatViewModel) {
     XWPlatViewModelPeom,
     XWPlatViewModelYizijing,
     XWPlatViewModelNotebook,
-    XWPlatViewModelGame
+    XWPlatViewModelGame,
+    XWPlatViewModelPDFPrint,
 };
 
 @interface XWBaseViewController : UIViewController

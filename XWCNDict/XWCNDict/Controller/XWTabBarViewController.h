@@ -20,6 +20,8 @@
 
 - (void)setItem:(XWSegmentItem *)itemInfo atIndex:(NSInteger)index;
 
+- (void)setBarHidden:(BOOL )hidden;
+
 
 @end
 

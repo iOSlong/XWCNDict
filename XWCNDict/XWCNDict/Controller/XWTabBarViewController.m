@@ -7,7 +7,7 @@
 //
 
 #import "XWTabBarViewController.h"
-
+#import "XWSetInfo.h"
 
 
 static XWTabBarViewController *selfxwTabBarViewController;
@@ -31,6 +31,7 @@ static XWTabBarViewController *selfxwTabBarViewController;
     if (self) {
 
         self.tabBar.hidden = YES;
+        XWSetInfo *_setInfo = [XWSetInfo shareSetInfo];
 
         _imgvBackground = [[UIImageView alloc] initWithFrame:CGRectMake(0,20 * kFixed_rate,1024 * kFixed_rate,133 *kFixed_rate)];
         _imgvBackground.exclusiveTouch  = YES;
@@ -38,17 +39,14 @@ static XWTabBarViewController *selfxwTabBarViewController;
         _imgvBackground.userInteractionEnabled = YES;
         [self.view addSubview:_imgvBackground];
 
-        UIColor *color1 = [UIColor colorWithRed:120.0/255 green:184.0/255 blue:52.0/255 alpha:1];
-        UIColor *color2 = [UIColor colorWithRed:215.0/255 green:121.0/255 blue:21.0/255 alpha:1];
-        UIColor *color3 = [UIColor colorWithRed:204.0/255 green:166.0/255 blue:31.0/255 alpha:1];
-        UIColor *color4 = [UIColor colorWithRed:42.0/255 green:178.0/255 blue:192.0/255 alpha:1];
-        UIColor *color5 = [UIColor colorWithRed:184.0/255 green:57.0/255 blue:52.0/255 alpha:1];
-
-
-        _arrBarLineColor = [NSArray arrayWithObjects:color1,color2,color3,color4,color5, nil];
+        _arrBarLineColor = [NSArray arrayWithObjects:_setInfo.themeColorCharacter,
+                            _setInfo.themeColorRadical,
+                            _setInfo.themeColorPhonetic,
+                            _setInfo.themeColorCollection,
+                            _setInfo.themeColorPoems,nil];
 
         _imgvBarBottomLine = [[UIImageView alloc] initWithFrame:CGRectMake(0, 147* kFixed_rate, 1024 * kFixed_rate, 6 *kFixed_rate)];
-        _imgvBarBottomLine.backgroundColor = color1;
+        _imgvBarBottomLine.backgroundColor = _setInfo.themeColorCharacter;
         [self.view addSubview:_imgvBarBottomLine];
 
 
@@ -92,16 +90,16 @@ static XWTabBarViewController *selfxwTabBarViewController;
     XWSegmentItem *notebookItem     = [[XWSegmentItem alloc] init];
     XWSegmentItem *gameItem         = [[XWSegmentItem alloc] init];
 
-    characterItem.title     = @"character";
-    radicalItem.title       = @"radical";
-    phoneticItem.title      = @"phonetic";
-    collectionItem.title    = @"collection";
-    poemItem.title          = @"poem";
-    yizijingItem.title      = @"yizijing";
-    notebookItem.title      = @"notebook";
-    gameItem.title          = @"game";
+    characterItem.title     = @"Character";
+    radicalItem.title       = @"Radical Index";
+    phoneticItem.title      = @"Phonetic Index";
+    collectionItem.title    = @"My Collection";
+    poemItem.title          = @"Poems";
+    yizijingItem.title      = @"Yizijing";
+    notebookItem.title      = @"Notebook";
+    gameItem.title          = @"Game";
 
-    NSArray *arrayItem = @[characterItem,radicalItem,phoneticItem,collectionItem,poemItem,yizijingItem,notebookItem,gameItem];
+    NSArray *arrayItem = @[characterItem,radicalItem,phoneticItem,collectionItem,poemItem]; //,yizijingItem,notebookItem,gameItem];
     for (int i=0; i<arrayItem.count; i++) {
         XWSegmentItem *segItem = arrayItem[i];
         NSString *imgNormal     = [NSString stringWithFormat:@"bar_d%d",i+1];
@@ -124,6 +122,18 @@ static XWTabBarViewController *selfxwTabBarViewController;
     else
         _imgvBarBottomLine.backgroundColor = [UIColor clearColor];
 
+}
+
+
+- (void)setBarHidden:(BOOL)hidden
+{
+    if (hidden) {
+        [self.imgvBackground setHidden:YES];
+        [self.imgvBarBottomLine setHidden:YES];
+    }else{
+        [self.imgvBackground setHidden:NO];
+        [self.imgvBarBottomLine setHidden:NO];
+    }
 }
 
 - (void)viewDidLoad {

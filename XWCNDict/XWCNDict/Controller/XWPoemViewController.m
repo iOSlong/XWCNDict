@@ -181,10 +181,10 @@
 
 
 
-    [self performSelectorInBackground:@selector(addPoem) withObject:nil];
+    [self addPoem];
 
     
-    self.controlBtn = [[UIButton alloc] initWithFrame:CGRectMake(260/2 *kFixed_rate , self.btnSetGear.y, 55/2 * kFixed_rate, 55/2 * kFixed_rate)];
+    self.controlBtn = [[UIButton alloc] initWithFrame:CGRectMake(280/2 *kFixed_rate , self.btnSetGear.y, 55/2 * kFixed_rate, 55/2 * kFixed_rate)];
     [self.controlBtn setImage:[UIImage imageNamed:@"bofang2"] forState:UIControlStateNormal];
     [self.view addSubview:self.controlBtn];
     [self.controlBtn addTarget:self action:@selector(btnPlayClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -307,7 +307,8 @@
     _launchIndex = poemArena.tag+1;
     if (_launchIndex<=4) {
         _launchPoemArena = [_arrPoemArena objectAtIndex:_launchIndex];
-        [self performSelectorInBackground:@selector(launchPoem) withObject:nil];
+//        [self performSelectorInBackground:@selector(launchPoem) withObject:nil];
+        [self launchPoem];
         //        [self launchPoem];
         //        [self.scrollView setContentSize:CGSizeMake((_launchIndex+1)*1024, self.scrollView.frame.size.height)];
     }

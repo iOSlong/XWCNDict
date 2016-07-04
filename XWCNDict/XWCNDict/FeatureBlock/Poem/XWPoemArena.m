@@ -54,26 +54,27 @@
 
     //计算布局
     [self mathmaticPlayItemsWith:poem];
-
-    [self displayPoemWordBtns];
-
 }
 
 - (void)mathmaticPlayItemsWith:(XWPoem *)poem
 {
-    self.pContentArr = (NSMutableArray *)[poem.pContent getCharArray];
-    self.pNameArr = (NSMutableArray *)[poem.pName getCharArray];
-    self.pAuthorArr = (NSMutableArray *)[poem.pAuthor getCharArray];
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        self.pContentArr = (NSMutableArray *)[poem.pContent getCharArray];
+        self.pNameArr = (NSMutableArray *)[poem.pName getCharArray];
+        self.pAuthorArr = (NSMutableArray *)[poem.pAuthor getCharArray];
 
-    _poemRow    = poem.pLineLenght;
-    _poemColumn = [self.pContentArr count]/poem.pLineLenght + 2;
-    if (self.pContentArr.count % poem.pLineLenght) {
-        _poemColumn += 1;
-    }
-    _pwb_w      =(self.width-(_poemColumn+1)*kPWB_SpanX-kAuthor_span)/_poemColumn;
+        _poemRow    = poem.pLineLenght;
+        _poemColumn = [self.pContentArr count]/poem.pLineLenght + 2;
+        if (self.pContentArr.count % poem.pLineLenght) {
+            _poemColumn += 1;
+        }
+        _pwb_w      =(self.width-(_poemColumn+1)*kPWB_SpanX-kAuthor_span)/_poemColumn;
 
-    self.frame = CGRectMake(self.x, self.y, self.width, _poemRow*(kPWB_spanY+_pwb_w));
+        self.frame = CGRectMake(self.x, self.y, self.width, _poemRow*(kPWB_spanY+_pwb_w));
 
+        [self displayPoemWordBtns];
+
+    });
 }
 
 - (void)displayPoemWordBtns
@@ -101,7 +102,9 @@
         [pwb addTarget:self action:@selector(pwbBtnClick:) forControlEvents:UIControlEventTouchUpInside];
 
         [self.pwbMuArray addObject:pwb];
-        [self addSubview:pwb];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self addSubview:pwb];
+        });
     }
     //添加诗歌作者名字
     for (int j=0; j<[self.pAuthorArr count]; j++) {
@@ -118,7 +121,9 @@
 
 
         [self.pwbMuArray addObject:pwb];
-        [self addSubview:pwb];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self addSubview:pwb];
+        });
     }
     //添加诗歌类容
     for (int n=0; n<[self.pContentArr count]; n++) {
@@ -133,7 +138,10 @@
 
 
         [self.pwbMuArray addObject:pwb];
-        [self addSubview:pwb];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self addSubview:pwb];
+        });
     }
 
     self.pwb = [self.pwbMuArray objectAtIndex:0];

@@ -84,6 +84,9 @@
     [self.tabBarVC.view addSubview:self.imgvTabBarMask];
 
 
+    [self addSearchBar];
+    [self addSetGear];
+
 }
 
 - (CGRect)rectPlat
@@ -183,8 +186,10 @@
     [self.sectionPlatView setHidden:NO];
 
     switch (platViewModel) {
-        case XWPlatViewModelCharacters:
+        case XWPlatViewModelCharacters:{
             self.sectionPlatView.backgroundColor = [UIColor clearColor];
+            [self.sectionPlatView setHidden:YES];
+        }
             break;
         case XWPlatViewModelRadical:{
             self.sectionPlatView.leftColor  = [UIColor colorWithRed:204.0/225 green:166.0/255 blue:31.0/255 alpha:1];
@@ -200,11 +205,19 @@
             break;
         case XWPlatViewModelCollection:{
             self.sectionPlatView.backgroundColor = [UIColor whiteColor];
+            [self.sectionPlatView setHidden:YES];
         }
             break;
         case XWPlatViewModelPeom:{
             self.imgvPageMask.image     = [UIImage imageNamed:_setInfo.imgNamePoemPlatMask];
             self.imgvTabBarMask.image   = [UIImage imageNamed:_setInfo.imgNamePoemTabMask];
+            [self.sectionPlatView setHidden:YES];
+        }
+            break;
+        case XWPlatViewModelPDFPrint:{
+            [self.btnSetGear setHidden:YES];
+            [self.textfield setHidden:YES];
+            [self.sectionPlatView setHidden:YES];
         }
             break;
         default:{
@@ -212,9 +225,6 @@
         }
             break;
     }
-
-    [self addSearchBar];
-    [self addSetGear];
 }
 
 

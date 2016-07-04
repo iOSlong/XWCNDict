@@ -220,6 +220,10 @@
 		014B836E1D2A2F4000C6D841 /* XWPoem.m in Sources */ = {isa = PBXBuildFile; fileRef = 014B836D1D2A2F4000C6D841 /* XWPoem.m */; };
 		014B83711D2A2FBD00C6D841 /* XWPoemArena.m in Sources */ = {isa = PBXBuildFile; fileRef = 014B83701D2A2FBD00C6D841 /* XWPoemArena.m */; };
 		014B83741D2A506000C6D841 /* XWPoemSetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 014B83731D2A506000C6D841 /* XWPoemSetView.m */; };
+		014B83771D2A893400C6D841 /* XWPDFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 014B83761D2A893400C6D841 /* XWPDFViewController.m */; };
+		014B837B1D2A8FFA00C6D841 /* XWPrintPageRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 014B837A1D2A8FFA00C6D841 /* XWPrintPageRender.m */; };
+		014B837E1D2A930C00C6D841 /* UIView+XWImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 014B837D1D2A930C00C6D841 /* UIView+XWImage.m */; };
+		014B83811D2A97DE00C6D841 /* datapdf in Resources */ = {isa = PBXBuildFile; fileRef = 014B83801D2A97DE00C6D841 /* datapdf */; };
 		0170D2881D1C135B00275F70 /* UIView+XWPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0170D2871D1C135B00275F70 /* UIView+XWPosition.m */; };
 		0170D28C1D1C2B1A00275F70 /* XWCharacterInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0170D28B1D1C2B1A00275F70 /* XWCharacterInfoView.m */; };
 		0170D2911D1C3A8F00275F70 /* STZhuankai.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0170D2901D1C3A8F00275F70 /* STZhuankai.ttf */; };
@@ -494,6 +498,13 @@
 		014B83701D2A2FBD00C6D841 /* XWPoemArena.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWPoemArena.m; sourceTree = "<group>"; };
 		014B83721D2A506000C6D841 /* XWPoemSetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWPoemSetView.h; sourceTree = "<group>"; };
 		014B83731D2A506000C6D841 /* XWPoemSetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWPoemSetView.m; sourceTree = "<group>"; };
+		014B83751D2A893400C6D841 /* XWPDFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWPDFViewController.h; sourceTree = "<group>"; };
+		014B83761D2A893400C6D841 /* XWPDFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWPDFViewController.m; sourceTree = "<group>"; };
+		014B83791D2A8FFA00C6D841 /* XWPrintPageRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWPrintPageRender.h; sourceTree = "<group>"; };
+		014B837A1D2A8FFA00C6D841 /* XWPrintPageRender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWPrintPageRender.m; sourceTree = "<group>"; };
+		014B837C1D2A930C00C6D841 /* UIView+XWImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XWImage.h"; sourceTree = "<group>"; };
+		014B837D1D2A930C00C6D841 /* UIView+XWImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XWImage.m"; sourceTree = "<group>"; };
+		014B83801D2A97DE00C6D841 /* datapdf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = datapdf; sourceTree = "<group>"; };
 		0170D2861D1C135B00275F70 /* UIView+XWPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XWPosition.h"; sourceTree = "<group>"; };
 		0170D2871D1C135B00275F70 /* UIView+XWPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XWPosition.m"; sourceTree = "<group>"; };
 		0170D28A1D1C2B1A00275F70 /* XWCharacterInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWCharacterInfoView.h; sourceTree = "<group>"; };
@@ -596,6 +607,8 @@
 				010988471D08701C00C1BA84 /* XWRadicalViewController.m */,
 				0109883A1D08701C00C1BA84 /* XWCollectionViewController.h */,
 				0109883B1D08701C00C1BA84 /* XWCollectionViewController.m */,
+				014B83751D2A893400C6D841 /* XWPDFViewController.h */,
+				014B83761D2A893400C6D841 /* XWPDFViewController.m */,
 				010988441D08701C00C1BA84 /* XWPoemViewController.h */,
 				010988451D08701C00C1BA84 /* XWPoemViewController.m */,
 				010988401D08701C00C1BA84 /* XWNotebookViewController.h */,
@@ -649,6 +662,7 @@
 		010988511D08701C00C1BA84 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				014B837F1D2A97B800C6D841 /* otherfile */,
 				014B83351D2A0D3400C6D841 /* poems */,
 				014B831D1D2444CC00C6D841 /* collection */,
 				014B829A1D1D401700C6D841 /* strokeAudio */,
@@ -690,6 +704,7 @@
 		010988801D08701C00C1BA84 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				014B83781D2A8FB300C6D841 /* printPagerenderer */,
 				01098A4B1D1AE70D00C1BA84 /* singleton */,
 				010988811D08701C00C1BA84 /* category */,
 				010988841D08701C00C1BA84 /* plistReader */,
@@ -704,6 +719,8 @@
 				010988831D08701C00C1BA84 /* NSString+SubStringMethod.m */,
 				0170D2861D1C135B00275F70 /* UIView+XWPosition.h */,
 				0170D2871D1C135B00275F70 /* UIView+XWPosition.m */,
+				014B837C1D2A930C00C6D841 /* UIView+XWImage.h */,
+				014B837D1D2A930C00C6D841 /* UIView+XWImage.m */,
 			);
 			path = category;
 			sourceTree = "<group>";
@@ -984,6 +1001,23 @@
 			path = Poem;
 			sourceTree = "<group>";
 		};
+		014B83781D2A8FB300C6D841 /* printPagerenderer */ = {
+			isa = PBXGroup;
+			children = (
+				014B83791D2A8FFA00C6D841 /* XWPrintPageRender.h */,
+				014B837A1D2A8FFA00C6D841 /* XWPrintPageRender.m */,
+			);
+			path = printPagerenderer;
+			sourceTree = "<group>";
+		};
+		014B837F1D2A97B800C6D841 /* otherfile */ = {
+			isa = PBXGroup;
+			children = (
+				014B83801D2A97DE00C6D841 /* datapdf */,
+			);
+			path = otherfile;
+			sourceTree = "<group>";
+		};
 		0170D2891D1C2AD600275F70 /* infoSection */ = {
 			isa = PBXGroup;
 			children = (
@@ -1186,6 +1220,7 @@
 				014B82891D1CFFB700C6D841 /* poemSetBackImg.png in Resources */,
 				010989721D0B10F900C1BA84 /* 11.png in Resources */,
 				010989741D0B10F900C1BA84 /* anniu.png in Resources */,
+				014B83811D2A97DE00C6D841 /* datapdf in Resources */,
 				014B82C51D1D40B300C6D841 /* 5_11.wav in Resources */,
 				010988FE1D0873A900C1BA84 /* bar_a5.png in Resources */,
 				0109897A1D0B10F900C1BA84 /* box_3r.png in Resources */,
@@ -1310,6 +1345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				014B82941D1D228D00C6D841 /* XWColorBtn.m in Sources */,
+				014B83771D2A893400C6D841 /* XWPDFViewController.m in Sources */,
 				010989221D08792A00C1BA84 /* STSinoFont.mm in Sources */,
 				014B82971D1D298900C6D841 /* XWSevenSwitch.swift in Sources */,
 				010988951D08701C00C1BA84 /* XWGameViewController.m in Sources */,
@@ -1317,6 +1353,7 @@
 				010988CE1D08701D00C1BA84 /* XWNavSegmentView.m in Sources */,
 				010988941D08701C00C1BA84 /* XWCollectionViewController.m in Sources */,
 				010988981D08701C00C1BA84 /* XWPhoneticViewController.m in Sources */,
+				014B837E1D2A930C00C6D841 /* UIView+XWImage.m in Sources */,
 				014B82F91D1DCECD00C6D841 /* XWCanvasControl.m in Sources */,
 				014B83711D2A2FBD00C6D841 /* XWPoemArena.m in Sources */,
 				014B827B1D1C68F500C6D841 /* XWRadicalBtn.m in Sources */,
@@ -1347,6 +1384,7 @@
 				010989211D08792A00C1BA84 /* StrokeFontIO.mm in Sources */,
 				014B82721D1C58C900C6D841 /* XWPinyinInfoView.m in Sources */,
 				014B82781D1C684200C6D841 /* XWRadicalInfoView.m in Sources */,
+				014B837B1D2A8FFA00C6D841 /* XWPrintPageRender.m in Sources */,
 				014B83341D26D1D600C6D841 /* XWCollectionSetView.m in Sources */,
 				010988971D08701C00C1BA84 /* XWNotebookViewController.m in Sources */,
 				014B82E51D1D7B2B00C6D841 /* DataModel.xcdatamodeld in Sources */,

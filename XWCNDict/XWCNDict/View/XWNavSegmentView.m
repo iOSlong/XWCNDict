@@ -7,7 +7,7 @@
 //
 
 #import "XWNavSegmentView.h"
-
+#import "XWSetInfo.h"
 
 
 @implementation XWSegmentItem
@@ -30,10 +30,12 @@
     CGFloat _item_w;
     CGFloat _item_h;
     CGFloat _item_span;
+    XWSetInfo *_setInfo;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame segmentItemArr:(NSArray *)segmentItemArr{
     if (self = [super initWithFrame:frame]) {
+        _setInfo = [XWSetInfo shareSetInfo];
         UIImage *imgBack = [UIImage imageNamed:@"111"];
         self.imgvBackground = [[UIImageView alloc] init];
         self.imgvBackground.image = imgBack;
@@ -52,8 +54,8 @@
             }
 
             //按照设计效果，还是第二种的segment效果感觉好一些。
-//            [self configureSegmentItemsWithArr:segmentItemArr];
-            [self configurePartViewWith:segmentItemArr];
+            [self configureSegmentItemsWithArr:segmentItemArr];
+//            [self configurePartViewWith:segmentItemArr];
 
         }
     }
@@ -140,7 +142,7 @@
 - (void)configureSegmentItemsWithArr:(NSArray *)segmentItemArr{
 
     self.segmentControl = [[UISegmentedControl alloc] initWithFrame:self.bounds];
-    self.segmentControl.tintColor = [UIColor whiteColor];
+    self.segmentControl.tintColor = _setInfo.themeColorCharacter;
     for (XWSegmentItem *item in segmentItemArr) {
         [self.segmentControl insertSegmentWithTitle:item.title atIndex:self.segmentControl.numberOfSegments animated:YES];
     }
@@ -152,11 +154,11 @@
                                                   }forState:UIControlStateNormal];
     [self.segmentControl setTitleTextAttributes:@{
                                                   NSFontAttributeName:[UIFont systemFontOfSize:24],
-                                                  NSForegroundColorAttributeName:[UIColor blueColor]
+                                                  NSForegroundColorAttributeName:[UIColor whiteColor]
                                                   }forState:UIControlStateSelected];
     [self.segmentControl setTitleTextAttributes:@{
                                                   NSFontAttributeName:[UIFont systemFontOfSize:24],
-                                                  NSForegroundColorAttributeName:[UIColor redColor]
+                                                  NSForegroundColorAttributeName:[UIColor blueColor]
                                                   }forState:UIControlStateHighlighted];
 
     [self addSubview:_segmentControl];
@@ -167,6 +169,16 @@
 
 - (void)segmentControlClick:(UISegmentedControl *)segC{
     [self updateSegmentControlBackgroundColor:segC];
+
+    NSInteger index = segC.selectedSegmentIndex;
+    NSArray *arr = [NSArray arrayWithObjects:_setInfo.themeColorCharacter,
+                    _setInfo.themeColorRadical,
+                    _setInfo.themeColorPhonetic,
+                    _setInfo.themeColorCollection,
+                    _setInfo.themeColorPoems,nil];
+
+    segC.tintColor = arr[index];
+
     if ([self.delegate respondsToSelector:@selector(xwNavSegment:didSelectedIndex:)]) {
         [self.delegate xwNavSegment:self didSelectedIndex:segC.selectedSegmentIndex];
     }
@@ -176,10 +188,10 @@
 {
     for (int i=0; i<[sender.subviews count]; i++){
         if ([[sender.subviews objectAtIndex:i] respondsToSelector:@selector(isSelected)] && [[sender.subviews objectAtIndex:i]isSelected]){
-            [[sender.subviews objectAtIndex:i] setBackgroundColor:[UIColor grayColor]];
+            [[sender.subviews objectAtIndex:i] setBackgroundColor:[UIColor blackColor]];
         }
         if ([[sender.subviews objectAtIndex:i] respondsToSelector:@selector(isSelected)] && ![[sender.subviews objectAtIndex:i] isSelected]){
-            [[sender.subviews objectAtIndex:i] setBackgroundColor:[UIColor lightGrayColor]];
+            [[sender.subviews objectAtIndex:i] setBackgroundColor:_setInfo.themeColorBackground];
         }
     }
 }

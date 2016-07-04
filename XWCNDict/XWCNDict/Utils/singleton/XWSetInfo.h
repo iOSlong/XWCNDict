@@ -25,10 +25,18 @@
 @property (nonatomic, strong, readonly) NSString        *imgNameEqTabMask;
 
 
+
 @property (nonatomic, strong) NSString  *imgNameField;
 @property (nonatomic, strong) NSString  *fontCharShow;
 @property (nonatomic, strong) UIColor   *color_char;
 @property (nonatomic, strong) UIColor   *color_radical;
+@property (nonatomic, strong) UIColor   *themeColorCharacter;
+@property (nonatomic, strong) UIColor   *themeColorRadical;
+@property (nonatomic, strong) UIColor   *themeColorPhonetic;
+@property (nonatomic, strong) UIColor   *themeColorCollection;
+@property (nonatomic, strong) UIColor   *themeColorPoems;
+@property (nonatomic, strong) UIColor   *themeColorBackground;
+
 
 @property (nonatomic, assign) float     speed;
 @property (nonatomic, assign) float     volume;

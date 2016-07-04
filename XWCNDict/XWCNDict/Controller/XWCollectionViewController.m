@@ -10,17 +10,21 @@
 #import "XWMyDataController.h"
 #import "XWCollectionPlat.h"
 #import "XWCollectionSetView.h"
+#import "XWPDFViewController.h"
 
 @interface XWCollectionViewController ()<UIScrollViewDelegate, UITextFieldDelegate>
 @property (nonatomic, strong) UILabel               *labelPageIndex;
 @property (nonatomic, strong) XWCollectionSetView   *collectionSetView;
+@property (nonatomic, strong) UIButton              *btnPrint;
+
 @end
 
 @implementation XWCollectionViewController{
     XWMyDataController  *_DC;
 
-    NSMutableArray      *_arrSectionCanvas; //[ [8],[8],[<8] ]
-    NSMutableArray      *_arrPlat;
+    NSMutableArray                          *_arrSectionCanvas; //[ [8],[8],[<8] ]
+    NSMutableArray<XWCollectionPlat *>      *_arrPlat;
+    XWCollectionPlat                        *_currentPlat;
 }
 
 - (XWCollectionSetView *)collectionSetView
@@ -31,6 +35,18 @@
     return _collectionSetView;
 }
 
+- (UIButton *)btnPrint
+{
+    if (!_btnPrint) {
+        _btnPrint = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_btnPrint setFrame:CGRectMake(self.labelPageIndex.x-50 * kFixed_rate, 668 * kFixed_rate, 26 * kFixed_rate, 26 * kFixed_rate)];
+        _btnPrint.centerY = self.btnSetGear.centerY;
+        [_btnPrint setBackgroundImage:[UIImage imageNamed:@"printbtn.png"] forState:UIControlStateNormal];
+        [_btnPrint addTarget:self action:@selector(printBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:_btnPrint];
+    }
+    return _btnPrint;
+}
 
 - (UILabel *)labelPageIndex
 {
@@ -65,12 +81,17 @@
     _arrPlat            = [NSMutableArray array];
 
 
-    self.scrollView.delegate = self;
+    self.scrollView.delegate    = self;
+    self.textfield.delegate     = self;
     
+    self.platViewModel          = XWPlatViewModelCollection;
 
     [self.view addSubview:self.labelPageIndex];
+
+    [self.view addSubview:self.btnPrint];
+
     [self.view addSubview:self.collectionSetView];
-    self.textfield.delegate = self;
+
 
     __weak __typeof(self)weakSelf = self;
     self.MaskHiddenBlock = ^(){
@@ -160,8 +181,10 @@
 
     [self.scrollView setContentSize:CGSizeMake( kScreenSize.width * _arrSectionCanvas.count, self.scrollView.height)];
 
-    NSString *indexTitle = [NSString stringWithFormat:@"%d / %d",1,_arrSectionCanvas.count ? (int)[_arrSectionCanvas count]:1];
-    _labelPageIndex.text = indexTitle;
+    NSString *indexTitle    = [NSString stringWithFormat:@"%d / %d",1,_arrSectionCanvas.count ? (int)[_arrSectionCanvas count]:1];
+    _labelPageIndex.text    = indexTitle;
+    _currentPlat            = _arrPlat[0];
+
 }
 
 - (void)loadCollectionPlat
@@ -173,12 +196,13 @@
 #pragma mark - _scrollViewDelegate -
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    CGPoint point = scrollView.contentOffset;
-    printf("point.x = %f\n",point.x);
-    NSString *indexTitle = [NSString stringWithFormat:@"%d / %ld",(int)point.x/(int)kScreenSize.width+1,_arrSectionCanvas.count];
+    CGPoint point           = scrollView.contentOffset;
+    NSInteger index         = (int)point.x/(int)kScreenSize.width+1;
+    NSString *indexTitle    = [NSString stringWithFormat:@"%ld / %ld",(long)index,_arrSectionCanvas.count];
     //    NSString *indexTitle = @"12/21";//[NSString stringWithFormat:@"%d/%d",(int)point.x/1024+1,_caseRowArr.count];
 
-    _labelPageIndex.text = indexTitle;
+    _labelPageIndex.text    = indexTitle;
+    _currentPlat            = _arrPlat[index -1];
 
     [self.view bringSubviewToFront:self.scrollView];
 }
@@ -214,6 +238,20 @@
         i++;
     }
     [self showHint:@"没有搜索到该字符" hide:1.5];
+}
+
+#pragma mark 打印文字
+- (void)printBtnClick:(UIButton *)btn
+{
+    if (_arrSectionCanvas.count == 0) {
+        [self showHint:@"没有收藏的字符!" hide:1.5];
+        return;
+    }
+    XWPDFViewController *pdfVC = [[XWPDFViewController alloc] init];
+    pdfVC.collectionPlat    = _currentPlat;
+
+
+    [self.navigationController pushViewController:pdfVC animated:YES];
 }
 
 @end
