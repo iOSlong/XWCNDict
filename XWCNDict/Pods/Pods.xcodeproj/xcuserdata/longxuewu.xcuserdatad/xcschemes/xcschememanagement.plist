@@ -19,16 +19,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>ReactiveCocoa.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Result.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>SevenSwitch.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,27 +37,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3B930C505CE0DBF863964C3D2F591476</key>
+		<key>74F5653C76F2F57D6D447DE632B49691</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>42286453D1CEF5171F77B794EF1428BC</key>
+		<key>95A0DFB65694DF693B597F151FABC67E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>971D27924DDCFF6F69577482F30FC3F4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A89973ECDE563230F07127F2E3C03D90</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C7653404D5BAC1B10F61A22C416FB8BD</key>
+		<key>D0DBA07042482E522AD9496B0398E415</key>
 		<dict>
 			<key>primary</key>
 			<true/>
