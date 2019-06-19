@@ -27,7 +27,6 @@
 		0109889D1D08701C00C1BA84 /* XWCharacterPlat.m in Sources */ = {isa = PBXBuildFile; fileRef = 0109884F1D08701C00C1BA84 /* XWCharacterPlat.m */; };
 		0109889E1D08701C00C1BA84 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 010988521D08701C00C1BA84 /* background.png */; };
 		010988A11D08701C00C1BA84 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 010988561D08701C00C1BA84 /* info.png */; };
-		010988A21D08701C00C1BA84 /* navbackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 010988571D08701C00C1BA84 /* navbackground.png */; };
 		010988C21D08701D00C1BA84 /* pinyin.plist in Resources */ = {isa = PBXBuildFile; fileRef = 010988791D08701C00C1BA84 /* pinyin.plist */; };
 		010988C31D08701D00C1BA84 /* pinyinArr.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0109887A1D08701C00C1BA84 /* pinyinArr.plist */; };
 		010988C41D08701D00C1BA84 /* poem.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0109887B1D08701C00C1BA84 /* poem.plist */; };
@@ -129,7 +128,6 @@
 		014B827B1D1C68F500C6D841 /* XWRadicalBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 014B827A1D1C68F500C6D841 /* XWRadicalBtn.m */; };
 		014B82841D1CFFB700C6D841 /* shezhi.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B827C1D1CFFB700C6D841 /* shezhi.png */; };
 		014B82851D1CFFB700C6D841 /* poemNavMask.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B827D1D1CFFB700C6D841 /* poemNavMask.png */; };
-		014B82861D1CFFB700C6D841 /* poemMask.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B827E1D1CFFB700C6D841 /* poemMask.png */; };
 		014B82871D1CFFB700C6D841 /* colorKeyboardimg.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B827F1D1CFFB700C6D841 /* colorKeyboardimg.png */; };
 		014B82881D1CFFB700C6D841 /* bofang.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B82801D1CFFB700C6D841 /* bofang.png */; };
 		014B82891D1CFFB700C6D841 /* poemSetBackImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B82811D1CFFB700C6D841 /* poemSetBackImg.png */; };
@@ -207,12 +205,7 @@
 		014B835D1D2A186700C6D841 /* shijin55.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B83491D2A186700C6D841 /* shijin55.png */; };
 		014B835E1D2A186700C6D841 /* zanting2.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B834A1D2A186700C6D841 /* zanting2.png */; };
 		014B835F1D2A186700C6D841 /* bofang2.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B834B1D2A186700C6D841 /* bofang2.png */; };
-		014B83601D2A186700C6D841 /* shezhi.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B834C1D2A186700C6D841 /* shezhi.png */; };
-		014B83611D2A186700C6D841 /* poemNavMask.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B834D1D2A186700C6D841 /* poemNavMask.png */; };
 		014B83621D2A186700C6D841 /* poemMask.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B834E1D2A186700C6D841 /* poemMask.png */; };
-		014B83641D2A186700C6D841 /* bofang.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B83501D2A186700C6D841 /* bofang.png */; };
-		014B83661D2A186700C6D841 /* zanting.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B83521D2A186700C6D841 /* zanting.png */; };
-		014B83671D2A186700C6D841 /* playing.png in Resources */ = {isa = PBXBuildFile; fileRef = 014B83531D2A186700C6D841 /* playing.png */; };
 		014B836B1D2A2A3D00C6D841 /* XWPoemWordBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 014B836A1D2A2A3D00C6D841 /* XWPoemWordBtn.m */; };
 		014B836E1D2A2F4000C6D841 /* XWPoem.m in Sources */ = {isa = PBXBuildFile; fileRef = 014B836D1D2A2F4000C6D841 /* XWPoem.m */; };
 		014B83711D2A2FBD00C6D841 /* XWPoemArena.m in Sources */ = {isa = PBXBuildFile; fileRef = 014B83701D2A2FBD00C6D841 /* XWPoemArena.m */; };
@@ -268,7 +261,6 @@
 		0109884F1D08701C00C1BA84 /* XWCharacterPlat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWCharacterPlat.m; sourceTree = "<group>"; };
 		010988521D08701C00C1BA84 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		010988561D08701C00C1BA84 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
-		010988571D08701C00C1BA84 /* navbackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navbackground.png; sourceTree = "<group>"; };
 		010988791D08701C00C1BA84 /* pinyin.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = pinyin.plist; sourceTree = "<group>"; };
 		0109887A1D08701C00C1BA84 /* pinyinArr.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = pinyinArr.plist; sourceTree = "<group>"; };
 		0109887B1D08701C00C1BA84 /* poem.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = poem.plist; sourceTree = "<group>"; };
@@ -391,7 +383,6 @@
 		014B827A1D1C68F500C6D841 /* XWRadicalBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWRadicalBtn.m; sourceTree = "<group>"; };
 		014B827C1D1CFFB700C6D841 /* shezhi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shezhi.png; sourceTree = "<group>"; };
 		014B827D1D1CFFB700C6D841 /* poemNavMask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = poemNavMask.png; sourceTree = "<group>"; };
-		014B827E1D1CFFB700C6D841 /* poemMask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = poemMask.png; sourceTree = "<group>"; };
 		014B827F1D1CFFB700C6D841 /* colorKeyboardimg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = colorKeyboardimg.png; sourceTree = "<group>"; };
 		014B82801D1CFFB700C6D841 /* bofang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bofang.png; sourceTree = "<group>"; };
 		014B82811D1CFFB700C6D841 /* poemSetBackImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = poemSetBackImg.png; sourceTree = "<group>"; };
@@ -478,12 +469,7 @@
 		014B83491D2A186700C6D841 /* shijin55.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shijin55.png; sourceTree = "<group>"; };
 		014B834A1D2A186700C6D841 /* zanting2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zanting2.png; sourceTree = "<group>"; };
 		014B834B1D2A186700C6D841 /* bofang2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bofang2.png; sourceTree = "<group>"; };
-		014B834C1D2A186700C6D841 /* shezhi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shezhi.png; sourceTree = "<group>"; };
-		014B834D1D2A186700C6D841 /* poemNavMask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = poemNavMask.png; sourceTree = "<group>"; };
 		014B834E1D2A186700C6D841 /* poemMask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = poemMask.png; sourceTree = "<group>"; };
-		014B83501D2A186700C6D841 /* bofang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bofang.png; sourceTree = "<group>"; };
-		014B83521D2A186700C6D841 /* zanting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zanting.png; sourceTree = "<group>"; };
-		014B83531D2A186700C6D841 /* playing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playing.png; sourceTree = "<group>"; };
 		014B83691D2A2A3D00C6D841 /* XWPoemWordBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWPoemWordBtn.h; sourceTree = "<group>"; };
 		014B836A1D2A2A3D00C6D841 /* XWPoemWordBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWPoemWordBtn.m; sourceTree = "<group>"; };
 		014B836C1D2A2F4000C6D841 /* XWPoem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWPoem.h; sourceTree = "<group>"; };
@@ -663,10 +649,8 @@
 				0170D28D1D1C36D800275F70 /* ttffont */,
 				010988521D08701C00C1BA84 /* background.png */,
 				010988561D08701C00C1BA84 /* info.png */,
-				010988571D08701C00C1BA84 /* navbackground.png */,
 				014B827C1D1CFFB700C6D841 /* shezhi.png */,
 				014B827D1D1CFFB700C6D841 /* poemNavMask.png */,
-				014B827E1D1CFFB700C6D841 /* poemMask.png */,
 				014B827F1D1CFFB700C6D841 /* colorKeyboardimg.png */,
 				014B82801D1CFFB700C6D841 /* bofang.png */,
 				014B82811D1CFFB700C6D841 /* poemSetBackImg.png */,
@@ -962,12 +946,7 @@
 				014B83491D2A186700C6D841 /* shijin55.png */,
 				014B834A1D2A186700C6D841 /* zanting2.png */,
 				014B834B1D2A186700C6D841 /* bofang2.png */,
-				014B834C1D2A186700C6D841 /* shezhi.png */,
-				014B834D1D2A186700C6D841 /* poemNavMask.png */,
 				014B834E1D2A186700C6D841 /* poemMask.png */,
-				014B83501D2A186700C6D841 /* bofang.png */,
-				014B83521D2A186700C6D841 /* zanting.png */,
-				014B83531D2A186700C6D841 /* playing.png */,
 				014B83361D2A0DA600C6D841 /* dengguanquelou.wav */,
 				014B83371D2A0DA600C6D841 /* huixiangoushu.wav */,
 				014B83381D2A0DA600C6D841 /* jiangxue.wav */,
@@ -1062,7 +1041,6 @@
 				010987BA1D086DFA00C1BA84 /* Frameworks */,
 				010987BB1D086DFA00C1BA84 /* Resources */,
 				9E83315A2F7B53F90A13671A /* [CP] Embed Pods Frameworks */,
-				1AFBD6EE525D8B2423F285B4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1095,6 +1073,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -1129,12 +1108,10 @@
 				010989771D0B10F900C1BA84 /* box_1.png in Resources */,
 				010989031D0873A900C1BA84 /* bar_d2.png in Resources */,
 				014B82DA1D1D40B300C6D841 /* 5_7.wav in Resources */,
-				014B83661D2A186700C6D841 /* zanting.png in Resources */,
 				014B82D01D1D40B300C6D841 /* 5_21.wav in Resources */,
 				014B82D11D1D40B300C6D841 /* 5_22.wav in Resources */,
 				010989761D0B10F900C1BA84 /* box_2r.png in Resources */,
 				014B835C1D2A186700C6D841 /* shijin44.png in Resources */,
-				010988A21D08701C00C1BA84 /* navbackground.png in Resources */,
 				014B82D51D1D40B300C6D841 /* 5_26.wav in Resources */,
 				010989641D0B10ED00C1BA84 /* font_plat.png in Resources */,
 				014B828B1D1CFFB700C6D841 /* playing.png in Resources */,
@@ -1145,7 +1122,6 @@
 				010988A11D08701C00C1BA84 /* info.png in Resources */,
 				010988F91D0873A900C1BA84 /* 111.png in Resources */,
 				014B82C71D1D40B300C6D841 /* 5_13.wav in Resources */,
-				014B83641D2A186700C6D841 /* bofang.png in Resources */,
 				014B832C1D24450700C6D841 /* SetGear.png in Resources */,
 				014B833D1D2A0DA600C6D841 /* jiangxue.wav in Resources */,
 				010989021D0873A900C1BA84 /* bar_d1.png in Resources */,
@@ -1188,10 +1164,8 @@
 				014B82C11D1D40B300C6D841 /* 4_0.wav in Resources */,
 				014B82CF1D1D40B300C6D841 /* 5_20.wav in Resources */,
 				010989631D0B10ED00C1BA84 /* btn_ele4.png in Resources */,
-				014B82861D1CFFB700C6D841 /* poemMask.png in Resources */,
 				014B83281D24450700C6D841 /* bagcreate.png in Resources */,
 				0109894F1D0B10ED00C1BA84 /* seg3.png in Resources */,
-				014B83611D2A186700C6D841 /* poemNavMask.png in Resources */,
 				010989561D0B10ED00C1BA84 /* cir2.png in Resources */,
 				010989791D0B10F900C1BA84 /* box_3.png in Resources */,
 				010989541D0B10ED00C1BA84 /* seg44.png in Resources */,
@@ -1216,7 +1190,6 @@
 				014B82C51D1D40B300C6D841 /* 5_11.wav in Resources */,
 				010988FE1D0873A900C1BA84 /* bar_a5.png in Resources */,
 				0109897A1D0B10F900C1BA84 /* box_3r.png in Resources */,
-				014B83601D2A186700C6D841 /* shezhi.png in Resources */,
 				014B82881D1CFFB700C6D841 /* bofang.png in Resources */,
 				014B83271D24450700C6D841 /* backIndex.png in Resources */,
 				010988C51D08701D00C1BA84 /* radical.plist in Resources */,
@@ -1232,7 +1205,6 @@
 				014B82BF1D1D40B300C6D841 /* 2_1.wav in Resources */,
 				014B82D61D1D40B300C6D841 /* 5_3.wav in Resources */,
 				014B83591D2A186700C6D841 /* shijin11.png in Resources */,
-				014B83671D2A186700C6D841 /* playing.png in Resources */,
 				010989091D0873A900C1BA84 /* bar_d8.png in Resources */,
 				014B82CB1D1D40B300C6D841 /* 5_17.wav in Resources */,
 				010989011D0873A900C1BA84 /* bar_a8.png in Resources */,
@@ -1281,34 +1253,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1AFBD6EE525D8B2423F285B4 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XWCNDict/Pods-XWCNDict-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		9E83315A2F7B53F90A13671A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-XWCNDict/Pods-XWCNDict-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XWCNDict/Pods-XWCNDict-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-XWCNDict/Pods-XWCNDict-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C3A0BC7B574C04B952650236 /* [CP] Check Pods Manifest.lock */ = {
@@ -1317,13 +1279,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XWCNDict-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1516,7 +1481,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "XWCNDict/View/XWCNDict-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1536,7 +1501,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "XWCNDict/View/XWCNDict-Bridging-Header.h";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

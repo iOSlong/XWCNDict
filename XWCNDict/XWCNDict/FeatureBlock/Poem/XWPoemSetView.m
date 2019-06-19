@@ -156,13 +156,13 @@
             break;
         case kCharacterSoundTag:
         {
-            self.voiceOpen = sw.isOn;
+            self.voiceOpen = sw.on;
             PoemSetVoiceCallback(self);
         }
             break;
         case kCharacterColorTag:
         {
-            if (sw.isOn) {
+            if (sw.on) {
                 [_poemwordcolor_keyboard setHidden:NO];
             }else{
                 [_poemwordcolor_keyboard setHidden:YES];

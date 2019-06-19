@@ -67,7 +67,7 @@
 
 - (void)sSwitchChangedValue:(XWSevenSwitch *)ssw
 {
-    if (ssw.isOn) {
+    if (ssw.on) {
         printf("ssw.isOn = Yes!\n");
 
 //        [CollectAccount shareCollectAcount].isManageMode = YES;

@@ -224,8 +224,8 @@
         case 0:
         {
             //            printf("strokeSound!\n");
-            _setInfo.sound_stroke = sw.isOn;
-            _setInfo.isVoice = sw.isOn;
+            _setInfo.sound_stroke = sw.on;
+            _setInfo.isVoice = sw.on;
         }
             break;
         case 1:
@@ -236,7 +236,8 @@
         case 2:
         {
             [_radicalcolor_keyboard setHidden:YES];
-            [(XWSevenSwitch *)[_switchArr objectAtIndex:3] setOn:NO animated:YES];
+            [(XWSevenSwitch *)[_switchArr objectAtIndex:3] setOn:NO];
+//            [(XWSevenSwitch *)[_switchArr objectAtIndex:3] setOn:NO animated:YES];
 
             _tempkeyboard = [_colorKeyboardArr objectAtIndex:0];
 
@@ -257,7 +258,8 @@
         case 3:
         {
             [_charatercolor_keyboard setHidden:YES];
-            [(XWSevenSwitch *)[_switchArr objectAtIndex:2] setOn:NO animated:YES];
+            [(XWSevenSwitch *)[_switchArr objectAtIndex:2] setOn:NO];
+//            [(XWSevenSwitch *)[_switchArr objectAtIndex:2] setOn:NO animated:YES];
 
             _tempkeyboard = [_colorKeyboardArr objectAtIndex:1];
             if (sw.on) {

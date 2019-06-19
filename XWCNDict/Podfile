@@ -7,9 +7,9 @@ target 'XWCNDict' do
 
   # Pods for XWCNDict
   # pod 'ReactiveCocoa', '~> 4.0.4-alpha-4'
-   pod 'UIView+Positioning', '~> 1.1'
-   pod 'SevenSwitch', '~> 2.0.0'
-   pod 'MBProgressHUD', '~> 0.9.2'
+  # pod 'UIView+Positioning'
+  # pod 'SevenSwitch'
+   pod 'MBProgressHUD'
 	
-   pod 'FMDB', '~> 2.6'
+   pod 'FMDB'
 end
